@@ -7,27 +7,17 @@
 .medals::before {
   content: "🏆";
   position: absolute;
-  right: 0;
-  /* keep decorative glyph anchored to edge */
+  right: 4vw;
   top: 50%;
-  transform: translateX(30%) translateY(-50%);
-  /* transform doesn't affect layout */
-  font-size: clamp(120px, 22vw, 260px);
+  transform: translateY(-50%);
+  font-size: 260px;
   opacity: 0.04;
   pointer-events: none;
-  will-change: transform, opacity;
 }
 
 .medals>* {
   position: relative;
   z-index: 1;
-}
-
-.medals__counts {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-  margin-top: 8px;
 }
 
 .medal-count {
