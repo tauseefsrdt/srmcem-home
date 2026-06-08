@@ -1,0 +1,29 @@
+.companies { background: linear-gradient(160deg, #0f2f57 0%, #0b2142 100%); }
+.company-cat { text-align: center; margin-bottom: 40px; }
+.company-cat:last-child { margin-bottom: 0; }
+.company-cat__label {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-left: 3px solid var(--gold);
+  padding: 6px 16px;
+  margin-bottom: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+.company-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.chip {
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  transition: transform 0.2s var(--ease), background 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+.chip:hover { transform: translateY(-2px); background: rgba(239, 166, 60, 0.12); border-color: var(--gold-light); color: var(--gold-light); }
+.chip--hl { border-color: rgba(242, 184, 75, 0.45); background: rgba(242, 184, 75, 0.18); color: var(--gold-light); }

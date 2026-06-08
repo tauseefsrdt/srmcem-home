@@ -1,0 +1,18 @@
+.admission {
+  background: linear-gradient(120deg, #08162e 0%, #0b2142 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.admission__icon {
+  width: 52px; height: 52px;
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: rgba(242, 184, 75, 0.18);
+  border: 1px solid rgba(242, 184, 75, 0.35);
+  font-size: 24px;
+}
+.admission__label { color: var(--gold-light); font-weight: 700; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
+.admission__text { color: #A3B3CC; font-size: 14px; line-height: 1.6; }
