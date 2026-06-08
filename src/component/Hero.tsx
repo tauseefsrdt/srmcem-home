@@ -19,14 +19,15 @@ const Hero = () => {
       <div className="hero__grid"></div>
       <div className="hero__inner">
         <div className="hero__content">
-          <div className="hero__badge">Admissions 2025-26 now open</div>
+          <div className="hero__badge">Admissions Open 2025-26</div>
           <h1 className="hero__title">
-            SRMCEM School of Engineering &amp; Management
-            <span>Industry-first learning, research depth, and career outcomes.</span>
+            Top Choice of AKTU Aspirants in the Region
+            <span>Innovate, Transform, Empower &amp; Succeed with AKTU Score Based Scholarships</span>
           </h1>
           <p className="hero__sub">
-            Build your future with outcome-driven programs, hands-on projects, and a campus culture
-            designed for leadership and innovation.
+            SRMCEM has achieved distinction for its value-based institutional culture focusing on
+            in-depth knowledge and employability enhancement — join a campus committed to
+            outcomes, scholarships and real-world experience.
           </p>
           <div className="hero__meta">
             <span>Established 1999</span>
@@ -54,15 +55,8 @@ const Hero = () => {
         </div>
 
         <div className="hero__visual">
-          <div className="hero__stats">
-            {stats.map((item, idx) => (
-              <div key={idx} className="hero__stat" style={{ animationDelay: `${0.5 + idx * 0.08}s` }}>
-                <div className="hero__stat-num">
-                  {item.stat.replace('+', '')}{item.stat.includes('+') && <sup>+</sup>}
-                </div>
-                <div className="hero__stat-label">{item.text}</div>
-              </div>
-            ))}
+          <div className="hero__media">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="SRMCEM Campus" />
           </div>
         </div>
       </div>

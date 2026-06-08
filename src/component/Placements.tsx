@@ -2,16 +2,16 @@ import React from 'react';
 import './Placements.css';
 
 const minis = [
-  { num: '35%', label: 'Students Secured Multiple Job Offers' },
-  { num: '225', label: 'Selected at CTC 5 LPA & Above' },
-  { num: '1200+', label: 'Job Offers' }
+  { num: '91%', label: 'Placement in Computer Science Engineering' },
+  { num: '29 LPA', label: 'Highest Package — Morgan Stanley' },
+  { num: '87%', label: 'Students placed in CMM Level companies' }
 ];
 
 const rows = [
-  { num: '350+', title: 'Corporates Hiring', sub: 'Top companies recruiting from campus' },
-  { num: '100%', title: 'Placement in Core Engineering', sub: 'Outstanding opportunities in core sector roles' },
-  { num: '93%', title: 'Placement in Management', sub: 'High success rate for management students' },
-  { num: '4.52', unit: 'LPA', title: 'Average Package', sub: 'Consistently growing average compensation' }
+  { num: '623+', title: 'Students selected in Fortune 500 companies', sub: '' },
+  { num: '38+', title: 'Recruiters Exclusively for Core Engineering', sub: '' },
+  { num: '168+', title: 'Students got a package of more than 5 LPA', sub: '' },
+  { num: '96%', title: 'Placement achieved in Engineering, Management, Computer Application and Polytechnic', sub: '' }
 ];
 
 const Placements = () => {
@@ -27,7 +27,7 @@ const Placements = () => {
 
       <div className="placements__grid">
         <div className="reveal">
-          <div className="placements__big">25<span>LPA</span></div>
+          <div className="placements__big">29<span>LPA</span></div>
           <div className="placements__big-label">Highest Package Achieved</div>
           <div className="placements__minis">
             {minis.map((m, i) => (

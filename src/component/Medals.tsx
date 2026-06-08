@@ -2,17 +2,17 @@ import React from 'react';
 import './Medals.css';
 
 const counts = [
-  { num: '18', cls: 'is-gold', label: 'Gold Medals', sub: 'AKTU University' },
-  { num: '12', cls: 'is-silver', label: 'Silver Medals', sub: 'AKTU University' },
-  { num: '06', cls: 'is-bronze', label: 'Bronze Medals', sub: 'AKTU University' },
-  { num: '192', cls: 'is-merit', label: 'Merit Holders', sub: 'AKTU University' }
+  { num: '8+', cls: 'is-gold', label: 'Years Of Experience', sub: '' },
+  { num: '8+', cls: 'is-silver', label: 'Number Of Courses', sub: '' },
+  { num: '486+', cls: 'is-bronze', label: 'Students', sub: '' },
+  { num: '96+', cls: 'is-merit', label: 'Number Of Placements', sub: '' }
 ];
 
 const merit = [
-  { pos: '1st Position — University', init: 'AR', name: 'Anjali Raj', branch: 'B.Tech (EE)' },
-  { pos: '2nd Position — University', init: 'NI', name: 'Nimish', branch: 'B.Tech (CE)' },
-  { pos: '2nd Position — University', init: 'SS', name: 'Sakshi Singh', branch: 'B.Tech (IT)' },
-  { pos: '3rd Position — University', init: 'AR', name: 'Akshat Rastogi', branch: 'B.Tech (ME)' }
+  { pos: 'Top Achievers — AKTU', init: 'AR', name: 'Anjali Raj', branch: 'B.Tech (EE)' },
+  { pos: 'Top Achievers — AKTU', init: 'NI', name: 'Nimish', branch: 'B.Tech (CE)' },
+  { pos: 'Top Achievers — AKTU', init: 'SS', name: 'Sakshi Singh', branch: 'B.Tech (IT)' },
+  { pos: 'Top Achievers — AKTU', init: 'AR', name: 'Akshat Rastogi', branch: 'B.Tech (ME)' }
 ];
 
 const Medals = () => {

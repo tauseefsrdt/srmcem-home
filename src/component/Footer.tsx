@@ -23,7 +23,7 @@ const Footer = () => {
         <div>
           <div className="footer__brand-title">Shri Ramswaroop Memorial</div>
           <div className="footer__brand-sub">College of Engineering & Management</div>
-          <div className="footer__brand-text">Tiwariganj, Faizabad Road, Lucknow, Uttar Pradesh 226010. Established 2001. NBA Accredited · AICTE Approved · AKTU Affiliated.</div>
+          <div className="footer__brand-text">Tiwariganj, Faizabad Road, Lucknow (U.P.) - 226028. NBA Accredited · AICTE Approved · AKTU Affiliated.</div>
         </div>
         {columns.map((col, i) => (
           <div key={i}>
@@ -35,7 +35,7 @@ const Footer = () => {
         ))}
       </div>
       <div className="footer__bottom">
-        <div className="footer__copy">© {new Date().getFullYear()} Shri Ramswaroop Memorial College of Engineering & Management. All rights reserved.</div>
+        <div className="footer__copy">© {new Date().getFullYear()} SHRI RAMSWAROOP. All rights reserved.</div>
         <div className="footer__legal">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>

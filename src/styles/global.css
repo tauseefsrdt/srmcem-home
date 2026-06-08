@@ -59,6 +59,8 @@
 html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+    /* prevent horizontal scroll caused by positioned elements */
 }
 
 body {
@@ -67,6 +69,7 @@ body {
     background: radial-gradient(circle at 10% 0%, #ffffff 0%, var(--off-white) 52%, #eef2f8 100%);
     line-height: 1.6;
     overflow-x: hidden;
+    /* safeguard against horizontal overflow */
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }

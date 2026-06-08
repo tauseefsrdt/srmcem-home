@@ -2,12 +2,10 @@ import React from 'react';
 import './News.css';
 
 const events = [
-  { title: 'ABHIVYAKTI — Annual Cultural Fest 2025', meta: 'Cultural · Upcoming 2025' },
-  { title: 'GANTAVYA — Tech Fest: Hackathon, Robotics & Paper Presentations', meta: 'Technical · Annual Event' },
-  { title: 'SPARDHA — Annual Sports Fest & SRM Premier League', meta: 'Sports · Annual Event' },
-  { title: 'Campus Placement Drive — 250+ Companies Visiting', meta: 'Placements · 2025 Season' },
-  { title: 'ANVARAT — 25 Years of Excellence Celebration', meta: 'Milestone · Silver Jubilee' },
-  { title: 'Blood Donation Camp & NCC Annual Parade', meta: 'CSR / NCC · Regular Initiative' }
+  { title: 'A proud moment for the SRMCEM family!', meta: '8 MARCH 2026' },
+  { title: 'SRMCEM Alumni Mr. Suyash awarded by U.P. Govt', meta: 'Alumni · Recognition' },
+  { title: 'SRMCEM Robotics Club Triumphs at Intercollege Meet', meta: 'Clubs · Robotics' },
+  { title: 'Abhivyakti 2026 — Cultural Extravaganza', meta: 'Events · 2026' }
 ];
 
 const News = () => {
@@ -20,13 +18,13 @@ const News = () => {
 
       <div className="news-grid reveal">
         <article className="news-featured">
-          <div className="news-featured__media"><span>🌐</span></div>
+          <div className="news-featured__media"><img src="https://picsum.photos/seed/event-main/900/420" alt="convocation" /></div>
           <div className="news-featured__body">
             <span className="pill pill--gold">Featured</span>
-            <h3 className="news-featured__title">IEEE International Conference — U.P. Section, November 2024</h3>
-            <p className="news-featured__desc">SRMCEM becomes the proud host of the prestigious IEEE International Conference under the U.P. Section — a landmark achievement bringing global researchers, academicians and engineers to our campus.</p>
+            <h3 className="news-featured__title">A proud moment for the SRMCEM family!</h3>
+            <p className="news-featured__desc">Our Co-founder and Additional Executive Director, Dr. Pooja Agarwal, was honored by the Hon'ble Governor of Uttar Pradesh on the occasion of International Women's Day (8 March 2026). This prestigious recognition reflects SRMCEM's commitment to excellence and leadership.</p>
             <div className="news-featured__meta">
-              <div className="news-featured__date"><span>📅</span> November 2024 · Lucknow Campus</div>
+              <div className="news-featured__date"><span>📅</span> 8 March 2026 · Lucknow Campus</div>
               <a href="#" className="link-arrow">Read More →</a>
             </div>
           </div>
