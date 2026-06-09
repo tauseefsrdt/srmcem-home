@@ -1,5 +1,4 @@
 import React from 'react';
-import './Alumni.css';
 
 const alumniData = [
   { init: 'AS', name: 'Abhay Singh', batch: 'B.Tech ME · 2005', role: 'IFS, Gujarat Cadre · AKTU Distinguished Alumni', tone: 'is-navy' },

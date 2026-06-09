@@ -1,5 +1,4 @@
 import React from 'react';
-import './AdmissionInfo.css';
 
 const AdmissionInfo = () => {
   return (

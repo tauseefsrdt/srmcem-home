@@ -1,5 +1,4 @@
 import React from 'react';
-import './Placements.css';
 
 const minis = [
   { num: '91%', label: 'Placement in Computer Science Engineering' },

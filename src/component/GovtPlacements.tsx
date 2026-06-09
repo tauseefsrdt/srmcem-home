@@ -1,5 +1,4 @@
 import React from 'react';
-import './GovtPlacements.css';
 
 const cells = [
   { icon: '🏛️', title: '20+ Alumni in Indian Civil Services', desc: 'Serving the nation through prestigious roles in the IAS, IPS, IRS and other civil services, contributing to governance, policy-making and public administration.' },
@@ -20,7 +19,7 @@ const GovtPlacements = () => {
 
       <div className="govt__grid reveal">
         {cells.map((c, i) => (
-          <div key={i} className="govt-cell">
+          <div key={i} className="glass-cell govt-cell">
             <span className="govt-cell__icon">{c.icon}</span>
             <div className="govt-cell__title">{c.title}</div>
             <div className="govt-cell__desc">{c.desc}</div>

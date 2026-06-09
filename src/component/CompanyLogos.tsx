@@ -1,5 +1,4 @@
 import React from 'react';
-import './CompanyLogos.css';
 
 const categories = [
   {

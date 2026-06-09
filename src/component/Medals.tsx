@@ -1,5 +1,4 @@
 import React from 'react';
-import './Medals.css';
 
 const counts = [
   { num: '8+', cls: 'is-gold', label: 'Years Of Experience', sub: '' },

@@ -1,5 +1,4 @@
 import React from 'react';
-import './WorldStage.css';
 
 const cards = [
   { icon: '🤖', title: 'Global Robotics Champions', desc: 'Grobot team competes and wins at international robotics championships — placing Lucknow on the global map of technical excellence.', tag: 'International Win' },
@@ -21,7 +20,7 @@ const WorldStage = () => {
 
       <div className="grid grid--3 reveal">
         {cards.map((c, i) => (
-          <div key={i} className="ws-card">
+          <div key={i} className="surface-card ws-card">
             <div className="ws-card__icon">{c.icon}</div>
             <div className="ws-card__title">{c.title}</div>
             <div className="ws-card__desc">{c.desc}</div>

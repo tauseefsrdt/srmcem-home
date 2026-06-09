@@ -1,5 +1,4 @@
 import React from 'react';
-import './Programs.css';
 
 const programs = [
   { icon: '💻', title: 'Computer Science & Engineering', cap: 'CSE', desc: 'Core CSE program with specialization options in AI, ML, Data Science and Cyber Security.' },
@@ -25,7 +24,7 @@ const Programs = () => {
 
       <div className="grid grid--3 programs-grid">
         {programs.map((p, i) => (
-          <div key={i} className="prog-card">
+          <div key={i} className="surface-card prog-card">
             <div className="prog-card__icon">{p.icon}</div>
             <div className="prog-card__title">{p.title}</div>
             <div className="prog-card__cap">{p.cap}</div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import './IEEE.css';
 
 const chapters = [
   { icon: '🤖', title: 'Robotics & Automation', cap: 'IEEE RAS Branch' },
@@ -20,7 +19,7 @@ const IEEE = () => {
 
       <div className="grid grid--5 reveal">
         {chapters.map((c, i) => (
-          <div key={i} className="ieee-card">
+          <div key={i} className="surface-card ieee-card">
             <div className="ieee-card__icon">{c.icon}</div>
             <div className="ieee-card__title">{c.title}</div>
             <div className="ieee-card__cap">{c.cap}</div>

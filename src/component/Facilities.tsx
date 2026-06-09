@@ -1,5 +1,4 @@
 import React from 'react';
-import './Facilities.css';
 
 const facilitiesData = [
   { icon: '🖥️', title: 'Smart Classrooms', desc: 'Interactive panels and digital boards in every classroom' },
@@ -29,7 +28,7 @@ const Facilities = () => {
 
       <div className="fac-grid reveal">
         {facilitiesData.map((item, i) => (
-          <div key={i} className="fac-cell">
+          <div key={i} className="glass-cell fac-cell">
             <div className="fac-cell__icon">{item.icon}</div>
             <div>
               <div className="fac-cell__title">{item.title}</div>

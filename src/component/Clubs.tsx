@@ -1,5 +1,4 @@
 import React from 'react';
-import './Clubs.css';
 
 const culturalClubs = [
   'WIWA Club', 'Choreography Club', 'Dramatics Club', 'Music Club', 'Photography Club',

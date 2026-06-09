@@ -1,5 +1,4 @@
 import React from 'react';
-import './News.css';
 
 const events = [
   { title: 'A proud moment for the SRMCEM family!', meta: '8 MARCH 2026' },

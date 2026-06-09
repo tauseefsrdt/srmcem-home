@@ -1,16 +1,4 @@
 import React from 'react';
-import './Hero.css';
-
-const stats = [
-  { stat: '30000+', text: 'Alumni Network Worldwide' },
-  { stat: '228', text: 'University Honors & Medals' },
-  { stat: '2300+', text: 'LIVE / Student Projects Completed' },
-  { stat: '80+', text: 'Victories Across IIT & National Tech Competitions' },
-  { stat: '95', text: 'Innovation Projects Showcased' },
-  { stat: '132', text: 'Hours of Industry Connect Every Year' },
-  { stat: '323+', text: 'Research Publications' },
-  { stat: '11', text: 'Patents Filed & Granted' }
-];
 
 const Hero = () => {
   return (
@@ -51,12 +39,6 @@ const Hero = () => {
               <span>Research collaborators</span>
               <span>Scholarship sponsors</span>
             </div>
-          </div>
-        </div>
-
-        <div className="hero__visual">
-          <div className="hero__media">
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="SRMCEM Campus" />
           </div>
         </div>
       </div>

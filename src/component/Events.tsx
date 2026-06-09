@@ -1,5 +1,4 @@
 import React from 'react';
-import './Events.css';
 
 const eventsData = [
   { title: 'ABHIVYAKTI', subtitle: 'The Annual Cultural Fest', desc: "A grand celebration of arts, music, dance, drama, and cultural diversity — one of Lucknow's most anticipated college festivals.", color: 'var(--navy-dark)', icon: '🎭' },

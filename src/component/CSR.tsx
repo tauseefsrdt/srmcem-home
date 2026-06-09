@@ -1,5 +1,4 @@
 import React from 'react';
-import './CSR.css';
 
 const csrData = [
   { icon: '🩸', title: 'Blood Donation Camp', desc: 'Regular blood donation drives with hundreds of student volunteers saving lives in the community' },
@@ -18,7 +17,7 @@ const CSR = () => {
 
       <div className="csr-grid reveal">
         {csrData.map((item, i) => (
-          <div key={i} className="csr-cell">
+          <div key={i} className="glass-cell csr-cell">
             <div className="csr-cell__icon">{item.icon}</div>
             <div className="csr-cell__title">{item.title}</div>
             <div className="csr-cell__desc">{item.desc}</div>
