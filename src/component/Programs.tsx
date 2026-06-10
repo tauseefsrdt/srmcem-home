@@ -1,39 +1,84 @@
-import React from 'react';
+import React, { useState } from "react";
+import Classes from "../utils/styles/Global.module.css";
+import Engeenring from "./programs/Engeenring";
+import Pharmacy from "./programs/Pharmacy";
+import Management from "./programs/Management";
+import { tabDataType } from "../types/home-data-type";
+import ComputerApplication from "./programs/ComputerApplication";
+import Commerce from "./programs/Commerce";
 
-const programs = [
-  { icon: '💻', title: 'Computer Science & Engineering', cap: 'CSE', desc: 'Core CSE program with specialization options in AI, ML, Data Science and Cyber Security.' },
-  { icon: '🧠', title: 'Computer Science — AI & ML', cap: 'CSE · AI/ML', desc: 'Focused AI & ML track with labs, industry mentors and capstone projects.' },
-  { icon: '📊', title: 'Computer Science — Data Science', cap: 'CSE · Data Science', desc: 'Data science pathway with strong industry collaboration and project opportunities.' },
-  { icon: '🔐', title: 'Computer Science — Cyber Security', cap: 'CSE · Cyber Security', desc: 'Security-focused curriculum with practical labs and internships.' },
-  { icon: '📡', title: 'Electronics & Communication Engineering', cap: 'ECE', desc: 'Embedded systems, VLSI and communication engineering with modern labs.' },
-  { icon: '🖧', title: 'Information Technology', cap: 'IT', desc: 'IT program with software engineering practices and industry tie-ups.' },
-  { icon: '⚙️', title: 'Mechanical Engineering', cap: 'ME', desc: 'Practical mechanical engineering training and workshop-based learning.' },
-  { icon: '🏗️', title: 'Civil Engineering', cap: 'CE', desc: 'Civil engineering for infrastructure, construction and design projects.' },
-  { icon: '🔋', title: 'Electrical Engineering', cap: 'EE', desc: 'Power systems, control and electrical design electives.' },
-  { icon: '💼', title: 'Management (MBA)', cap: 'MBA', desc: 'Two-year management program focusing on employability and industry projects.' }
+export const tabData: tabDataType[] = [
+  {
+    heading: [
+      {
+        h1: "Our Courses",
+        para: "On the college’s dynamic campus, you will be part of a diverse and inclusive academic community that fosters intellectual growth and equips you with essential life skills in a supportive environment.",
+      },
+    ],
+    tabs: [
+      {
+        id: 0,
+        title: "Engineering",
+        content: <Engeenring />,
+      },
+      {
+        id: 1,
+        title: "Computer Application",
+        content: <ComputerApplication />,
+      },
+      {
+        id: 2,
+        title: "Pharmacy",
+        content: <Pharmacy />,
+      },
+      {
+        id: 3,
+        title: "Management",
+        content: <Management />,
+      },
+      {
+        id: 4,
+        title: "Commerce",
+        content: <Commerce />,
+      },
+    ],
+  },
 ];
+const { heading, tabs } = tabData[0];
 
-const Programs = () => {
+const Course: React.FC = () => {
+  const [activeTab, setActiveTab] = useState(0);
   return (
-    <section className="section section--white" id="programs">
-      <div className="section-head section-head--center reveal">
-        <div className="eyebrow">Our Courses</div>
-        <h2 className="section-title">Our Courses</h2>
-        <p className="section-desc">On the college's dynamic campus, you will be part of a diverse and inclusive academic community that fosters intellectual growth and equips you with essential life skills in a supportive environment.</p>
-      </div>
+    <section className="program-section">
+      <div className="w-full">
+        <div className={`${Classes["container"]} `}>
+          {heading.map((item: any, index: any) => {
+            return (
+              <div className="program-heading" key={index}>
+                <h2>{item.h1}</h2>
+                <p>On the college's dynamic campus, you will be part of a diverse and inclusive academic community that fosters intellectual growth and equips you with essential life skills in a supportive environment.</p>
+              </div>
+            );
+          })}
 
-      <div className="grid grid--3 programs-grid">
-        {programs.map((p, i) => (
-          <div key={i} className="surface-card prog-card">
-            <div className="prog-card__icon">{p.icon}</div>
-            <div className="prog-card__title">{p.title}</div>
-            <div className="prog-card__cap">{p.cap}</div>
-            <div className="prog-card__desc">{p.desc}</div>
-          </div>
-        ))}
+          <ul className="program-tabs" role="tablist" aria-label="Course categories">
+            {tabs.map((item: any) => (
+              <li
+                key={item.id}
+                onClick={() => setActiveTab(item.id)}
+                role="tab"
+                aria-selected={activeTab === item.id}
+                className={`program-tab ${activeTab === item.id ? 'is-active' : ''}`}
+              >
+                {item.title}
+              </li>
+            ))}
+          </ul>
+          <div className="program-content">{tabs[activeTab].content}</div>
+        </div>
       </div>
     </section>
   );
 };
 
-export default Programs;
+export default Course;

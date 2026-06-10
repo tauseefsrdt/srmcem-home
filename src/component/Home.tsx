@@ -26,7 +26,7 @@ const Home = () => {
       <TopBar />
       <NavBar />
       <Hero />
-      <Medals />
+      {/* <Medals /> */}
       <Placements />
       <WorldStage />
       <GovtPlacements />
