@@ -1,4 +1,5 @@
 import React from 'react';
+import { section, sectionHeadCenter, eyebrowCenter, sectionTitle } from '../utils/tw';
 
 const csrData = [
   { icon: '🩸', title: 'Blood Donation Camp', desc: 'Regular blood donation drives with hundreds of student volunteers saving lives in the community' },
@@ -9,18 +10,18 @@ const csrData = [
 
 const CSR = () => {
   return (
-    <section className="section csr" id="csr">
-      <div className="section-head section-head--center reveal">
-        <div className="eyebrow eyebrow--muted">Social Responsibility</div>
-        <h2 className="section-title section-title--light">CSR Initiatives — Giving Back to Society</h2>
+    <section className={`${section} bg-[linear-gradient(150deg,#0a1f3d_0%,#0f2f57_100%)] overflow-hidden`} id="csr">
+      <div className={`${sectionHeadCenter} reveal`}>
+        <div className={`${eyebrowCenter} text-white/65`}>Social Responsibility</div>
+        <h2 className={`${sectionTitle} text-white`}>CSR Initiatives — Giving Back to Society</h2>
       </div>
 
-      <div className="csr-grid reveal">
+      <div className="grid grid-cols-4 gap-[18px] max-[900px]:grid-cols-2 max-[560px]:grid-cols-1 reveal">
         {csrData.map((item, i) => (
-          <div key={i} className="glass-cell csr-cell">
-            <div className="csr-cell__icon">{item.icon}</div>
-            <div className="csr-cell__title">{item.title}</div>
-            <div className="csr-cell__desc">{item.desc}</div>
+          <div key={i} className="group rounded-md bg-white/[0.06] border border-white/[0.12] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(7,22,43,0.45)] hover:border-gold/35 px-7 py-9 text-center">
+            <div className="text-[32px] mb-5 transition-transform duration-300 group-hover:scale-[1.12]">{item.icon}</div>
+            <div className="font-serif font-bold text-base text-white mb-3">{item.title}</div>
+            <div className="text-xs leading-[1.6] text-white/50 max-w-[220px] mx-auto">{item.desc}</div>
           </div>
         ))}
       </div>

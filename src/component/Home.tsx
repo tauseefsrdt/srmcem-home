@@ -19,6 +19,7 @@ import Clubs from './Clubs';
 import CTA from './CTA';
 import AdmissionInfo from './AdmissionInfo';
 import Footer from './Footer';
+import Innovation from './Innovation';
 
 const Home = () => {
   return (
@@ -30,7 +31,7 @@ const Home = () => {
       <Placements />
       <WorldStage />
       <GovtPlacements />
-      <CompanyLogos />
+      {/* <CompanyLogos /> */}
       <Programs />
       <IEEE />
       <News />
@@ -40,6 +41,7 @@ const Home = () => {
       <CSR />
       <Clubs />
       <CTA />
+      <Innovation />
       <AdmissionInfo />
       <Footer />
     </>
