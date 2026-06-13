@@ -49,14 +49,15 @@ const { heading, tabs } = tabData[0];
 const Course: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
   return (
-    <section className="pt-[86px] pb-[92px] px-0 bg-white max-[940px]:pt-16 max-[940px]:pb-[72px]">
+    <section id="programs" className="pt-[86px] pb-[92px] px-0 bg-[linear-gradient(180deg,#FFFFFF_0%,#F6F7FB_100%)] max-[940px]:pt-16 max-[940px]:pb-[72px]">
       <div className="w-full">
         <div className={container}>
           {heading.map((item: any, index: any) => {
             return (
-              <div className="text-center" key={index}>
-                <h2 className="mx-auto text-[#101522] font-sans text-[36px] leading-[1.2] font-extrabold tracking-normal max-[940px]:text-[32px]">{item.h1}</h2>
-                <p className="max-w-[1270px] mx-auto mt-4 text-[#020817] text-[16px] leading-[1.55] max-[940px]:max-w-[760px] max-[940px]:text-[15px]">On the college's dynamic campus, you will be part of a diverse and inclusive academic community that fosters intellectual growth and equips you with essential life skills in a supportive environment.</p>
+              <div className="text-center max-w-[760px] mx-auto reveal" key={index}>
+                <div className="inline-flex justify-center items-center gap-2.5 text-[11px] font-bold tracking-[4px] uppercase mb-[18px] text-navy before:content-[''] before:w-[30px] before:h-0.5 before:bg-gold after:content-[''] after:w-[30px] after:h-0.5 after:bg-gold">Programs Offered</div>
+                <h2 className="mx-auto font-serif text-[clamp(28px,3.8vw,46px)] leading-[1.12] font-black tracking-[-0.5px] text-ink">{item.h1}</h2>
+                <p className="max-w-[680px] mx-auto mt-4 text-brand-gray text-[16px] leading-[1.7]">On the college's dynamic campus, you will be part of a diverse and inclusive academic community that fosters intellectual growth and equips you with essential life skills in a supportive environment.</p>
               </div>
             );
           })}
@@ -85,6 +86,15 @@ const Course: React.FC = () => {
             ))}
           </ul>
           <div className="mt-[55px] max-[700px]:mt-9">{tabs[activeTab].content}</div>
+
+          <div className="mt-12 flex justify-center reveal">
+            <a
+              href="#admissions"
+              className="inline-flex items-center justify-center gap-2 px-8 py-[14px] rounded-pill bg-gold text-navy-dark text-sm font-bold tracking-[0.5px] shadow-[0_8px_22px_rgba(239,166,60,0.4)] transition-all duration-300 hover:bg-gold-dark hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(239,166,60,0.5)]"
+            >
+              Apply Now →
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -9,6 +9,7 @@ import {
   pillGold,
   linkArrow,
 } from '../utils/tw';
+import Icon from './Icon';
 
 const events = [
   { title: 'A proud moment for the SRMCEM family!', meta: '8 MARCH 2026' },
@@ -35,7 +36,7 @@ const News = () => {
             <h3 className="font-serif font-bold text-[24px] leading-[1.3] text-ink mt-3.5 mb-3">A proud moment for the SRMCEM family!</h3>
             <p className="text-[14px] leading-[1.65] text-brand-gray mb-6">Our Co-founder and Additional Executive Director, Dr. Pooja Agarwal, was honored by the Hon'ble Governor of Uttar Pradesh on the occasion of International Women's Day (8 March 2026). This prestigious recognition reflects SRMCEM's commitment to excellence and leadership.</p>
             <div className="flex items-center justify-between flex-wrap gap-3">
-              <div className="inline-flex items-center gap-2 text-[12px] font-semibold text-brand-gray"><span>📅</span> 8 March 2026 · Lucknow Campus</div>
+              <div className="inline-flex items-center gap-2 text-[12px] font-semibold text-brand-gray"><Icon name="calendar" className="w-4 h-4 text-navy" /> 8 March 2026 · Lucknow Campus</div>
               <a href="#" className={linkArrow}>Read More →</a>
             </div>
           </div>

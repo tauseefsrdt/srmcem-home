@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from './Icon';
 
 const TopBar = () => {
   const link =
@@ -14,29 +15,29 @@ const TopBar = () => {
         {/* Contact + tags */}
         <div className="flex items-center min-w-0 gap-2 sm:gap-3 md:gap-4">
           <a href="#" className={`${link} shrink-0`}>
-            📞 <span className="overflow-hidden text-ellipsis whitespace-nowrap">0522-2970510</span>
+            <Icon name="phone" className="w-3.5 h-3.5" /> <span className="overflow-hidden text-ellipsis whitespace-nowrap">0522-2970510</span>
           </a>
-          <a href="#" className={`${link} hidden sm:inline-flex`}>✉ info@srmcem.ac.in</a>
+          <a href="#" className={`${link} hidden sm:inline-flex`}><Icon name="mail" className="w-3.5 h-3.5" /> info@srmcem.ac.in</a>
           <div className="hidden md:block w-px h-3.5 bg-white/20"></div>
           <a
             href="#"
             className={`${tag} bg-gold text-navy-dark shadow-[0_2px_8px_rgba(239,166,60,0.4)] hover:bg-gold-dark hover:-translate-y-px`}
           >
-            ⭐ UPTAC-2025
+            <Icon name="star" className="w-3.5 h-3.5" /> UPTAC-2025
           </a>
           <a
             href="#"
             className={`${tag} bg-white/[0.08] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.16)] hover:bg-white/[0.16] hover:-translate-y-px`}
           >
-            📊 NIRF-2026
+            <Icon name="chart" className="w-3.5 h-3.5" /> NIRF-2026
           </a>
         </div>
 
         {/* Quick actions */}
         <div className="flex items-center gap-2 md:gap-3">
-          <a href="#" className={`${btn} md:inline-flex`}>🔔 Notice Board</a>
-          <a href="#" className={`${btn} lg:inline-flex`}>📊 Result</a>
-          <a href="#" className={`${btn} sm:inline-flex`}>🔐 Login</a>
+          <a href="#" className={`${btn} md:inline-flex items-center gap-1.5`}><Icon name="bell" className="w-3.5 h-3.5" /> Notice Board</a>
+          <a href="#" className={`${btn} lg:inline-flex items-center gap-1.5`}><Icon name="chart" className="w-3.5 h-3.5" /> Result</a>
+          <a href="#" className={`${btn} sm:inline-flex items-center gap-1.5`}><Icon name="lock" className="w-3.5 h-3.5" /> Login</a>
           <a
             href="#"
             className="inline-flex px-3.5 py-1 rounded-[4px] text-[11px] font-semibold tracking-wide uppercase whitespace-nowrap bg-gold text-navy-dark border border-gold transition-colors duration-200 hover:bg-gold-dark"

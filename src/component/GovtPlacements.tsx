@@ -1,11 +1,12 @@
 import React from 'react';
 import { section, sectionHeadCenter, eyebrowCenter, sectionTitle, sectionDesc } from '../utils/tw';
+import Icon, { IconName } from './Icon';
 
-const cells = [
-  { icon: '🏛️', title: '20+ Alumni in Indian Civil Services', desc: 'Serving the nation through prestigious roles in the IAS, IPS, IRS and other civil services, contributing to governance, policy-making and public administration.' },
-  { icon: '🎖️', title: '30+ Alumni in Indian Armed Forces', desc: 'Leading with courage and discipline across the Indian Army, Air Force and other defence services, safeguarding the nation and serving with distinction.' },
-  { icon: '🏭', title: '150+ Alumni in Public Sector Undertakings', desc: "Building India's infrastructure, energy and industrial future through careers in leading PSUs including BHEL, NTPC, ONGC, GAIL, PGCIL and other government enterprises." },
-  { icon: '🏦', title: '1000+ Alumni in Public Sector Banks', desc: "Driving India's financial sector through successful careers in SBI, PNB, Bank of Baroda, Canara Bank, Union Bank and other leading public sector banks." }
+const cells: { icon: IconName; title: string; desc: string }[] = [
+  { icon: 'landmark', title: '20+ Alumni in Indian Civil Services', desc: 'Serving the nation through prestigious roles in the IAS, IPS, IRS and other civil services, contributing to governance, policy-making and public administration.' },
+  { icon: 'shield', title: '30+ Alumni in Indian Armed Forces', desc: 'Leading with courage and discipline across the Indian Army, Air Force and other defence services, safeguarding the nation and serving with distinction.' },
+  { icon: 'factory', title: '150+ Alumni in Public Sector Undertakings', desc: "Building India's infrastructure, energy and industrial future through careers in leading PSUs including BHEL, NTPC, ONGC, GAIL, PGCIL and other government enterprises." },
+  { icon: 'wallet', title: '1000+ Alumni in Public Sector Banks', desc: "Driving India's financial sector through successful careers in SBI, PNB, Bank of Baroda, Canara Bank, Union Bank and other leading public sector banks." }
 ];
 
 const GovtPlacements = () => {
@@ -24,7 +25,7 @@ const GovtPlacements = () => {
             key={i}
             className="rounded-md bg-white/[0.06] border border-white/[0.12] transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(7,22,43,0.45)] hover:border-[rgba(242,184,75,0.35)] py-[34px] px-[26px]"
           >
-            <span className="block text-[38px] mb-[18px]">{c.icon}</span>
+            <span className="grid place-items-center w-12 h-12 mb-[18px] rounded-[12px] bg-white/[0.08] border border-white/[0.16] text-gold-light"><Icon name={c.icon} className="w-6 h-6" /></span>
             <div className="text-[15px] font-bold text-gold-light mb-2">{c.title}</div>
             <div className="text-[13px] leading-[1.6] text-white/[0.42]">{c.desc}</div>
           </div>

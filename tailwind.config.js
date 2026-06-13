@@ -59,11 +59,24 @@ export default {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-8px)' },
         },
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' },
+        },
+        shimmer: {
+          '100%': { transform: 'translateX(100%)' },
+        },
+        spinSlow: {
+          to: { transform: 'rotate(360deg)' },
+        },
       },
       animation: {
         fadeUp: 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both',
         softPulse: 'softPulse 2s infinite',
         floaty: 'floaty 6s ease-in-out infinite',
+        marquee: 'marquee 32s linear infinite',
+        marqueeSlow: 'marquee 55s linear infinite',
+        spinSlow: 'spinSlow 22s linear infinite',
       },
     },
   },

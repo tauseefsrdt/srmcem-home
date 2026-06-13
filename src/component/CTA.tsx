@@ -1,5 +1,6 @@
 import React from 'react';
 import { section, btnPrimary, btnOutline } from '../utils/tw';
+import Icon from './Icon';
 
 const CTA = () => {
   return (
@@ -12,7 +13,7 @@ const CTA = () => {
       </div>
       <div className="relative z-[1] flex flex-wrap gap-4 max-[560px]:w-full">
         <a href="#" className={`${btnPrimary} max-[560px]:flex-1`}>Apply Online →</a>
-        <a href="#" className={`${btnOutline} max-[560px]:flex-1`}><span>📞</span> Call Admissions</a>
+        <a href="#" className={`${btnOutline} max-[560px]:flex-1`}><Icon name="phone" className="w-4 h-4" /> Call Admissions</a>
       </div>
     </section>
   );

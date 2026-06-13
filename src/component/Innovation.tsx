@@ -142,13 +142,32 @@ const Innovation: React.FC = () => {
 
   return (
     <section className={`${section} bg-[linear-gradient(180deg,#fff_0%,#f6f7fb_100%)]`} id="innovation">
-      <div className="max-w-[820px] mb-14 max-[640px]:mb-9 mx-auto text-center reveal">
-        <div className="inline-flex justify-center items-center gap-2.5 text-[11px] font-bold tracking-[4px] uppercase mb-[18px] text-navy before:content-[''] before:w-[30px] before:h-0.5 before:bg-gold">Ideas in Motion</div>
+      <div className="max-w-[820px] mb-12 max-[640px]:mb-9 mx-auto text-center reveal">
+        <div className="inline-flex justify-center items-center gap-2.5 text-[11px] font-bold tracking-[4px] uppercase mb-[18px] text-navy before:content-[''] before:w-[30px] before:h-0.5 before:bg-gold after:content-[''] after:w-[30px] after:h-0.5 after:bg-gold">Applied Learning</div>
         <h2 className={`${sectionTitle} text-ink`}>Student Innovations</h2>
         <p className={`${sectionDesc} text-brand-gray mx-auto`}>
-          Practical projects, prototypes and engineering ideas shaped by SRMCEM
-          students through hands-on learning and mentorship.
+          Hands-on projects, technical experimentation and innovation-led problem
+          solving — practical prototypes and engineering ideas shaped by SRMCEM
+          students through mentorship.
         </p>
+      </div>
+
+      {/* Applied-learning gallery strip */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-14 max-[640px]:mb-10 reveal">
+        {[innovation1, innovation2, innovation3, innovation1].map((src, i) => (
+          <div
+            key={i}
+            className={`group relative overflow-hidden rounded-md border border-[rgba(27,76,127,0.12)] shadow-card ${i === 0 ? 'col-span-2 row-span-2 aspect-[4/3] sm:aspect-auto' : 'aspect-[4/3]'}`}
+          >
+            <img
+              src={src}
+              alt="SRMCEM students applied learning"
+              loading="lazy"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_50%,rgba(7,22,43,0.55)_100%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+          </div>
+        ))}
       </div>
 
       {/* Desktop Layout */}
