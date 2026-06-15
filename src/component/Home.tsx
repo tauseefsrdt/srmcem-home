@@ -21,6 +21,7 @@ import CTA from './CTA';
 import AdmissionInfo from './AdmissionInfo';
 import Footer from './Footer';
 import Innovation from './Innovation';
+import TestmonialSlider from './TestmonialSlider';
 
 const Home = () => {
   return (
@@ -42,6 +43,7 @@ const Home = () => {
       <Alumni />
       <News />
       <Events />
+      <TestmonialSlider />
       <CSR />
       <Clubs />
       <CTA />
