@@ -21,12 +21,55 @@
 
   body {
     font-family: 'Space Grotesk', system-ui, sans-serif;
+    /* Light glassmorphism: white theme with blue + gold accents. */
     color: #101828;
-    background: radial-gradient(circle at 10% 0%, #ffffff 0%, #f6f7fb 52%, #eef2f8 100%);
+    background-color: #f4f7fc;
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  /* Fixed, layered light backdrop: airy white gradient + soft drifting blue &
+     gold aurora blobs. Sits behind all content so frosted-white panels read as
+     floating over subtle depth. */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+      radial-gradient(900px 620px at 12% -5%, rgba(27, 76, 127, 0.12) 0%, transparent 60%),
+      radial-gradient(820px 600px at 100% 2%, rgba(242, 184, 75, 0.12) 0%, transparent 55%),
+      radial-gradient(760px 760px at 50% 112%, rgba(27, 76, 127, 0.10) 0%, transparent 60%),
+      linear-gradient(180deg, #ffffff 0%, #f4f7fc 52%, #eaf1fb 100%);
+    animation: aurora 18s ease-in-out infinite;
+  }
+
+  /* Faint engineering grid (navy lines), masked toward the centre. */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(15, 47, 87, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 47, 87, 0.04) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 30%, #000 30%, transparent 100%);
+    mask-image: radial-gradient(ellipse 90% 80% at 50% 30%, #000 30%, transparent 100%);
+  }
+
+  /* Aurora keyframes live here too (CSS-driven backdrop, not a utility). */
+  @keyframes aurora {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(2%, 1.5%, 0) scale(1.06); }
+  }
+
+  ::selection {
+    background: rgba(27, 76, 127, 0.18);
+    color: #0a1f3d;
   }
 
   img,
@@ -63,6 +106,41 @@
 .reveal {
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ------------------------------------------------------------------ *
+ * react-slick dots — recoloured for the dark glass backdrop.
+ * ------------------------------------------------------------------ */
+.slick-dots li button:before {
+  color: rgba(15, 47, 87, 0.3) !important;
+  opacity: 1 !important;
+  font-size: 9px !important;
+}
+.slick-dots li.slick-active button:before {
+  color: #1b4c7f !important;
+  opacity: 1 !important;
+}
+
+/* ------------------------------------------------------------------ *
+ * Premium glass scrollbar.
+ * ------------------------------------------------------------------ */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track {
+  background: #e6eef9;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1b4c7f, #0f2f57);
+  border: 2px solid #e6eef9;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f2b84b, #d89a2f);
+}
+html {
+  scrollbar-color: #1b4c7f #e6eef9;
 }
 
 .js-reveal .reveal:not(.is-visible) {

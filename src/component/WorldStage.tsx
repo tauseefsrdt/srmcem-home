@@ -1,5 +1,5 @@
 import React from 'react';
-import { section, sectionLight, eyebrow, sectionTitle, sectionDesc, btnNavy, pill, pillGhost } from '../utils/tw';
+import { section, sectionGlass, eyebrow, sectionTitle, sectionDesc, btnNavy, pill, pillGhost, glassSheen } from '../utils/tw';
 import Icon, { IconName } from './Icon';
 
 const cards: { icon: IconName; title: string; desc: string; tag: string }[] = [
@@ -18,19 +18,20 @@ const highlights = [
 
 const WorldStage = () => {
   return (
-    <section className={`${section} ${sectionLight}`} id="achievements">
+    <section className={`${section} ${sectionGlass}`} id="achievements">
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.4fr)] gap-10 lg:gap-14 items-start">
         {/* LEFT — why panel (sticky on desktop) */}
         <div className="lg:sticky lg:top-24 reveal">
-          <div className="relative overflow-hidden rounded-lg bg-[linear-gradient(160deg,#FBF7EE_0%,#F6F7FB_100%)] border border-[rgba(15,47,87,0.1)] shadow-card p-8 sm:p-10">
-            <div className={`${eyebrow} text-navy`}>Why SRMCEM Is Preferred</div>
-            <h2 className={`${sectionTitle} text-ink`}>Celebrating Excellence Across Every Frontier</h2>
-            <p className={`${sectionDesc} text-brand-gray`}>From robotics championships and prestigious IEEE conferences to accomplished alumni in civil services, ISRO, and global corporations, SRMCEM continues to create achievers who make their mark across industries, institutions, and nations.</p>
+          <div className="relative overflow-hidden rounded-lg bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] shadow-card p-8 sm:p-10">
+            <span className={glassSheen} aria-hidden />
+            <div className={eyebrow}>Why SRMCEM Is Preferred</div>
+            <h2 className={sectionTitle}>Celebrating Excellence Across Every Frontier</h2>
+            <p className={sectionDesc}>From robotics championships and prestigious IEEE conferences to accomplished alumni in civil services, ISRO, and global corporations, SRMCEM continues to create achievers who make their mark across industries, institutions, and nations.</p>
 
             <div className="grid grid-cols-2 gap-4 mt-8 mb-8">
               {highlights.map((h) => (
-                <div key={h.label} className="rounded-md bg-white border border-[rgba(15,47,87,0.1)] p-4 shadow-card">
-                  <div className="font-display text-[40px] leading-none text-navy-dark">{h.num}<span className="text-[0.4em] text-gold-dark ml-1 align-top">{h.unit}</span></div>
+                <div key={h.label} className="rounded-md bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] p-4 shadow-card">
+                  <div className="font-display text-[40px] leading-none text-ink">{h.num}<span className="text-[0.4em] text-gold-dark ml-1 align-top">{h.unit}</span></div>
                   <div className="mt-1.5 text-[11px] leading-[1.5] font-semibold text-brand-gray">{h.label}</div>
                 </div>
               ))}
@@ -45,9 +46,9 @@ const WorldStage = () => {
           {cards.map((c, i) => (
             <div
               key={i}
-              className="group relative overflow-hidden p-7 bg-white border border-[rgba(27,76,127,0.14)] rounded-md shadow-card transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:shadow-hover hover:border-[rgba(27,76,127,0.25)] before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[3px] before:bg-[linear-gradient(90deg,#F2B84B,#1B4C7F)]"
+              className="group relative overflow-hidden p-7 bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] rounded-md shadow-card transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:bg-white hover:shadow-hover hover:border-navy-mid/30 before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-[3px] before:bg-[linear-gradient(90deg,#F2B84B,#1B4C7F)]"
             >
-              <div className="w-12 h-12 mb-5 grid place-items-center rounded-[12px] bg-navy-light text-navy transition-transform duration-300 group-hover:scale-110"><Icon name={c.icon} className="w-6 h-6" /></div>
+              <div className="w-12 h-12 mb-5 grid place-items-center rounded-[12px] bg-navy-mid/[0.10] border border-navy-mid/20 text-navy-mid transition-all duration-300 group-hover:scale-110 group-hover:bg-gold/15 group-hover:text-gold-dark"><Icon name={c.icon} className="w-6 h-6" /></div>
               <div className="font-serif font-bold text-[18px] leading-[1.3] text-ink mb-2.5">{c.title}</div>
               <div className="text-[13px] leading-[1.65] text-brand-gray mb-6">{c.desc}</div>
               <span className={`${pill} ${pillGhost} !bg-gold/[0.12] !text-gold-text !border-gold/30`}>{c.tag}</span>

@@ -20,20 +20,17 @@ interface ArrowProps {
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
+const arrowBase =
+  "absolute top-[80px] p-1 sm:top-[calc(50%-24px)] lg:text-[22px] 2xl:text-[26px] xl:p-2 2xl:p-3 transform sm:-translate-y-1/2 z-10 cursor-pointer grid place-items-center rounded-full text-navy-mid bg-white border border-navy-mid/30 shadow-card transition-all duration-300 hover:text-white hover:bg-navy hover:border-navy hover:shadow-soft";
+
 const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
-  <div
-    className="absolute top-[80px] p-1 sm:top-[calc(50%-24px)] lg:text-[25px] 2xl:text-[30px] xl:p-2  -right-2 xl:-right-8 2xl:-right-10 transform sm:-translate-y-1/2 hover:border-[#ffb703] hover:text-[#ffb703] hover:bg-white  text-white b border-2 border-white  rounded-full 2xl:p-3 cursor-pointer z-10"
-    onClick={onClick}
-  >
+  <div className={`${arrowBase} -right-2 xl:-right-8 2xl:-right-10`} onClick={onClick}>
     <FaChevronRight />
   </div>
 );
 
 const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
-  <div
-    className="absolute top-[80px] p-1 sm:top-[calc(50%-24px)] lg:text-[25px] 2xl:text-[30px] xl:p-2  transform sm:-translate-y-1/2 -left-2 xl:-left-8 2xl:-left-10   hover:border-[#ffb703] hover:text-[#ffb703] hover:bg-white  text-white b border-2 border-white rounded-full 2xl:p-3 cursor-pointer z-10"
-    onClick={onClick}
-  >
+  <div className={`${arrowBase} -left-2 xl:-left-8 2xl:-left-10`} onClick={onClick}>
     <FaChevronLeft />
   </div>
 );
@@ -76,24 +73,31 @@ const TestmonialSlider: React.FC = () => {
 
   return (
     <div className={`${Classes.container} py-10 md:py-18 lg:py-24`}>
-      <div className=" testimonial-part relative w-full rounded-[10px]">
-        <div className="max-w-6xl mx-auto px-4 py-14 lg:py-20">
-          <h2 className="text-center text-3xl lg:text-4xl font-bold  text-white mb-6">Testimonials</h2>
-          <div className="py-6 testimonial">
+      <div className="testimonial-part relative w-full">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center max-w-[680px] mx-auto mb-12 reveal">
+            <div className="inline-flex justify-center items-center gap-2.5 text-[11px] font-bold tracking-[4px] uppercase mb-[18px] text-navy-mid before:content-[''] before:w-[30px] before:h-0.5 before:bg-gold after:content-[''] after:w-[30px] after:h-0.5 after:bg-gold">In Their Words</div>
+            <h2 className="font-serif font-black text-[clamp(28px,3.8vw,46px)] leading-[1.12] tracking-[-0.5px] text-ink">Alumni Testimonials</h2>
+          </div>
+          {/* Frosted glass stage that holds the slider */}
+          <div className="relative rounded-[22px] bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.1)] shadow-card px-6 sm:px-10 lg:px-14 py-6 reveal">
+            <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(27,76,127,0.18),transparent)]" aria-hidden />
+            <span className="pointer-events-none absolute top-6 left-7 font-serif text-[120px] leading-none text-gold/25 select-none" aria-hidden>&ldquo;</span>
+            <div className="relative py-6 testimonial">
             <Slider {...settings}>
               {alumniData.map((alumnus, index) => (
                 <div key={index} className="px-2">
-                  <div className="md:flex items-center gap-x-6 justify-between">
-                    <div className="min-w-[300px] md:border-r-4 border-[#ffb703] py-5">
+                  <div className="md:flex items-center gap-x-8 justify-between">
+                    <div className="min-w-[300px] md:border-r border-navy-mid/15 py-5">
                       <div className=" min-w-[180px] w-[300px] flex flex-col items-center mx-auto">
-                        <img src={alumnus.image} alt={alumnus.name} className="w-full max-w-[200px] h-[200px] md:max-w-[170px] md:h-[170px] rounded-lg object-top  object-cover" />
-                        <p className="text-center text-white font-semibold mt-2 ">{alumnus.name}</p>
-                        <p className="text-center text-white  text-sm ">{alumnus.degree}</p>
-                        <p className="text-center text-white   ">{alumnus.company}</p>
+                        <img src={alumnus.image} alt={alumnus.name} className="w-full max-w-[200px] h-[200px] md:max-w-[160px] md:h-[160px] rounded-2xl object-top object-cover ring-2 ring-gold/50 shadow-gold" />
+                        <p className="text-center text-navy-dark font-semibold mt-4">{alumnus.name}</p>
+                        <p className="text-center text-gold-dark text-sm mt-0.5">{alumnus.degree}</p>
+                        <p className="text-center text-brand-gray text-sm">{alumnus.company}</p>
                       </div>
                     </div>
                     <div className="md:mx-10 py-5">
-                      <p className="text-white  mt-4 md:mt-0 text-justify sm:pr-3">{alumnus.content}</p>
+                      <p className="text-brand-gray leading-[1.9] mt-4 md:mt-0 text-justify sm:pr-3">{alumnus.content}</p>
                     </div>
                     {/* <div className="hidden lg:block blur-part">
                       <div className="w-full min-w-[150px] flex flex-col items-center ">
@@ -107,6 +111,7 @@ const TestmonialSlider: React.FC = () => {
                 </div>
               ))}
             </Slider>
+            </div>
           </div>
         </div>
       </div>

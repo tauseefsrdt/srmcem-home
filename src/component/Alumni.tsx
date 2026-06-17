@@ -33,33 +33,33 @@ const Alumni = () => {
   return (
     <section className={`${section} ${sectionWhite}`} id="alumni">
       <div className={`${sectionHeadCenter} reveal`}>
-        <div className={`${eyebrowCenter} text-navy`}>Legacy of Excellence</div>
+        <div className={`${eyebrowCenter} text-navy-mid`}>Legacy of Excellence</div>
         <h2 className={`${sectionTitle} text-ink`}>Alumni Who Make Us Proud</h2>
         <p className={`${sectionDesc} text-brand-gray mx-auto`}>From IAS officers and scientists to global tech leaders and military officers — SRMCEM's 8119+ alumni are shaping India and the world.</p>
       </div>
 
       <div className="grid gap-[22px] grid-cols-1 min-[600px]:grid-cols-2 min-[900px]:grid-cols-3 min-[1100px]:grid-cols-6 reveal">
         {alumniData.map((a, i) => (
-          <div key={i} className="group flex flex-col items-center text-center p-6 bg-white border border-[rgba(27,76,127,0.14)] rounded-[14px] transition-all duration-300 hover:-translate-y-[5px] hover:bg-white hover:shadow-hover hover:border-[rgba(27,76,127,0.28)]">
-            <div className={`w-12 h-12 mb-4 grid place-items-center rounded-full text-white font-bold text-sm shadow-[0_8px_18px_rgba(16,42,86,0.25)] transition-transform duration-300 group-hover:scale-110 ${a.tone}`}>{a.init}</div>
-            <div className="font-bold text-xs leading-[1.3] text-ink mb-1">{a.name}</div>
-            <div className="text-[9px] font-bold tracking-[0.5px] uppercase text-gold-text mb-2">{a.batch}</div>
+          <div key={i} className="group flex flex-col items-center text-center p-6 bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] rounded-[14px] shadow-card transition-all duration-[400ms] ease-out hover:-translate-y-1.5 hover:bg-white hover:shadow-hover hover:border-navy-mid/30">
+            <div className="w-12 h-12 mb-4 grid place-items-center rounded-full text-navy-mid font-bold text-sm bg-navy-mid/[0.10] border border-navy-mid/20 transition-transform duration-300 group-hover:scale-110 group-hover:bg-gold/15 group-hover:border-gold/40 group-hover:text-gold-dark">{a.init}</div>
+            <div className="font-bold text-xs leading-[1.3] text-navy-dark mb-1">{a.name}</div>
+            <div className="text-[9px] font-bold tracking-[0.5px] uppercase text-gold-dark mb-2">{a.batch}</div>
             <div className="text-[10px] leading-[1.5] text-brand-gray">{a.role}</div>
           </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-3 gap-10 mt-16 pt-14 border-t border-[rgba(27,76,127,0.14)] text-center max-[640px]:grid-cols-1 max-[640px]:gap-8 reveal">
+      <div className="grid grid-cols-3 gap-10 mt-16 pt-14 border-t border-[rgba(15,47,87,0.10)] text-center max-[640px]:grid-cols-1 max-[640px]:gap-8 reveal">
         <div>
-          <div className="font-display text-[56px] leading-none text-navy-dark mb-2">30000<sup className="text-2xl align-super">+</sup></div>
+          <div className="font-display text-[56px] leading-none text-ink mb-2">30000<sup className="text-2xl align-super text-gold-dark">+</sup></div>
           <div className="text-xs font-bold tracking-[2px] uppercase text-brand-gray">Alumni Network Worldwide</div>
         </div>
         <div>
-          <div className="font-display text-[56px] leading-none text-navy-dark mb-2">2000<sup className="text-2xl align-super">+</sup></div>
+          <div className="font-display text-[56px] leading-none text-ink mb-2">2000<sup className="text-2xl align-super text-gold-dark">+</sup></div>
           <div className="text-xs font-bold tracking-[2px] uppercase text-brand-gray">Alumni in Fortune 500 & MNCs</div>
         </div>
         <div>
-          <div className="font-display text-[56px] leading-none text-navy-dark mb-2">100<sup className="text-2xl align-super">+</sup></div>
+          <div className="font-display text-[56px] leading-none text-ink mb-2">100<sup className="text-2xl align-super text-gold-dark">+</sup></div>
           <div className="text-xs font-bold tracking-[2px] uppercase text-brand-gray">Alumni at CTC of 1 Cr.+</div>
         </div>
       </div>

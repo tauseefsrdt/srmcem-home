@@ -8,7 +8,7 @@ import Accreditation from './Accreditation';
 import Placements from './Placements';
 import WorldStage from './WorldStage';
 import GovtPlacements from './GovtPlacements';
-import CompanyLogos from './CompanyLogos';
+// import CompanyLogos from './CompanyLogos';
 import Programs from './Programs';
 import IEEE from './IEEE';
 import News from './News';
@@ -34,7 +34,7 @@ const Home = () => {
       <WorldStage />
       {/* <Medals /> — disabled: its stat counters duplicate/contradict the Hero counters */}
       <Placements />
-      <CompanyLogos />
+      {/* <CompanyLogos /> */}
       <GovtPlacements />
       <Programs />
       <Innovation />
@@ -47,7 +47,7 @@ const Home = () => {
       <CSR />
       <Clubs />
       <CTA />
-      <AdmissionInfo />
+      {/* <AdmissionInfo /> */}
       <Footer />
     </>
   );

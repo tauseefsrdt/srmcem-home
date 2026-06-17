@@ -1,74 +1,107 @@
 // Shared Tailwind utility-class strings — single source of truth for the design
-// patterns that used to live as global classes in index.css (.section, .eyebrow,
-// .card, .btn, .pill, …). Components compose these with component-specific
-// utilities inline. This keeps styling 100% Tailwind (no .css component classes)
-// while staying DRY and visually consistent.
+// system. The site uses a LIGHT glassmorphism language: frosted-white panels with
+// blue + gold accents floating over a soft white aurora backdrop (see index.css).
+// Theme colours: White (surfaces/background), Blue (navy family — primary accent),
+// Gold (secondary accent). Components compose these strings inline (or use the
+// React primitives in src/component/ui/) so styling stays 100% Tailwind & DRY.
 
 /* ----------------------------------- Layout ---------------------------------- */
 export const container = 'w-full max-w-container mx-auto px-6';
 
 // Section: vertical clamp padding + horizontal gutters that center a 1220px column.
-// Append a background modifier (sectionLight / sectionNavy / …).
+// Sections are transparent by default and float over the global light backdrop.
 export const section =
   'relative py-[clamp(64px,7vw,112px)] px-[max(24px,calc((100%-1220px)/2))]';
 export const sectionTight =
   'relative py-[clamp(44px,5vw,76px)] px-[max(24px,calc((100%-1220px)/2))]';
 
 // Section background modifiers (append after `section`):
-export const sectionLight = 'bg-off-white';
-export const sectionWhite = 'bg-white';
-export const sectionNavy = 'bg-navy text-white';
-export const sectionNavyDark = 'bg-navy-dark text-white';
-export const sectionGradient = 'bg-[linear-gradient(150deg,#0a1f3d_0%,#133a6b_100%)] text-white';
-export const sectionTintBlue = 'bg-navy-light';
+// Default = transparent (shows the body aurora). The others add light bands.
+export const sectionGlass =
+  'bg-white/55 backdrop-blur-glass border-y border-[rgba(15,47,87,0.08)]';
+export const sectionDeep =
+  'bg-[linear-gradient(180deg,#eef3fb_0%,#e6eef9_100%)]';
+export const sectionGradient =
+  'bg-[linear-gradient(150deg,#f3f7fd_0%,#ffffff_100%)]';
+// Back-compat aliases (older components reference these names).
+export const sectionLight = sectionGlass;
+export const sectionWhite = '';
+export const sectionNavy = sectionDeep;
+export const sectionNavyDark = sectionDeep;
+export const sectionTintBlue = sectionGradient;
 
 /* -------------------------------- Section head -------------------------------- */
 export const sectionHead = 'max-w-[680px] mb-14';
-export const sectionHeadCenter = 'max-w-[680px] mb-14 mx-auto text-center';
+export const sectionHeadCenter = 'container mb-14 mx-auto text-center';
 export const sectionHeadWide = 'max-w-[820px] mb-14';
 
-// Eyebrow label — COLOR-FREE. Append a color: `text-navy` (default), `text-gold-light`
-// (--light), or `text-white/65` (--muted).
+// Eyebrow label — blue text with a leading gold tick. Override by appending a color.
 export const eyebrow =
-  "inline-flex items-center gap-2.5 text-[11px] font-bold tracking-[4px] uppercase mb-[18px] before:content-[''] before:w-[30px] before:h-0.5 before:bg-gold";
-// Centered variant: centers the row and adds a trailing line (matches .section-head--center .eyebrow).
+  "inline-flex items-center gap-2.5 text-[11px] font-bold tracking-[4px] uppercase mb-[18px] text-navy-mid before:content-[''] before:w-[30px] before:h-0.5 before:bg-gold";
 export const eyebrowCenter =
-  "inline-flex justify-center items-center gap-2.5 text-[11px] font-bold tracking-[4px] uppercase mb-[18px] before:content-[''] before:w-[30px] before:h-0.5 before:bg-gold after:content-[''] after:w-[30px] after:h-0.5 after:bg-gold";
+  "inline-flex justify-center items-center gap-2.5 text-[11px] font-bold tracking-[4px] uppercase mb-[18px] text-navy-mid before:content-[''] before:w-[30px] before:h-0.5 before:bg-gold after:content-[''] after:w-[30px] after:h-0.5 after:bg-gold";
 
-// Section title — COLOR-FREE. Append `text-ink` (default) or `text-white` (--light).
+// Section title — dark ink on the light backdrop. Append a color to override.
 export const sectionTitle =
-  'font-serif font-black text-[clamp(28px,3.8vw,50px)] leading-[1.12] tracking-[-0.5px]';
+  'font-serif font-black text-[clamp(28px,3.8vw,50px)] leading-[1.12] tracking-[-0.5px] text-ink';
+// Blue-gradient text accent for emphasis words inside a title.
+export const titleAccent =
+  'bg-[linear-gradient(120deg,#1B4C7F,#0F2F57)] bg-clip-text text-transparent';
 
-// Section description — COLOR-FREE. Append `text-brand-gray` (default) or `text-white/60` (--light).
-// For centered heads add `mx-auto`.
-export const sectionDesc = 'mt-[18px] text-base leading-[1.85] max-w-[640px]';
+// Section description — muted ink.
+export const sectionDesc =
+  'mt-[18px] text-base leading-[1.85] container mx-auto text-brand-gray';
 
-/* ------------------------------------ Cards ----------------------------------- */
-export const card =
-  'bg-white border border-[rgba(27,76,127,0.14)] rounded-md shadow-card transition-all duration-[350ms] hover:-translate-y-1.5 hover:shadow-hover hover:border-[rgba(28,78,157,0.28)]';
-export const cardSoft =
-  'bg-card-bg border border-[rgba(27,76,127,0.14)] rounded-md shadow-card transition-all duration-[350ms] hover:-translate-y-1.5 hover:bg-white hover:shadow-hover hover:border-[rgba(28,78,157,0.28)]';
-export const cardDark =
-  'bg-navy-dark border border-white/[0.12] text-white rounded-md shadow-card transition-all duration-[350ms] hover:-translate-y-1.5 hover:border-gold/40 hover:shadow-[0_24px_50px_rgba(10,20,45,0.45)]';
+/* ------------------------------------ Glass ---------------------------------- *
+ * The core surface of the design language. `glass` is the base frosted-white
+ * panel; the others layer on interactivity / emphasis. All read on the light bg. */
+export const glass =
+  'bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] rounded-lg shadow-card';
+export const glassSubtle =
+  'bg-white/50 backdrop-blur-glass border border-[rgba(15,47,87,0.08)] rounded-lg';
+// Interactive glass card: lifts + gains a blue-tinted shadow on hover.
+export const glassCard =
+  'group relative overflow-hidden bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] rounded-lg shadow-card transition-all duration-[400ms] ease-out hover:-translate-y-1.5 hover:bg-white hover:border-navy-mid/30 hover:shadow-hover';
+// Stronger emphasis panel (feature blocks).
+export const glassPanel =
+  'relative overflow-hidden bg-white/80 backdrop-blur-glass border border-[rgba(15,47,87,0.12)] rounded-lg shadow-soft';
 export const cardPad = 'p-8';
+
+// Back-compat card aliases → all map onto glass now.
+export const card = glassCard;
+export const cardSoft = glassCard;
+export const cardDark = glassCard;
+
+// A thin top "sheen" line you can drop into a glass card for a subtle highlight:
+//   <span className={glassSheen} aria-hidden />
+export const glassSheen =
+  'pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(27,76,127,0.18),transparent)]';
+
+/* ------------------------------- Glow / accents ------------------------------ */
+// Decorative icon tile inside cards — blue by default, warms to gold on hover.
+export const iconTile =
+  'grid place-items-center rounded-[14px] bg-navy-mid/[0.10] border border-navy-mid/20 text-navy-mid transition-all duration-300 group-hover:scale-110 group-hover:bg-gold/15 group-hover:border-gold/40 group-hover:text-gold-dark';
 
 /* ----------------------------------- Buttons ---------------------------------- */
 // Base size/shape. Color variants below already include it.
 export const btn =
-  'inline-flex items-center justify-center gap-2 px-[30px] py-[14px] text-sm font-bold tracking-[0.4px] rounded-sm whitespace-nowrap transition-all duration-300 active:translate-y-0';
-export const btnPrimary = `${btn} bg-gold text-navy-dark shadow-[0_6px_20px_rgba(239,166,60,0.38)] hover:bg-gold-dark hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(239,166,60,0.5)]`;
-export const btnOutline = `${btn} font-semibold bg-transparent text-white border-2 border-white/40 hover:border-white hover:bg-white/10 hover:-translate-y-0.5`;
-export const btnLight = `${btn} bg-white text-navy-dark shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:bg-navy-dark hover:text-white hover:-translate-y-0.5`;
-export const btnNavy = `${btn} bg-navy text-white shadow-[0_6px_20px_rgba(28,78,157,0.32)] hover:bg-navy-dark hover:-translate-y-0.5`;
+  'inline-flex items-center justify-center gap-2 px-[30px] py-[14px] text-sm font-bold tracking-[0.4px] rounded-pill whitespace-nowrap transition-all duration-300 active:translate-y-0';
+// Primary = blue.
+export const btnPrimary = `${btn} bg-[linear-gradient(135deg,#1B4C7F,#0F2F57)] text-white shadow-[0_8px_24px_rgba(27,76,127,0.32)] hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(27,76,127,0.45)]`;
+// Secondary = gold.
+export const btnGold = `${btn} bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] text-navy-deep shadow-gold hover:-translate-y-0.5 hover:shadow-glowGoldStrong`;
+export const btnOutline = `${btn} font-semibold bg-white/60 backdrop-blur-sm text-navy-dark border border-navy-mid/30 hover:border-navy-mid hover:bg-white hover:-translate-y-0.5`;
+export const btnLight = `${btn} bg-white text-navy-dark shadow-card hover:shadow-soft hover:-translate-y-0.5`;
+export const btnNavy = `${btn} bg-navy text-white shadow-[0_8px_24px_rgba(27,76,127,0.32)] hover:bg-navy-dark hover:-translate-y-0.5`;
 // Small size: compose color classes onto this instead of the default btn padding.
 export const btnSm =
-  'inline-flex items-center justify-center gap-2 px-[22px] py-2.5 text-[13px] font-bold tracking-[0.4px] rounded-sm whitespace-nowrap transition-all duration-300 active:translate-y-0';
+  'inline-flex items-center justify-center gap-2 px-[22px] py-2.5 text-[13px] font-bold tracking-[0.4px] rounded-pill whitespace-nowrap transition-all duration-300 active:translate-y-0';
 
 /* ------------------------------- Pills & links -------------------------------- */
 export const pill =
   'inline-flex items-center gap-1.5 px-3.5 py-[5px] rounded-pill text-[10px] font-bold tracking-[1px] uppercase';
-export const pillGold = 'bg-[#FDEFD3] text-[#8A5A12]';
-export const pillGhost = 'bg-gold/[0.12] border border-gold/30 text-gold-light';
+export const pillGold = 'bg-gold/15 border border-gold/40 text-gold-text';
+export const pillGhost = 'bg-navy-mid/[0.08] border border-navy-mid/20 text-navy-mid';
 
 export const linkArrow =
-  'inline-flex items-center gap-1.5 text-[13px] font-bold text-navy transition-all duration-[250ms] hover:gap-2.5';
+  'inline-flex items-center gap-1.5 text-[13px] font-bold text-navy-mid transition-all duration-[250ms] hover:gap-2.5 hover:text-navy-dark';

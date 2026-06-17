@@ -38,6 +38,30 @@ export default {
         hover: '0 26px 60px rgba(15, 23, 42, 0.16)',
         soft: '0 14px 40px rgba(15, 23, 42, 0.12)',
         gold: '0 10px 28px rgba(242, 184, 75, 0.4)',
+        // --- Glass & Depth ---
+        // Frosted panel resting on the dark backdrop + a faint inner top highlight
+        // that sells the "glass" reflection.
+        glass: '0 18px 50px rgba(3, 10, 24, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
+        glassHover: '0 30px 70px rgba(3, 10, 24, 0.62), inset 0 1px 0 rgba(255, 255, 255, 0.12)',
+        // Coloured glows for hover / focus accents.
+        glow: '0 0 0 1px rgba(255,255,255,0.06), 0 0 60px rgba(27, 76, 127, 0.45)',
+        glowGold: '0 0 40px rgba(242, 184, 75, 0.35)',
+        glowGoldStrong: '0 10px 40px rgba(242, 184, 75, 0.55)',
+      },
+      backdropBlur: {
+        xs: '2px',
+        glass: '18px',
+      },
+      backgroundImage: {
+        // Layered radial aurora used by the global backdrop and hero-like sections.
+        aurora:
+          'radial-gradient(900px 600px at 12% -5%, rgba(27,76,127,0.55) 0%, transparent 60%), radial-gradient(800px 600px at 100% 0%, rgba(242,184,75,0.12) 0%, transparent 55%), radial-gradient(700px 700px at 50% 110%, rgba(27,76,127,0.4) 0%, transparent 60%)',
+        // Faint engineering grid overlay.
+        grid:
+          'linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)',
+        // Subtle glass sheen for cards.
+        sheen:
+          'linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.02) 40%, transparent 70%)',
       },
       maxWidth: {
         container: '1220px',
@@ -69,6 +93,16 @@ export default {
         spinSlow: {
           to: { transform: 'rotate(360deg)' },
         },
+        // Slow drift of the aurora blobs for a living, immersive backdrop.
+        aurora: {
+          '0%, 100%': { transform: 'translate3d(0,0,0) scale(1)', opacity: '1' },
+          '50%': { transform: 'translate3d(3%,2%,0) scale(1.08)', opacity: '0.85' },
+        },
+        // Breathing glow for accent rings / badges.
+        glowPulse: {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(242,184,75,0.0)' },
+          '50%': { boxShadow: '0 0 28px 2px rgba(242,184,75,0.45)' },
+        },
       },
       animation: {
         fadeUp: 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both',
@@ -77,6 +111,8 @@ export default {
         marquee: 'marquee 32s linear infinite',
         marqueeSlow: 'marquee 55s linear infinite',
         spinSlow: 'spinSlow 22s linear infinite',
+        aurora: 'aurora 18s ease-in-out infinite',
+        glowPulse: 'glowPulse 3.2s ease-in-out infinite',
       },
     },
   },

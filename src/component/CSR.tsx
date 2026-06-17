@@ -11,18 +11,19 @@ const csrData: { icon: IconName; title: string; desc: string }[] = [
 
 const CSR = () => {
   return (
-    <section className={`${section} bg-[linear-gradient(150deg,#0a1f3d_0%,#0f2f57_100%)] overflow-hidden`} id="csr">
+    <section className={`${section} bg-[linear-gradient(180deg,#eef3fb,#e6eef9)] overflow-hidden`} id="csr">
       <div className={`${sectionHeadCenter} reveal`}>
-        <div className={`${eyebrowCenter} text-white/65`}>Social Responsibility</div>
-        <h2 className={`${sectionTitle} text-white`}>CSR Initiatives — Giving Back to Society</h2>
+        <div className={eyebrowCenter}>Social Responsibility</div>
+        <h2 className={sectionTitle}>CSR Initiatives — Giving Back to Society</h2>
       </div>
 
       <div className="grid grid-cols-4 gap-[18px] max-[900px]:grid-cols-2 max-[560px]:grid-cols-1 reveal">
         {csrData.map((item, i) => (
-          <div key={i} className="group rounded-md bg-white/[0.06] border border-white/[0.12] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(7,22,43,0.45)] hover:border-gold/35 px-7 py-9 text-center">
-            <div className="w-12 h-12 mx-auto mb-5 grid place-items-center rounded-[12px] bg-white/[0.08] border border-white/[0.16] text-gold-light transition-transform duration-300 group-hover:scale-[1.12]"><Icon name={item.icon} className="w-6 h-6" /></div>
-            <div className="font-serif font-bold text-base text-white mb-3">{item.title}</div>
-            <div className="text-xs leading-[1.6] text-white/50 max-w-[220px] mx-auto">{item.desc}</div>
+          <div key={i} className="group relative overflow-hidden rounded-md bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] shadow-card transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-hover hover:border-navy-mid/30 px-7 py-9 text-center">
+            <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(27,76,127,0.18),transparent)]" aria-hidden />
+            <div className="w-12 h-12 mx-auto mb-5 grid place-items-center rounded-[12px] bg-navy-mid/[0.10] border border-navy-mid/20 text-navy-mid transition-all duration-300 group-hover:scale-[1.12] group-hover:bg-gold/15 group-hover:text-gold-dark"><Icon name={item.icon} className="w-6 h-6" /></div>
+            <div className="font-serif font-bold text-base text-ink mb-3">{item.title}</div>
+            <div className="text-xs leading-[1.6] text-brand-gray max-w-[220px] mx-auto">{item.desc}</div>
           </div>
         ))}
       </div>

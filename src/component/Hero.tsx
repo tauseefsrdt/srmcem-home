@@ -56,17 +56,17 @@ const Hero = () => {
   }, []);
 
   const btnPrimary =
-    'inline-flex items-center justify-center gap-2 px-[30px] py-[14px] text-sm font-bold tracking-[0.4px] rounded-sm whitespace-nowrap transition-all duration-300 active:translate-y-0 bg-gold text-navy-dark shadow-[0_6px_20px_rgba(239,166,60,0.38)] hover:bg-gold-dark hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(239,166,60,0.5)] max-[640px]:w-full';
+    'inline-flex items-center justify-center gap-2 px-[30px] py-[14px] text-sm font-bold tracking-[0.4px] rounded-pill whitespace-nowrap transition-all duration-300 active:translate-y-0 bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] text-navy-deep shadow-glowGold hover:-translate-y-0.5 hover:shadow-glowGoldStrong max-[640px]:w-full';
   const btnOutline =
-    'inline-flex items-center justify-center gap-2 px-[30px] py-[14px] text-sm font-semibold tracking-[0.4px] rounded-sm whitespace-nowrap transition-all duration-300 active:translate-y-0 bg-transparent text-white border-2 border-white/40 hover:border-white hover:bg-white/10 hover:-translate-y-0.5 max-[640px]:w-full';
+    'inline-flex items-center justify-center gap-2 px-[30px] py-[14px] text-sm font-semibold tracking-[0.4px] rounded-pill whitespace-nowrap transition-all duration-300 active:translate-y-0 bg-white/[0.06] backdrop-blur-glass text-white border border-white/25 hover:border-gold/60 hover:bg-white/10 hover:-translate-y-0.5 max-[640px]:w-full';
 
   const field =
-    'w-full px-4 py-[11px] text-sm rounded-[10px] bg-white border border-[rgba(15,47,87,0.16)] text-ink placeholder:text-brand-gray/70 outline-none transition-all duration-200 focus:border-gold focus:ring-2 focus:ring-gold/30';
+    'w-full px-4 py-[11px] text-sm rounded-[10px] bg-white border border-[rgba(15,47,87,0.16)] text-ink placeholder:text-brand-gray/70 outline-none transition-all duration-200 focus:border-navy-mid focus:ring-2 focus:ring-navy-mid/25';
   const selectField = `${field} appearance-none bg-[length:14px] bg-no-repeat bg-[position:right_14px_center] bg-[url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%231B4C7F' stroke-width='2' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6'/></svg>")] pr-9 text-brand-gray`;
 
   return (
     <section
-      className="relative overflow-hidden bg-[radial-gradient(circle_at_15%_10%,#173c6f_0%,#0b2142_48%,#08162e_100%)]"
+      className="relative overflow-hidden bg-[radial-gradient(circle_at_20%_10%,#1B4C7F_0%,#0F2F57_52%,#0A1F3D_100%)]"
       id="home"
       aria-label="Admissions hero"
     >
@@ -132,7 +132,7 @@ const Hero = () => {
 
           {/* RIGHT — admissions enquiry form */}
           <div className="animate-fadeUp [animation-delay:0.2s] w-full" id="admissions">
-            <div className="relative rounded-[20px] bg-white/[0.97] backdrop-blur-sm shadow-[0_30px_70px_rgba(4,12,28,0.55)] border border-white/40 overflow-hidden">
+            <div className="relative rounded-[22px] bg-white shadow-[0_30px_70px_rgba(10,31,61,0.4)] border border-white/70 overflow-hidden">
               <div className="px-6 py-4 bg-[linear-gradient(135deg,#0F2F57,#1B4C7F)] text-center">
                 <div className="text-[10px] font-bold tracking-[2.5px] uppercase text-gold-light">Admissions Open For</div>
                 <div className="text-lg font-serif font-bold text-white">Session 2025-26</div>
@@ -140,7 +140,7 @@ const Hero = () => {
 
               {submitted ? (
                 <div className="px-6 py-12 text-center">
-                  <div className="w-14 h-14 mx-auto mb-4 grid place-items-center rounded-full bg-gold/20 border-2 border-gold text-gold-dark"><Icon name="check" className="w-7 h-7" strokeWidth={2.5} /></div>
+                  <div className="w-14 h-14 mx-auto mb-4 grid place-items-center rounded-full bg-gold/20 border-2 border-gold text-gold-dark animate-glowPulse"><Icon name="check" className="w-7 h-7" strokeWidth={2.5} /></div>
                   <div className="font-serif font-bold text-xl text-navy-dark mb-2">Thank you!</div>
                   <p className="text-sm text-brand-gray">Your application interest has been received. Our admissions team will reach out shortly.</p>
                 </div>
@@ -167,12 +167,12 @@ const Hero = () => {
                     </select>
                   </div>
                   <label className="flex items-start gap-2.5 mt-1 text-[11px] leading-[1.5] text-brand-gray cursor-pointer">
-                    <input type="checkbox" required className="mt-0.5 accent-navy w-3.5 h-3.5 shrink-0" />
+                    <input type="checkbox" required className="mt-0.5 accent-navy-mid w-3.5 h-3.5 shrink-0" />
                     <span>I authorise SRMCEM Group representatives to Call, SMS, Email or Whatsapp me about the programs offered.</span>
                   </label>
                   <button
                     type="submit"
-                    className="mt-1.5 w-full py-[13px] rounded-[10px] bg-gold text-navy-dark text-sm font-bold tracking-[0.5px] shadow-[0_8px_22px_rgba(239,166,60,0.45)] transition-all duration-200 hover:bg-gold-dark hover:-translate-y-0.5"
+                    className="mt-1.5 w-full py-[13px] rounded-[10px] bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] text-navy-deep text-sm font-bold tracking-[0.5px] shadow-glowGold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-glowGoldStrong"
                   >
                     Submit Application Interest
                   </button>

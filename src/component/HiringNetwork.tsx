@@ -11,9 +11,9 @@ const HiringNetwork = () => {
   const loop = [...companies, ...companies];
 
   return (
-    <section className="relative bg-[linear-gradient(180deg,#08162e_0%,#0b2142_100%)] border-t border-white/[0.06] py-7 overflow-hidden" aria-label="Recruiting partners">
+    <section className="relative bg-white/55 backdrop-blur-glass border-y border-[rgba(15,47,87,0.08)] py-7 overflow-hidden" aria-label="Recruiting partners">
       <div className="max-w-container mx-auto px-6 flex items-center gap-6 flex-col lg:flex-row">
-        <div className="shrink-0 flex items-center gap-2.5 text-gold-light">
+        <div className="shrink-0 flex items-center gap-2.5 text-navy-mid">
           <span className="w-2 h-2 rounded-full bg-gold animate-softPulse"></span>
           <span className="text-[11px] font-bold tracking-[3px] uppercase">Hiring Network</span>
         </div>
@@ -23,7 +23,7 @@ const HiringNetwork = () => {
             {loop.map((c, i) => (
               <span
                 key={i}
-                className="text-[15px] font-display font-bold tracking-wide text-white/55 whitespace-nowrap transition-colors duration-200 hover:text-gold-light"
+                className="text-[15px] font-display font-bold tracking-wide text-brand-gray whitespace-nowrap transition-colors duration-200 hover:text-gold-dark"
               >
                 {c}
               </span>
