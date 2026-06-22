@@ -86,7 +86,7 @@ const Hero = () => {
           <div className="flex flex-col items-start text-left max-lg:items-center max-lg:text-center">
             <div className="animate-fadeUp [animation-delay:0.05s] inline-flex items-center w-fit px-[18px] py-2 mb-[22px] rounded-pill bg-gold/[0.16] border border-gold/[0.45] text-gold-light text-[11px] font-semibold tracking-[3px] uppercase">
               <span className="w-1.5 h-1.5 mr-2.5 rounded-full bg-gold shadow-[0_0_8px_rgba(242,184,75,0.9)] animate-softPulse"></span>
-              Admissions Open 2025-26
+              Admissions Open 2026-27
             </div>
             <h1 className="animate-fadeUp [animation-delay:0.15s] font-serif font-black text-[clamp(30px,4.1vw,54px)] leading-[1.12] text-white mb-3">
               Build Your Future at SRMCEM
@@ -136,7 +136,7 @@ const Hero = () => {
             <div className="relative rounded-[22px] bg-white shadow-[0_30px_70px_rgba(10,31,61,0.4)] border border-white/70 overflow-hidden">
               <div className="px-6 py-4 bg-[linear-gradient(135deg,#0F2F57,#1B4C7F)] text-center">
                 <div className="text-[10px] font-bold tracking-[2.5px] uppercase text-gold-light">Admissions Open For</div>
-                <div className="text-lg font-serif font-bold text-white">Session 2025-26</div>
+                <div className="text-lg font-serif font-bold text-white">Session 2026-27</div>
               </div>
 
               {submitted ? (

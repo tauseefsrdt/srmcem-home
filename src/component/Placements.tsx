@@ -1,5 +1,6 @@
 import React from 'react';
 import { section, sectionHeadCenter, eyebrowCenter, sectionTitle, sectionDesc } from '../utils/tw';
+import { unsplash, themeImg } from '../utils/placeholder';
 
 const minis = [
   { num: '4.52 LPA', label: 'Average Package' },
@@ -27,9 +28,32 @@ const Placements = () => {
 
       <div className="relative z-[1] grid grid-cols-2 gap-20 items-center mt-4 max-[900px]:grid-cols-1 max-[900px]:gap-12">
         <div className="reveal">
-          <div className="font-display text-[clamp(96px,14vw,150px)] leading-[0.85] text-ink mb-3">25<span className="text-[0.3em] text-gold-dark ml-2">LPA</span></div>
-          <div className="text-xs tracking-[3px] uppercase text-brand-gray font-bold mb-10">Highest Package Achieved</div>
-          <div className="flex flex-wrap gap-10">
+          {/* Big student image — topper with the highest 25 LPA package
+              (placeholder; swap for the real student/placement photo). */}
+          <div className="group relative overflow-hidden rounded-lg border border-[rgba(15,47,87,0.10)] shadow-soft bg-navy-mid/10">
+            <img
+              src={unsplash(themeImg.student, 760, 900)}
+              alt="SRMCEM student placed at the highest package of 25 LPA"
+              loading="lazy"
+              className="w-full h-[clamp(360px,42vw,520px)] object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            />
+            <span className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,22,43,0.05)_0%,transparent_30%,rgba(7,22,43,0.78)_100%)]" aria-hidden />
+
+            {/* Highest-package badge */}
+            <div className="absolute top-5 left-5 flex flex-col items-start rounded-[14px] bg-white/85 backdrop-blur-glass border border-white/70 shadow-card px-5 py-3">
+              <div className="font-display text-[clamp(40px,5vw,58px)] leading-[0.85] text-ink">25<span className="text-[0.32em] text-gold-dark ml-1.5 align-baseline">LPA</span></div>
+              <div className="mt-1 text-[10px] tracking-[2px] uppercase text-brand-gray font-bold">Highest Package Achieved</div>
+            </div>
+
+            {/* Topper caption */}
+            <div className="absolute left-6 bottom-5 text-white">
+              <div className="text-[11px] font-bold tracking-[2px] uppercase text-gold-light mb-0.5">Campus Topper · 2024</div>
+              <div className="font-serif text-xl font-extrabold leading-tight">Aman Verma</div>
+              <div className="text-[13px] text-white/80">B.Tech CSE · Placed at a global tech leader</div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-10 mt-9">
             {minis.map((m, i) => (
               <div key={i}>
                 <div className="font-display text-[34px] text-ink">{m.num}</div>

@@ -5,51 +5,65 @@ import NavBar from './NavBar';
 import Hero from './Hero';
 import HiringNetwork from './HiringNetwork';
 import Accreditation from './Accreditation';
+import WhySRMCEM from './WhySRMCEM';
+import AcademicExcellence from './AcademicExcellence';
 import LegacyStats from './LegacyStats';
+import IndustryOutcomes from './IndustryOutcomes';
 import Placements from './Placements';
-import WorldStage from './WorldStage';
 import GovtPlacements from './GovtPlacements';
-// import CompanyLogos from './CompanyLogos';
-import Programs from './Programs';
+import ProgramsOffered from './ProgramsOffered';
+import AppliedLearning from './AppliedLearning';
 import IEEE from './IEEE';
-import News from './News';
-import Alumni from './Alumni';
-import Facilities from './Facilities';
-import Events from './Events';
-import CSR from './CSR';
+import CampusInfrastructure from './CampusInfrastructure';
 import Clubs from './Clubs';
-import CTA from './CTA';
-import AdmissionInfo from './AdmissionInfo';
-import Footer from './Footer';
-import Innovation from './Innovation';
+import WorldStage from './WorldStage';
+import AlumniOutcomes from './AlumniOutcomes';
+import News from './News';
+import Events from './Events';
 import TestmonialSlider from './TestmonialSlider';
+import CSR from './CSR';
+import CTA from './CTA';
+import Footer from './Footer';
 
 const Home = () => {
   return (
     <>
       <TopBar />
       <NavBar />
+
+      {/* ---- Reference-design sequence + retained original sections ---- */}
       <Hero />
       <HiringNetwork />
       <Accreditation />
+      <WhySRMCEM />
+
+      {/* Academic credibility */}
+      <AcademicExcellence />
       <LegacyStats />
-      <WorldStage />
-      {/* <Medals /> — disabled: its stat counters duplicate/contradict the Hero counters */}
+
+      {/* Career outcomes */}
+      <IndustryOutcomes />
       <Placements />
-      {/* <CompanyLogos /> */}
       <GovtPlacements />
-      <Programs />
-      <Innovation />
-      <Facilities />
+
+      {/* Programs & applied learning */}
+      <ProgramsOffered />
+      <AppliedLearning />
       <IEEE />
-      <Alumni />
+
+      {/* Campus & student life */}
+      <CampusInfrastructure />
+      <Clubs />
+      <WorldStage />
+
+      {/* Alumni, news & engagement */}
+      <AlumniOutcomes />
       <News />
       <Events />
       <TestmonialSlider />
       <CSR />
-      <Clubs />
       <CTA />
-      {/* <AdmissionInfo /> */}
+
       <Footer />
     </>
   );
