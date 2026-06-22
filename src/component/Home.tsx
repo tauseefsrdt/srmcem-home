@@ -5,6 +5,7 @@ import NavBar from './NavBar';
 import Hero from './Hero';
 import HiringNetwork from './HiringNetwork';
 import Accreditation from './Accreditation';
+import LegacyStats from './LegacyStats';
 import Placements from './Placements';
 import WorldStage from './WorldStage';
 import GovtPlacements from './GovtPlacements';
@@ -31,6 +32,7 @@ const Home = () => {
       <Hero />
       <HiringNetwork />
       <Accreditation />
+      <LegacyStats />
       <WorldStage />
       {/* <Medals /> — disabled: its stat counters duplicate/contradict the Hero counters */}
       <Placements />

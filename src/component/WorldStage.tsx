@@ -24,7 +24,7 @@ const WorldStage = () => {
         <div className="lg:sticky lg:top-24 reveal">
           <div className="relative overflow-hidden rounded-lg bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] shadow-card p-8 sm:p-10">
             <span className={glassSheen} aria-hidden />
-            <div className={eyebrow}>Why SRMCEM Is Preferred</div>
+            <div className={eyebrow}>Achievements &amp; Recognition</div>
             <h2 className={sectionTitle}>Celebrating Excellence Across Every Frontier</h2>
             <p className={sectionDesc}>From robotics championships and prestigious IEEE conferences to accomplished alumni in civil services, ISRO, and global corporations, SRMCEM continues to create achievers who make their mark across industries, institutions, and nations.</p>
 

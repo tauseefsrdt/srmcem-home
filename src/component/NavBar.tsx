@@ -37,7 +37,7 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-[1000] bg-white/75 border-b border-[rgba(15,47,87,0.1)] shadow-card backdrop-blur-glass">
+    <nav className="sticky top-0 z-[999] bg-white/75 border-b border-[rgba(15,47,87,0.1)] shadow-card backdrop-blur-glass">
       <div className="max-w-container mx-auto flex items-stretch justify-between min-h-[66px] px-4 sm:px-6">
         {/* Brand Logo */}
         <a className="flex items-center gap-[14px] py-2.5" href="https://srmcem.ac.in" target="_blank" rel="noreferrer">

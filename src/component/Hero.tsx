@@ -17,7 +17,7 @@ const Hero = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    const stats = [20, 20, 3700, 1000];
+    const stats = [27, 20, 3700, 1000];
     const duration = 1400; // ms
 
     let started = false;
@@ -89,13 +89,14 @@ const Hero = () => {
               Admissions Open 2025-26
             </div>
             <h1 className="animate-fadeUp [animation-delay:0.15s] font-serif font-black text-[clamp(30px,4.1vw,54px)] leading-[1.12] text-white mb-3">
-              Top Choice of AKTU Aspirants in the Region
-              <span className="block mt-2 font-bold text-[clamp(16px,2vw,22px)] text-white/80">Innovate, Transform, Empower &amp; Succeed with AKTU Score Based Scholarships</span>
+              Build Your Future at SRMCEM
+              <span className="block mt-2 font-bold text-[clamp(16px,2vw,22px)] text-white/80">One of Lucknow&apos;s Most Trusted Engineering &amp; Management Colleges</span>
             </h1>
             <p className="animate-fadeUp [animation-delay:0.25s] text-base leading-[1.85] text-white/70 max-w-[600px] mb-6 max-lg:mx-auto">
-              SRMCEM has achieved distinction for its value-based institutional culture focusing on
-              in-depth knowledge and employability enhancement — join a campus committed to
-              outcomes, scholarships and real-world experience.
+              For 27+ years, SRMCEM has been shaping future-ready engineers and managers through
+              academic excellence, innovation-driven learning and strong industry exposure. Guided by
+              the vision of two IIT Kanpur Gold Medalists, the institution combines quality education
+              with practical, career-focused training.
             </p>
 
             {/* Accreditation chips */}

@@ -35,7 +35,7 @@ const Alumni = () => {
       <div className={`${sectionHeadCenter} reveal`}>
         <div className={`${eyebrowCenter} text-navy-mid`}>Legacy of Excellence</div>
         <h2 className={`${sectionTitle} text-ink`}>Alumni Who Make Us Proud</h2>
-        <p className={`${sectionDesc} text-brand-gray mx-auto`}>From IAS officers and scientists to global tech leaders and military officers — SRMCEM's 8119+ alumni are shaping India and the world.</p>
+        <p className={`${sectionDesc} text-brand-gray mx-auto`}>From IAS officers and scientists to global tech leaders and military officers — SRMCEM's 30000+ alumni are shaping India and the world.</p>
       </div>
 
       <div className="grid gap-[22px] grid-cols-1 min-[600px]:grid-cols-2 min-[900px]:grid-cols-3 min-[1100px]:grid-cols-6 reveal">

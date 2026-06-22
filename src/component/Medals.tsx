@@ -7,10 +7,10 @@ import {
 } from '../utils/tw';
 
 const counts = [
-  { num: '8+', cls: 'text-gold-light [text-shadow:0_0_28px_rgba(244,197,106,0.45)]', label: 'Years Of Experience', sub: '' },
-  { num: '8+', cls: 'text-[#C6D3E6] [text-shadow:0_0_28px_rgba(198,211,230,0.35)]', label: 'Number Of Courses', sub: '' },
-  { num: '486+', cls: 'text-gold-dark [text-shadow:0_0_28px_rgba(217,142,34,0.35)]', label: 'Students', sub: '' },
-  { num: '96+', cls: 'text-gold-light', label: 'Number Of Placements', sub: '' }
+  { num: '18', cls: 'text-gold-light [text-shadow:0_0_28px_rgba(244,197,106,0.45)]', label: 'Gold Medals', sub: '' },
+  { num: '12', cls: 'text-[#C6D3E6] [text-shadow:0_0_28px_rgba(198,211,230,0.35)]', label: 'Silver Medals', sub: '' },
+  { num: '6', cls: 'text-gold-dark [text-shadow:0_0_28px_rgba(217,142,34,0.35)]', label: 'Bronze Medals', sub: '' },
+  { num: '192', cls: 'text-gold-light', label: 'Merit Holders', sub: '' }
 ];
 
 const merit = [

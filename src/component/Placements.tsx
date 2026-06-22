@@ -2,16 +2,16 @@ import React from 'react';
 import { section, sectionHeadCenter, eyebrowCenter, sectionTitle, sectionDesc } from '../utils/tw';
 
 const minis = [
-  { num: '91%', label: 'Placement in Computer Science Engineering' },
-  { num: '29 LPA', label: 'Highest Package — Morgan Stanley' },
-  { num: '87%', label: 'Students placed in CMM Level companies' }
+  { num: '4.52 LPA', label: 'Average Package' },
+  { num: '35%', label: 'Students Secured Multiple Job Offers' },
+  { num: '100%', label: 'Placement in Core Engineering' }
 ];
 
 const rows = [
-  { num: '623+', title: 'Students selected in Fortune 500 companies', sub: '' },
-  { num: '38+', title: 'Recruiters Exclusively for Core Engineering', sub: '' },
-  { num: '168+', title: 'Students got a package of more than 5 LPA', sub: '' },
-  { num: '96%', title: 'Placement achieved in Engineering, Management, Computer Application and Polytechnic', sub: '' }
+  { num: '1200+', title: 'Job Offers', sub: '' },
+  { num: '350+', title: 'Corporates Hiring From Campus', sub: '' },
+  { num: '225', title: 'Students Selected at CTC of 5 LPA & Above', sub: '' },
+  { num: '93%', title: 'Placement in Management', sub: '' }
 ];
 
 const Placements = () => {
@@ -27,7 +27,7 @@ const Placements = () => {
 
       <div className="relative z-[1] grid grid-cols-2 gap-20 items-center mt-4 max-[900px]:grid-cols-1 max-[900px]:gap-12">
         <div className="reveal">
-          <div className="font-display text-[clamp(96px,14vw,150px)] leading-[0.85] text-ink mb-3">29<span className="text-[0.3em] text-gold-dark ml-2">LPA</span></div>
+          <div className="font-display text-[clamp(96px,14vw,150px)] leading-[0.85] text-ink mb-3">25<span className="text-[0.3em] text-gold-dark ml-2">LPA</span></div>
           <div className="text-xs tracking-[3px] uppercase text-brand-gray font-bold mb-10">Highest Package Achieved</div>
           <div className="flex flex-wrap gap-10">
             {minis.map((m, i) => (
