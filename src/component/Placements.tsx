@@ -1,7 +1,7 @@
 import React from 'react';
 import { section, sectionHeadCenter, eyebrowCenter, sectionTitle, sectionDesc } from '../utils/tw';
 import { unsplash, themeImg } from '../utils/placeholder';
-
+import bestPackages from '../assets/best-packages.png';
 const minis = [
   { num: '4.52 LPA', label: 'Average Package' },
   { num: '35%', label: 'Students Secured Multiple Job Offers' },
@@ -32,7 +32,7 @@ const Placements = () => {
               (placeholder; swap for the real student/placement photo). */}
           <div className="group relative overflow-hidden rounded-lg border border-[rgba(15,47,87,0.10)] shadow-soft bg-navy-mid/10">
             <img
-              src={unsplash(themeImg.student, 760, 900)}
+              src={bestPackages}
               alt="SRMCEM student placed at the highest package of 25 LPA"
               loading="lazy"
               className="w-full h-[clamp(360px,42vw,520px)] object-cover object-top transition-transform duration-500 group-hover:scale-105"

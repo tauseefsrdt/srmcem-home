@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from './Icon';
+import logo from '../assets/logo.png';
 
 const quickLinks = ['Home', 'Programs', 'Placements', 'Admissions', 'About SRMCEM', 'Contact'];
 
@@ -15,10 +16,12 @@ const Footer = () => {
       <div className="relative grid grid-cols-[2fr_1.2fr_1fr_1fr] gap-14 pb-14 border-b border-white/[0.06] max-[900px]:grid-cols-2 max-[900px]:gap-10 max-[560px]:grid-cols-1">
         {/* Brand */}
         <div>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-11 h-11 grid place-items-center flex-shrink-0 rounded-[10px] bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] font-display text-sm tracking-[0.025em] text-navy-deep shadow-gold">SRM</div>
+          <div className="flex items-center gap-4 mb-4">
+            <div className="shrink-0 w-14 h-14 rounded-full bg-white p-1 shadow-[0_0_0_1px_rgba(255,255,255,0.12)]">
+              <img src={logo} alt="SRMCEM Logo" className="w-full h-full object-contain rounded-full" />
+            </div>
             <div>
-              <div className="font-serif font-black text-[19px] text-white leading-tight">Shri Ramswaroop Memorial</div>
+              <div className="font-serif font-black text-[17px] text-white leading-tight">Shri Ramswaroop Memorial</div>
               <div className="text-[10px] tracking-[2px] uppercase text-gold-light">College of Engineering &amp; Management</div>
             </div>
           </div>

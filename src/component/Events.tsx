@@ -8,7 +8,6 @@ import {
   sectionTitle,
   sectionDesc,
 } from "../utils/tw";
-import { unsplash } from "../utils/placeholder";
 import SlickSlider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,20 +16,12 @@ const Slider =
   (SlickSlider as unknown as { default?: typeof SlickSlider }).default ??
   SlickSlider;
 
-// Relevant, curated imagery per event (the source data reuses one local photo).
-const EVENT_IMAGES: string[][] = [
-  ["1573164713988-8665fc963095", "1523580494863-6f3031224c94", "1540575467063-178a50c2df87"], // Proud moment / honour
-  ["1529107386315-e1a2ed48a620", "1507003211169-0a1dd7228f2d"], // UPSC civil services
-  ["1485827404703-89b55fcc595e", "1518770660439-4636190af475"], // Robotics @ IIT
-  ["1511671782779-c97d3d27a1d4", "1540575467063-178a50c2df87"], // Abhivyakti cultural fest
-];
-
 type EventItem = (typeof newsData)[number] & { imgs: string[] };
 
 const Events: React.FC = () => {
-  const items: EventItem[] = newsData.map((e, i) => ({
+  const items: EventItem[] = newsData.map((e) => ({
     ...e,
-    imgs: EVENT_IMAGES[i] ?? EVENT_IMAGES[0],
+    imgs: e.image.imagePart,
   }));
   const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
   const featuredEvent = items[0];
@@ -72,7 +63,7 @@ const Events: React.FC = () => {
                   <div key={idx} className="relative overflow-hidden">
                     <img
                       className="block h-[340px] max-[992px]:h-[240px] w-full object-cover"
-                      src={unsplash(id, 1000, 620)}
+                      src={id}
                       alt={`${featuredEvent.title} ${idx + 1}`}
                       loading="lazy"
                     />
@@ -118,7 +109,7 @@ const Events: React.FC = () => {
                 <div className="relative bg-navy-mid/10 overflow-hidden">
                   <img
                     className="w-full h-[150px] object-cover transition-transform duration-500 group-hover:scale-105"
-                    src={unsplash(event.imgs[0], 480, 280)}
+                    src={event.imgs[0]}
                     alt={event.title}
                     loading="lazy"
                   />
@@ -179,7 +170,7 @@ const Events: React.FC = () => {
                       <div key={idx} className="rounded-md overflow-hidden">
                         <img
                           className="w-full h-72 object-cover"
-                          src={unsplash(id, 900, 560)}
+                          src={id}
                           alt={`${selectedEvent.title} ${idx + 1}`}
                         />
                       </div>
@@ -189,7 +180,7 @@ const Events: React.FC = () => {
                   <div className="rounded-md overflow-hidden">
                     <img
                       className="w-full h-72 object-cover"
-                      src={unsplash(selectedEvent.imgs[0], 900, 560)}
+                      src={selectedEvent.imgs[0]}
                       alt={selectedEvent.title}
                     />
                   </div>

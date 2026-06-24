@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import logo from '../assets/logo.png';
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -40,9 +41,12 @@ const NavBar = () => {
     <nav className="sticky top-0 z-[999] bg-white/75 border-b border-[rgba(15,47,87,0.1)] shadow-card backdrop-blur-glass">
       <div className="max-w-container mx-auto flex items-stretch justify-between min-h-[66px] px-4 sm:px-6">
         {/* Brand Logo */}
-        <a className="flex items-center gap-[14px] py-2.5" href="https://srmcem.ac.in" target="_blank" rel="noreferrer">
-          <div className="w-11 h-11 grid place-items-center flex-shrink-0 rounded-[10px] bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] font-display text-sm tracking-[0.025em] text-navy-deep shadow-gold">SRM</div>
-          <div className="font-serif text-[17px] font-bold leading-[1.25] text-navy-dark">SRMCEM<span className="block font-sans text-[10px] font-normal tracking-[2px] uppercase text-brand-gray">Est. 2001 · Lucknow</span></div>
+        <a className="flex items-center gap-3 py-2" href="https://srmcem.ac.in" target="_blank" rel="noreferrer">
+          <img src={logo} alt="SRMCEM Logo" className="h-11 w-auto object-contain" />
+          <div className="hidden sm:block">
+            <div className="font-serif text-[15px] font-bold leading-[1.2] text-navy-dark">Shri Ramswaroop Memorial</div>
+            <div className="font-sans text-[9.5px] font-semibold tracking-[1.8px] uppercase text-brand-gray">College of Engg. &amp; Management</div>
+          </div>
         </a>
 
         {/* Desktop Nav Items */}
@@ -82,8 +86,8 @@ const NavBar = () => {
         {/* Slider Header */}
         <div className="flex items-center justify-between py-[22px] px-6 bg-navy-light/60 border-b border-[rgba(15,47,87,0.1)]">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 grid place-items-center rounded-lg bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] font-display text-sm tracking-[0.025em] text-navy-deep shadow-gold">SRM</div>
-            <div className="text-[15px] font-bold tracking-[0.025em] uppercase text-navy-dark">Menu</div>
+            <img src={logo} alt="SRMCEM Logo" className="h-9 w-auto object-contain" />
+            <div className="text-[13px] font-bold tracking-[0.025em] uppercase text-navy-dark">Menu</div>
           </div>
           <button className="w-9 h-9 grid place-items-center rounded-lg border border-[rgba(15,47,87,0.14)] bg-white text-2xl leading-none text-navy-dark transition-[background,border-color,color] duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] hover:border-navy-mid hover:bg-navy hover:text-white" aria-label="Close menu" onClick={() => setIsMobileMenuOpen(false)}>×</button>
         </div>

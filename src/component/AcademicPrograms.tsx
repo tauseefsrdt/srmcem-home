@@ -1,4 +1,10 @@
 import React from 'react';
+import computerScience from "../assets/course/image1.png";
+import electronics from "../assets/course/image10.png";
+import mechanical from "../assets/course/image7.png";
+import mba from "../assets/course/image18.png";
+import mca from "../assets/course/image15.png";
+import mtech from "../assets/course/image13.png";
 import {
   section,
   sectionHeadCenter,
@@ -26,7 +32,7 @@ type Program = {
 
 const programs: Program[] = [
   {
-    icon: '💻',
+    icon: computerScience,
     title: 'B.Tech Computer Science',
     tags: ['CSE', 'AI/ML', 'Data Science', 'Cyber Security'],
     tagVariant: 'gold',
@@ -34,21 +40,21 @@ const programs: Program[] = [
     badge: 'Most Popular',
   },
   {
-    icon: '📡',
+    icon: electronics,
     title: 'B.Tech Electronics',
     tags: ['ECE', 'IT', 'EE', 'AKTU Affiliated'],
     tagVariant: 'ghost',
     desc: 'Strong foundation in electronics, communications & embedded systems with state-of-the-art labs. Multiple AKTU gold medalists.',
   },
   {
-    icon: '⚙️',
+    icon: mechanical,
     title: 'B.Tech Mechanical & Civil',
     tags: ['ME', 'CE', 'Core Engineering'],
     tagVariant: 'ghost',
     desc: 'Hands-on engineering with industry partnerships at Torrent Power, Daikin, JBM and more. Dedicated core placement drive.',
   },
   {
-    icon: '📊',
+    icon: mba,
     title: 'MBA',
     seats: '120 Seats',
     tags: ['Marketing', 'Finance', 'HR', 'Operations'],
@@ -56,7 +62,7 @@ const programs: Program[] = [
     desc: 'Two-year program with HSBC, Axis Bank, IDFC placements. 100%+ placement score. Via CAT/MAT/CUET PG scores.',
   },
   {
-    icon: '🖥️',
+    icon: mca,
     title: 'MCA',
     seats: '120 Seats',
     tags: ['Master of Computer Applications', '3 Years'],
@@ -64,7 +70,7 @@ const programs: Program[] = [
     desc: '100% placement in computer applications. Strong IT tie-ups with SAP, Informatica, Infosys. Via CUET PG.',
   },
   {
-    icon: '🎓',
+    icon: mtech,
     title: 'M.Tech + Diploma Programs',
     tags: ['9 Specializations via GATE', 'Polytechnic'],
     tagVariant: 'ghost',
@@ -78,8 +84,8 @@ const ProgramCard = ({ program }: { program: Program }) => (
 
     {/* Icon + optional badge row */}
     <div className="flex items-start justify-between">
-      <div className={`${iconTile} w-14 h-14 text-2xl`}>
-        {program.icon}
+      <div className={` w-[80px] h-[80px] `}>
+       <img src={program.icon} alt={program.title} className="w-full h-full object-contain" />
       </div>
       {program.badge && (
         <span className="text-[10px] font-bold tracking-[1px] uppercase px-3 py-1 rounded-pill bg-gold/20 border border-gold/40 text-gold-text">
