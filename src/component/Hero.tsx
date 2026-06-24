@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Icon from './Icon';
-
-const CAMPUS_BG =
-  'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=70';
+import bannerVideo from '../assets/banner-video.mp4';
 
 const accreditations = ['NBA Accredited', 'AICTE Approved', 'AKTU Affiliated', 'LU Recognised'];
 
@@ -70,13 +68,17 @@ const Hero = () => {
       id="home"
       aria-label="Admissions hero"
     >
-      {/* Campus photo backdrop with navy wash */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-[0.22] [mask-image:linear-gradient(180deg,#000_0%,#000_55%,transparent_100%)]"
-        style={{ backgroundImage: `url(${CAMPUS_BG})` }}
+      {/* Campus video backdrop with navy wash */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover [mask-image:linear-gradient(180deg,#000_0%,#000_80%,transparent_100%)]"
+        src={bannerVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
         aria-hidden
       />
-      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(8,22,46,0.92)_0%,rgba(11,33,66,0.78)_45%,rgba(11,33,66,0.55)_100%)]" aria-hidden />
+      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(8,22,46,0.82)_0%,rgba(11,33,66,0.5)_45%,rgba(11,33,66,0.2)_100%)]" aria-hidden />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_80%_at_110%_50%,rgba(242,184,75,0.18)_0%,transparent_65%),radial-gradient(ellipse_50%_60%_at_-10%_70%,rgba(27,76,127,0.5)_0%,transparent_60%)]" aria-hidden />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[length:60px_60px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_40%,#000_40%,transparent_100%)]" aria-hidden />
 
@@ -92,12 +94,12 @@ const Hero = () => {
               Build Your Future at SRMCEM
               <span className="block mt-2 font-bold text-[clamp(16px,2vw,22px)] text-white/80">One of Lucknow&apos;s Most Trusted Engineering &amp; Management Colleges</span>
             </h1>
-            <p className="animate-fadeUp [animation-delay:0.25s] text-base leading-[1.85] text-white/70 max-w-[600px] mb-6 max-lg:mx-auto">
+            {/* <p className="animate-fadeUp [animation-delay:0.25s] text-base leading-[1.85] text-white/70 max-w-[600px] mb-6 max-lg:mx-auto">
               For 27+ years, SRMCEM has been shaping future-ready engineers and managers through
               academic excellence, innovation-driven learning and strong industry exposure. Guided by
               the vision of two IIT Kanpur Gold Medalists, the institution combines quality education
               with practical, career-focused training.
-            </p>
+            </p> */}
 
             {/* Accreditation chips */}
             <div className="animate-fadeUp [animation-delay:0.3s] flex flex-wrap gap-2.5 mb-7 max-lg:justify-center">

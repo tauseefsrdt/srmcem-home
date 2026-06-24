@@ -24,6 +24,7 @@ import TestmonialSlider from './TestmonialSlider';
 import CSR from './CSR';
 import CTA from './CTA';
 import Footer from './Footer';
+import Course from './Programs';
 
 const Home = () => {
   return (
@@ -34,13 +35,15 @@ const Home = () => {
       {/* ---- Reference-design sequence + retained original sections ---- */}
       <Hero />
       <HiringNetwork />
+      
       <Accreditation />
+      <AcademicExcellence />
       <WhySRMCEM />
 
       {/* Academic credibility */}
-      <AcademicExcellence />
+      
       <LegacyStats />
-
+      <Course />
       {/* Career outcomes */}
       <IndustryOutcomes />
       <Placements />

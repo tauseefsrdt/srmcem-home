@@ -8,6 +8,7 @@ import {
   sectionTitle,
   sectionDesc,
 } from "../utils/tw";
+import { unsplash } from "../utils/placeholder";
 import SlickSlider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,17 +17,29 @@ const Slider =
   (SlickSlider as unknown as { default?: typeof SlickSlider }).default ??
   SlickSlider;
 
+// Relevant, curated imagery per event (the source data reuses one local photo).
+const EVENT_IMAGES: string[][] = [
+  ["1573164713988-8665fc963095", "1523580494863-6f3031224c94", "1540575467063-178a50c2df87"], // Proud moment / honour
+  ["1529107386315-e1a2ed48a620", "1507003211169-0a1dd7228f2d"], // UPSC civil services
+  ["1485827404703-89b55fcc595e", "1518770660439-4636190af475"], // Robotics @ IIT
+  ["1511671782779-c97d3d27a1d4", "1540575467063-178a50c2df87"], // Abhivyakti cultural fest
+];
+
+type EventItem = (typeof newsData)[number] & { imgs: string[] };
+
 const Events: React.FC = () => {
-  const [selectedEvent, setSelectedEvent] = useState<
-    (typeof newsData)[number] | null
-  >(null);
-  const featuredEvent = newsData[0];
-  const otherEvents = newsData.slice(1);
+  const items: EventItem[] = newsData.map((e, i) => ({
+    ...e,
+    imgs: EVENT_IMAGES[i] ?? EVENT_IMAGES[0],
+  }));
+  const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
+  const featuredEvent = items[0];
+  const otherEvents = items.slice(1);
 
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 400,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
@@ -46,99 +59,88 @@ const Events: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-[minmax(0,1.25fr)_minmax(320px,0.75fr)] gap-6 max-[980px]:grid-cols-1 reveal mt-8 lg:grid-cols-3">
-          <article className="group relative p-5 bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-hover hover:border-navy-mid/30 overflow-hidden rounded-2xl shadow-card lg:col-span-2">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 reveal mt-8">
+          {/* Featured event */}
+          <article className="group relative flex flex-col bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-hover hover:border-navy-mid/30 overflow-hidden rounded-2xl shadow-card lg:col-span-2">
             <span
-              className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(27,76,127,0.18),transparent)]"
+              className="pointer-events-none absolute inset-x-0 top-0 h-px z-[2] bg-[linear-gradient(90deg,transparent,rgba(27,76,127,0.18),transparent)]"
               aria-hidden
             />
-            <div className="w-full bg-navy-light/50 rounded-lg">
-              {featuredEvent.image.imagePart &&
-              featuredEvent.image.imagePart.length > 1 ? (
-                <Slider {...sliderSettings} className="h-full w-full">
-                  {featuredEvent.image.imagePart.map(
-                    (src: string, idx: number) => (
-                      <div
-                        key={idx}
-                        className="h-full w-full rounded-lg overflow-hidden"
-                      >
-                        <img
-                          className="block max-h-[300px] rounded-lg w-full object-cover "
-                          src={src}
-                          alt={`${featuredEvent.title} ${idx + 1}`}
-                        />
-                      </div>
-                    ),
-                  )}
-                </Slider>
-              ) : (
-                <div className="h-full w-full">
-                  <img
-                    className="block max-h-[300px] rounded-lg w-full object-cover"
-                    src={featuredEvent.image.imagePart[0]}
-                    alt={featuredEvent.title}
-                  />
-                </div>
-              )}
-            </div>
-            <div className="relative flex w-full flex-col justify-center p-6 lg:p-8">
-              <span className="inline-block w-fit bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] text-navy-deep px-3 py-1 rounded-full text-sm font-semibold shadow-glowGold">
+            <div className="relative w-full bg-navy-mid/10 [&_.slick-dots]:bottom-3 [&_.slick-dots_li_button:before]:text-white [&_.slick-dots_li.slick-active_button:before]:!text-gold-light">
+              <Slider {...sliderSettings} className="w-full">
+                {featuredEvent.imgs.map((id, idx) => (
+                  <div key={idx} className="relative overflow-hidden">
+                    <img
+                      className="block h-[340px] max-[992px]:h-[240px] w-full object-cover"
+                      src={unsplash(id, 1000, 620)}
+                      alt={`${featuredEvent.title} ${idx + 1}`}
+                      loading="lazy"
+                    />
+                    <span className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(7,22,43,0.45)_100%)]" aria-hidden />
+                  </div>
+                ))}
+              </Slider>
+              <span className="absolute top-4 left-4 z-[2] inline-block bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] text-navy-deep px-3 py-1 rounded-full text-[12px] font-bold tracking-wide shadow-glowGold">
                 Featured Event
               </span>
-              <h3 className="mt-4 text-2xl lg:text-3xl font-bold leading-tight text-ink">
-                {featuredEvent.title}
-              </h3>
-              <div className="text-sm font-medium tracking-[0.2em] uppercase text-gold-dark mt-3">
+            </div>
+            <div className="relative flex w-full flex-col flex-1 p-6 lg:p-8">
+              <div className="text-[12px] font-bold tracking-[0.2em] uppercase text-gold-dark">
                 {featuredEvent.date}
               </div>
-              <p className="mt-5 text-brand-gray leading-7">
+              <h3 className="mt-2 font-serif text-2xl lg:text-[28px] font-bold leading-tight text-ink">
+                {featuredEvent.title}
+              </h3>
+              <p className="mt-4 text-brand-gray leading-7 line-clamp-4">
                 {featuredEvent.description}
               </p>
               <button
                 type="button"
-                className="mt-8 inline-flex w-fit items-center rounded-full bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] px-5 py-3 text-sm font-semibold text-navy-deep shadow-glowGold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glowGoldStrong"
+                className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] px-6 py-3 text-sm font-bold text-navy-deep shadow-glowGold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glowGoldStrong"
                 onClick={() => setSelectedEvent(featuredEvent)}
               >
-                View Details
+                View Details →
               </button>
             </div>
           </article>
 
-          <div className="lg:col-span-1 grid gap-4">
+          {/* Side events */}
+          <div className="lg:col-span-1 grid gap-4 content-start">
             {otherEvents.map((event) => (
-              <button
-                type="button"
+              <article
                 key={event.id}
-                className="w-full text-left bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.1)] shadow-card cursor-pointer transition-all duration-300 hover:-translate-y-[3px] hover:bg-white hover:border-navy-mid/30 hover:shadow-hover flex flex-col gap-4 p-3 rounded-md"
+                role="button"
+                tabIndex={0}
+                className="group w-full text-left bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.1)] shadow-card cursor-pointer transition-all duration-300 hover:-translate-y-[3px] hover:bg-white hover:border-navy-mid/30 hover:shadow-hover overflow-hidden rounded-xl"
                 onClick={() => setSelectedEvent(event)}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedEvent(event); } }}
               >
-                <div className="bg-navy-light/60 shrink-0 rounded-md overflow-hidden">
+                <div className="relative bg-navy-mid/10 overflow-hidden">
                   <img
-                    className="w-full h-full max-h-[130px] object-cover"
-                    src={event.image.imagePart[0]}
+                    className="w-full h-[150px] object-cover transition-transform duration-500 group-hover:scale-105"
+                    src={unsplash(event.imgs[0], 480, 280)}
                     alt={event.title}
+                    loading="lazy"
                   />
-                </div>
-                <div className="min-w-0 text-left">
-                  <div className="font-extrabold tracking-[1.4px] uppercase mb-1.5 text-sm text-gold-dark">
+                  <span className="absolute inset-0 bg-[linear-gradient(180deg,transparent_50%,rgba(7,22,43,0.5)_100%)]" aria-hidden />
+                  <div className="absolute left-3 bottom-2.5 text-[11px] font-bold tracking-[1.2px] uppercase text-gold-light">
                     {event.date}
                   </div>
-                  <div className="font-serif text-[18px] leading-[1.2] text-navy-dark font-semibold">
+                </div>
+                <div className="min-w-0 p-4">
+                  <div className="font-serif text-[16px] leading-[1.3] text-navy-dark font-semibold transition-colors duration-300 group-hover:text-gold-dark line-clamp-2">
                     {event.title}
                   </div>
-                  <button
-                    type="button"
-                    className="mt-4 inline-flex w-fit items-center rounded-full bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] px-3 py-1.5 text-xs font-semibold text-navy-deep shadow-glowGold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glowGoldStrong"
-                    onClick={() => setSelectedEvent(featuredEvent)}
-                  >
-                    View Details
-                  </button>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-bold text-navy-mid transition-all duration-300 group-hover:gap-2.5 group-hover:text-gold-dark">
+                    View Details →
+                  </span>
                 </div>
-              </button>
+              </article>
             ))}
           </div>
         </div>
       </section>
+
       {selectedEvent && (
         <div className="p-6 fixed top-0 left-0 inset-0 z-[9999] flex items-center justify-center">
           <button
@@ -149,7 +151,7 @@ const Events: React.FC = () => {
           />
           <div className="max-h-[min(760px,calc(100vh-48px))] relative max-w-4xl w-full mx-4 bg-white border border-[rgba(15,47,87,0.12)] rounded-2xl shadow-[0_40px_90px_rgba(10,31,61,0.35)] overflow-hidden">
             <span
-              className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#1B4C7F,#F2B84B)]"
+              className="pointer-events-none absolute inset-x-0 top-0 h-1 z-10 bg-[linear-gradient(90deg,#1B4C7F,#F2B84B)]"
               aria-hidden
             />
             <button
@@ -163,8 +165,7 @@ const Events: React.FC = () => {
 
             <div className="w-full">
               <div className="p-4">
-                {selectedEvent.image.imagePart &&
-                selectedEvent.image.imagePart.length > 1 ? (
+                {selectedEvent.imgs.length > 1 ? (
                   <Slider
                     {...{
                       dots: true,
@@ -174,23 +175,21 @@ const Events: React.FC = () => {
                       slidesToScroll: 1,
                     }}
                   >
-                    {selectedEvent.image.imagePart.map(
-                      (src: string, idx: number) => (
-                        <div key={idx} className="rounded-md overflow-hidden">
-                          <img
-                            className="w-full h-72 object-cover"
-                            src={src}
-                            alt={`${selectedEvent.title} ${idx + 1}`}
-                          />
-                        </div>
-                      ),
-                    )}
+                    {selectedEvent.imgs.map((id, idx) => (
+                      <div key={idx} className="rounded-md overflow-hidden">
+                        <img
+                          className="w-full h-72 object-cover"
+                          src={unsplash(id, 900, 560)}
+                          alt={`${selectedEvent.title} ${idx + 1}`}
+                        />
+                      </div>
+                    ))}
                   </Slider>
                 ) : (
                   <div className="rounded-md overflow-hidden">
                     <img
                       className="w-full h-72 object-cover"
-                      src={selectedEvent.image.imagePart[0]}
+                      src={unsplash(selectedEvent.imgs[0], 900, 560)}
                       alt={selectedEvent.title}
                     />
                   </div>
