@@ -9,6 +9,13 @@ const counts = [
   { num: '192', label: 'University Merit Holders', ring: 'text-gold-light border-gold/50 bg-gold/15' },
 ];
 
+const toppers = [
+  { position: '1st Position', name: 'Anjali Raj', branch: 'B.Tech (EE)', photo: 'https://i.pravatar.cc/150?img=47' },
+  { position: '2nd Position', name: 'Nimish', branch: 'B.Tech (CE)', photo: 'https://i.pravatar.cc/150?img=68' },
+  { position: '2nd Position', name: 'Sakshi Singh', branch: 'B.Tech (IT)', photo: 'https://i.pravatar.cc/150?img=32' },
+  { position: '3rd Position', name: 'Akshat Rastogi', branch: 'B.Tech (ME)', photo: 'https://i.pravatar.cc/150?img=53' },
+];
+
 const AcademicExcellence = () => {
   return (
     <section className={`${section}`} aria-label="Academic excellence">
@@ -36,6 +43,20 @@ const AcademicExcellence = () => {
               </span>
               <div className="font-display text-[clamp(40px,5vw,56px)] leading-none text-white mb-2">{c.num}</div>
               <div className="text-[12px] font-bold tracking-[1.5px] uppercase text-white/60">{c.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="relative z-[1] grid grid-cols-2 lg:grid-cols-4 gap-[18px] mt-6">
+          {toppers.map((t, i) => (
+            <div
+              key={i}
+              className="flex flex-col items-center text-center py-6 px-5 rounded-[14px] bg-white/[0.06] border border-white/[0.12] transition-all duration-300 hover:-translate-y-[5px] hover:bg-white/10 hover:border-gold/50"
+            >
+              <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-gold-light mb-4">{t.position} – University</div>
+              <img src={t.photo} alt={t.name} className="w-14 h-14 mb-3 rounded-full object-cover border-2 border-gold/50" />
+              <div className="text-white font-semibold text-sm">{t.name}</div>
+              <div className="text-white/50 text-xs mt-1">{t.branch}</div>
             </div>
           ))}
         </div>

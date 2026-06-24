@@ -87,6 +87,10 @@ export default {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(-50%)' },
         },
+        'marquee-reverse': {
+          from: { transform: 'translateX(-50%)' },
+          to: { transform: 'translateX(0)' },
+        },
         shimmer: {
           '100%': { transform: 'translateX(100%)' },
         },
@@ -109,6 +113,7 @@ export default {
         softPulse: 'softPulse 2s infinite',
         floaty: 'floaty 6s ease-in-out infinite',
         marquee: 'marquee 32s linear infinite',
+        'marquee-reverse': 'marquee-reverse 32s linear infinite',
         marqueeSlow: 'marquee 55s linear infinite',
         spinSlow: 'spinSlow 22s linear infinite',
         aurora: 'aurora 18s ease-in-out infinite',

@@ -1,81 +1,110 @@
-import React from 'react';
-import { section, eyebrow, sectionTitle, titleAccent } from '../utils/tw';
-import { unsplash, themeImg } from '../utils/placeholder';
-import Icon from './Icon';
+import {
+  section,
+  eyebrow,
+  sectionTitle,
+  titleAccent,
+  glassCard,
+  btnGold,
+  btnOutline,
+} from '../utils/tw';
 
-const cards = [
-  {
-    img: themeImg.campus,
-    title: 'Smart Academic Blocks',
-    desc: 'Interactive smart classrooms, modern labs and digital infrastructure built to support focused, technology-led learning.',
-  },
-  {
-    img: themeImg.robotics,
-    title: 'Research & Innovation Labs',
-    desc: 'Specialised labs for AI, IoT, robotics and core engineering streams that turn theory into hands-on work and prototypes.',
-  },
-  {
-    img: themeImg.graduates,
-    title: 'Student Life & Wellbeing',
-    desc: 'Hostels, sports grounds, an on-campus health centre and ambulance access that contribute to holistic student wellbeing.',
-  },
+const facilities = [
+  { icon: '🖥️', title: 'Smart Classrooms',         desc: 'Interactive panels and digital boards in every classroom for tech-led learning.' },
+  { icon: '🤖', title: 'Robotics, AI & IoT Labs',   desc: 'State-of-the-art innovation and research facilities for next-gen engineers.' },
+  { icon: '📚', title: 'Central Digital Library',   desc: '50,000+ volumes with full digital access, e-resources and reading zones.' },
+  { icon: '🔬', title: 'Department-Specific Labs',  desc: 'Specialized labs for each engineering and science stream with industry-grade equipment.' },
+  { icon: '🔧', title: 'Workshop Facilities',       desc: 'Industry-standard mechanical and fabrication workshops for hands-on training.' },
+  { icon: '🏠', title: 'On-Campus Hostel',          desc: 'Separate hostels for boys and girls with 24/7 security and modern amenities.' },
+  { icon: '📶', title: 'Fully Wi-Fi Campus',        desc: 'High-speed internet connectivity across the entire 100-acre campus, 24/7.' },
+  { icon: '🏥', title: 'Medical & Ambulance',       desc: 'On-campus health centre with a resident doctor and ambulance facility 24/7.' },
+  { icon: '🎮', title: 'Indoor Games',              desc: 'Table tennis, chess, carrom and a wide range of indoor sports and recreation.' },
+  { icon: '⚽', title: 'Sports Grounds',            desc: 'Cricket, football, basketball, volleyball and full athletics infrastructure.' },
+  { icon: '🎭', title: 'Auditorium & Seminar Halls',desc: 'Large air-conditioned auditorium and modern seminar halls for events and fests.' },
+  { icon: '💼', title: 'Dedicated Placement Cell',  desc: 'Full-time T&P cell with corporate tie-ups, mock interviews and aptitude prep.' },
+  { icon: '🍽️', title: 'Hygienic Cafeteria',       desc: 'Multi-cuisine mess and canteen with nutritious, hygienic meals every day.' },
+  { icon: '🎯', title: 'Clubs & Societies',         desc: '17+ student clubs spanning technical, cultural, social and entrepreneurial activities.' },
+  { icon: '🏧', title: 'ATM & Stationery Shop',     desc: 'On-campus ATM, stationery, and convenience store for everyday student needs.' },
 ];
 
-const CampusInfrastructure = () => {
-  return (
-    <section className={`${section} bg-[linear-gradient(180deg,#eef3fb,#e6eef9)]`} id="facilities">
-      <div className="relative z-[1] grid grid-cols-1 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] gap-10 lg:gap-14 items-center">
-        {/* Copy + CTA */}
-        <div className="reveal">
-          <div className={eyebrow}>Campus Infrastructure</div>
-          <h2 className={sectionTitle}>
-            A Modern Campus Designed for <span className={titleAccent}>Learning &amp; Student Life</span>
-          </h2>
-          <p className="mt-5 text-base leading-[1.85] text-brand-gray max-w-[460px]">
-            SRMCEM provides a vibrant academic environment supported by modern infrastructure and a
-            student-focused campus, built to support the holistic growth of every student across
-            learning, research and student life.
-          </p>
+const stats = [
+  { value: '100', suffix: '+', label: 'Acre Campus' },
+  { value: '15',  suffix: '+', label: 'Facilities'  },
+  { value: '50K', suffix: '+', label: 'Library Books'},
+  { value: '24',  suffix: '/7', label: 'Security'   },
+];
 
-          <div className="mt-8 flex flex-wrap items-center gap-5">
-            <div>
-              <div className="text-navy-mid font-bold text-[12px] tracking-[1.5px] uppercase mb-1">Admission Helpline</div>
-              <div className="text-navy-dark font-display text-2xl tracking-[1px]">1800-103-5298</div>
-            </div>
-            <a
-              href="tel:18001035298"
-              className="inline-flex items-center justify-center gap-2 px-7 py-[13px] rounded-pill bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] text-navy-deep text-sm font-bold tracking-[0.5px] shadow-glowGold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glowGoldStrong"
-            >
-              <Icon name="phone" className="w-4 h-4" /> Call Now
-            </a>
+const CampusInfrastructure = () => (
+  <section
+    className={`${section} bg-[linear-gradient(180deg,#eef3fb_0%,#e6eef9_100%)] border-y border-[rgba(15,47,87,0.08)]`}
+    id="facilities"
+  >
+    {/* Decorative blobs */}
+    <div aria-hidden className="pointer-events-none absolute -top-24 right-[-4%] w-[400px] h-[400px] rounded-full bg-gold/[0.10] blur-[110px]" />
+    <div aria-hidden className="pointer-events-none absolute -bottom-20 left-[-6%] w-[440px] h-[440px] rounded-full bg-navy-mid/[0.08] blur-[120px]" />
+
+    {/* ── Header ── */}
+    <div className="relative z-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 reveal">
+      <div>
+        <div className={eyebrow}>Campus Infrastructure</div>
+        <h2 className={sectionTitle}>
+          World-Class Facilities<br />
+          <span className={titleAccent}>on 100 Acres</span>
+        </h2>
+      </div>
+      <p className="text-brand-gray text-[15px] leading-[1.8] max-w-[380px] lg:text-right">
+        A vibrant campus designed to support learning, research, sports and holistic
+        student wellbeing — all under one roof.
+      </p>
+    </div>
+
+    {/* ── Stats strip ── */}
+    <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 reveal">
+      {stats.map((s) => (
+        <div
+          key={s.label}
+          className="flex flex-col items-center justify-center py-6 px-4 text-center bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] rounded-xl shadow-card"
+        >
+          <div className="font-black text-[32px] leading-none text-navy-dark">
+            {s.value}
+            <span className="text-gold text-[22px]">{s.suffix}</span>
+          </div>
+          <div className="text-navy-mid text-[11px] font-bold tracking-[2px] uppercase mt-2">{s.label}</div>
+        </div>
+      ))}
+    </div>
+
+    {/* ── Facilities grid ── */}
+    <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {facilities.map((f, i) => (
+        <div
+          key={f.title}
+          className={`${glassCard} flex items-start gap-4 p-5 reveal`}
+          style={{ animationDelay: `${i * 35}ms` }}
+        >
+          {/* Icon */}
+          <div className="flex-shrink-0 w-12 h-12 rounded-[12px] flex items-center justify-center text-2xl bg-navy-mid/[0.08] border border-navy-mid/15 transition-all duration-300 group-hover:scale-110 group-hover:bg-gold/15 group-hover:border-gold/40">
+            {f.icon}
+          </div>
+
+          {/* Text */}
+          <div>
+            <h3 className="text-[14px] font-bold text-navy-dark leading-snug mb-1.5">
+              {f.title}
+            </h3>
+            <p className="text-[13px] leading-[1.65] text-brand-gray">
+              {f.desc}
+            </p>
           </div>
         </div>
+      ))}
+    </div>
 
-        {/* Image cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 reveal">
-          {cards.map((c) => (
-            <article
-              key={c.title}
-              className="group flex flex-col overflow-hidden rounded-md bg-white/80 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] shadow-card transition-all duration-[400ms] ease-out hover:-translate-y-1.5 hover:shadow-hover hover:border-navy-mid/30"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden bg-navy-mid/10">
-                <img
-                  src={unsplash(c.img, 400, 300)}
-                  alt={c.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="text-[14px] font-bold text-navy-dark leading-snug mb-1.5">{c.title}</h3>
-                <p className="text-[12px] leading-[1.6] text-brand-gray">{c.desc}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+    {/* ── CTA ── */}
+    <div className="relative z-10 mt-14 flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
+      <a href="#admissions" className={btnGold}>Apply for 2025–26 →</a>
+      <a href="#facilities"  className={btnOutline}>Virtual Campus Tour</a>
+    </div>
+  </section>
+);
 
 export default CampusInfrastructure;

@@ -25,6 +25,8 @@ import CSR from './CSR';
 import CTA from './CTA';
 import Footer from './Footer';
 import Course from './Programs';
+import CompanyLogos from './CompanyLogos';
+import AcademicPrograms from './AcademicPrograms';
 
 const Home = () => {
   return (
@@ -38,33 +40,46 @@ const Home = () => {
       
       <Accreditation />
       <AcademicExcellence />
-      <WhySRMCEM />
+<Placements />
+ <WorldStage />
+<GovtPlacements />
+<CompanyLogos />
+<AcademicPrograms />
+<IEEE />
+ <News />
+ <TestmonialSlider />
+  <CampusInfrastructure />
+  <Events />
+    <CSR />
+     <Clubs />
+
+      {/* <WhySRMCEM /> */}
 
       {/* Academic credibility */}
       
-      <LegacyStats />
-      <Course />
+      {/* <LegacyStats />
+      <Course /> */}
       {/* Career outcomes */}
       <IndustryOutcomes />
-      <Placements />
-      <GovtPlacements />
+      
+      
 
       {/* Programs & applied learning */}
-      <ProgramsOffered />
-      <AppliedLearning />
-      <IEEE />
+      {/* <ProgramsOffered />
+      <AppliedLearning /> */}
+      
 
       {/* Campus & student life */}
-      <CampusInfrastructure />
-      <Clubs />
-      <WorldStage />
+     
+     
+     
 
       {/* Alumni, news & engagement */}
-      <AlumniOutcomes />
-      <News />
-      <Events />
-      <TestmonialSlider />
-      <CSR />
+      {/* <AlumniOutcomes /> */}
+     
+    
+      
+    
       <CTA />
 
       <Footer />
