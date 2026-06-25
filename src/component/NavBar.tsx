@@ -5,110 +5,181 @@ const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
-  // Prevent scrolling when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
+    return () => { document.body.style.overflow = 'unset'; };
   }, [isMobileMenuOpen]);
 
   const toggleAccordion = (name: string) => {
-    setOpenAccordion(openAccordion === name ? null : name);
+    setOpenAccordion(prev => (prev === name ? null : name));
   };
 
   const navItems = [
     {
       name: 'About Us',
-      links: ['About SRMCEM', 'Vision & Mission', 'Management', 'Principal\'s Message', 'NBA Accreditation', 'NIRF Ranking', 'AKTU Affiliation', 'UPTAC']
+      links: ['About SRMCEM', 'Vision & Mission', 'Management', "Principal's Message", 'NBA Accreditation', 'NIRF Ranking', 'AKTU Affiliation', 'UPTAC'],
     },
     {
       name: 'Departments',
-      links: ['Computer Science (CSE)', 'Information Technology (IT)', 'Electronics & Comm. (ECE)', 'Electrical Engineering (EE)', 'Mechanical Engineering (ME)', 'Civil Engineering (CE)', 'MBA', 'MCA / M.Tech']
+      links: ['Computer Science (CSE)', 'Information Technology (IT)', 'Electronics & Comm. (ECE)', 'Electrical Engineering (EE)', 'Mechanical Engineering (ME)', 'Civil Engineering (CE)', 'MBA', 'MCA / M.Tech'],
     },
     {
       name: 'Admission',
-      links: ['B.Tech Admission', 'MBA Admission', 'MCA Admission', 'M.Tech Admission', 'Diploma / Polytechnic', 'Fee Structure', 'Scholarship', 'UPTAC Counselling']
+      links: ['B.Tech Admission', 'MBA Admission', 'MCA Admission', 'M.Tech Admission', 'Diploma / Polytechnic', 'Fee Structure', 'Scholarship', 'UPTAC Counselling'],
     },
     {
       name: 'Placements',
-      links: ['Placement Overview', 'Recruiters List', 'Placement Statistics', 'Training & Development', 'Internship Cell']
+      links: ['Placement Overview', 'Recruiters List', 'Placement Statistics', 'Training & Development', 'Internship Cell'],
     },
     {
       name: 'Facilities',
-      links: ['Smart Classrooms', 'Laboratories & Labs', 'Library', 'Hostel', 'Sports & Gym', 'Medical Center']
-    }
+      links: ['Smart Classrooms', 'Laboratories & Labs', 'Library', 'Hostel', 'Sports & Gym', 'Medical Center'],
+    },
   ];
 
   return (
-    <nav className="sticky top-0 z-[999] bg-white/75 border-b border-[rgba(15,47,87,0.1)] shadow-card backdrop-blur-glass">
-      <div className="max-w-container mx-auto flex items-stretch justify-between min-h-[66px] px-4 sm:px-6">
-        {/* Brand Logo */}
-        <a className="flex items-center gap-3 py-2" href="https://srmcem.ac.in" target="_blank" rel="noreferrer">
-          <img src={logo} alt="SRMCEM Logo" className="h-11 w-auto object-contain" />
-          <div className="hidden sm:block">
-            <div className="font-serif text-[15px] font-bold leading-[1.2] text-navy-dark">Shri Ramswaroop Memorial</div>
-            <div className="font-sans text-[9.5px] font-semibold tracking-[1.8px] uppercase text-brand-gray">College of Engg. &amp; Management</div>
-          </div>
-        </a>
+    <>
+      {/* ── Main Nav Bar ────────────────────────────────────────────────── */}
+      <nav className="sticky top-0 z-[999] bg-white shadow-[0_2px_12px_rgba(15,23,42,0.08)] border-b border-[rgba(15,47,87,0.1)]">
+        <div className="max-w-[1220px] mx-auto flex items-center justify-between gap-3 px-4 sm:px-6 h-[64px] sm:h-[70px]">
 
-        {/* Desktop Nav Items */}
-        <div className="hidden lg:flex items-stretch">
-          {navItems.map((item, idx) => (
-            <div key={idx} className="group relative flex items-center">
-              <a href="#" className="flex items-center h-full gap-1.5 px-[18px] text-[13px] font-medium tracking-[0.025em] text-navy-dark/80 whitespace-nowrap transition-[background,color] duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:bg-navy-mid/[0.06] group-hover:text-navy-dark">
-                {item.name} <span className="text-[9px] opacity-60">▾</span>
-              </a>
-              <div className="absolute top-full left-0 z-[200] min-w-[210px] flex flex-col py-1.5 bg-white/95 backdrop-blur-glass border border-[rgba(15,47,87,0.1)] border-t-2 border-t-gold rounded-b-[14px] shadow-soft opacity-0 invisible translate-y-2 transition-[opacity,transform,visibility] duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-                {item.links.map((link, lIdx) => (
-                  <a key={lIdx} href="#" className="py-[11px] px-5 text-[13px] text-brand-gray border-l-2 border-l-transparent transition-[background,color,padding,border-color] duration-150 ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-navy-mid/[0.05] hover:text-navy-dark hover:pl-[26px] hover:border-l-gold">{link}</a>
-                ))}
+          {/* Brand — min-w-0 allows text to shrink on narrow phones */}
+          <a
+            href="https://srmcem.ac.in"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 sm:gap-3 min-w-0 shrink-0"
+          >
+            <img
+              src={logo}
+              alt="SRMCEM Logo"
+              className="h-9 w-9 sm:h-11 sm:w-auto object-contain shrink-0"
+            />
+            <div className="min-w-0 hidden xs:block sm:block">
+              <div className="font-serif text-[12px] sm:text-[14px] lg:text-[15px] font-bold leading-tight text-[#0A1F3D] whitespace-nowrap">
+                Shri Ramswaroop Memorial
+              </div>
+              <div className="text-[7.5px] sm:text-[9px] font-semibold tracking-[1.5px] uppercase text-[#475467] whitespace-nowrap">
+                College of Engg. &amp; Management
               </div>
             </div>
-          ))}
-        </div>
+          </a>
 
-        {/* Action Buttons & Hamburger (Mobile) */}
-        <div className="flex items-center gap-3 sm:gap-4">
-          <a href="#admissions" className="hidden sm:inline-flex py-2.5 px-[22px] rounded-pill bg-[linear-gradient(135deg,#1B4C7F,#0F2F57)] text-white text-xs font-bold tracking-[0.025em] whitespace-nowrap shadow-[0_8px_22px_rgba(27,76,127,0.35)] transition-[transform,box-shadow] duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-px hover:shadow-[0_12px_28px_rgba(27,76,127,0.5)]">Apply 2025–26 →</a>
-          <button className="flex lg:hidden flex-col justify-center gap-1.5 w-8 h-8" aria-label="Open menu" onClick={() => setIsMobileMenuOpen(true)}>
-            <span className="block h-[3px] rounded-pill bg-navy-dark transition-all duration-[250ms] ease-[cubic-bezier(0.4,0,0.2,1)]"></span>
-            <span className="block h-[3px] rounded-pill bg-navy-dark transition-all duration-[250ms] ease-[cubic-bezier(0.4,0,0.2,1)] w-4/5 ml-auto"></span>
-            <span className="block h-[3px] rounded-pill bg-navy-dark transition-all duration-[250ms] ease-[cubic-bezier(0.4,0,0.2,1)]"></span>
-          </button>
-        </div>
-      </div>
+          {/* Desktop Nav — lg and above */}
+          <div className="hidden lg:flex items-stretch h-full">
+            {navItems.map((item, idx) => (
+              <div key={idx} className="group relative flex items-center">
+                <a
+                  href="#"
+                  className="flex items-center gap-1 h-full px-4 xl:px-5 text-[13px] font-semibold text-[#0A1F3D]/75 whitespace-nowrap hover:text-[#0A1F3D] hover:bg-[rgba(15,47,87,0.04)] transition-colors duration-150"
+                >
+                  {item.name}
+                  <span className="text-[9px] opacity-50 mt-px">▾</span>
+                </a>
+                {/* Dropdown */}
+                <div className="absolute top-full left-0 z-50 min-w-[200px] flex flex-col py-1 bg-white border border-[rgba(15,47,87,0.1)] border-t-2 border-t-[#F2B84B] rounded-b-xl shadow-[0_14px_40px_rgba(15,23,42,0.12)] opacity-0 invisible translate-y-1.5 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                  {item.links.map((link, lIdx) => (
+                    <a
+                      key={lIdx}
+                      href="#"
+                      className="py-2.5 px-4 text-[13px] text-[#475467] border-l-2 border-transparent hover:bg-[rgba(15,47,87,0.04)] hover:text-[#0A1F3D] hover:pl-5 hover:border-l-[#F2B84B] transition-all duration-150"
+                    >
+                      {link}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
 
-      {/* Mobile Slider Overlay */}
+          {/* Right side: CTA + Hamburger */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            <a
+              href="#admissions"
+              className="hidden sm:inline-flex items-center py-2 px-4 lg:px-5 rounded-full bg-[linear-gradient(135deg,#1B4C7F,#0F2F57)] text-white text-[12px] lg:text-[13px] font-bold whitespace-nowrap shadow-[0_6px_18px_rgba(27,76,127,0.3)] hover:shadow-[0_10px_24px_rgba(27,76,127,0.45)] hover:-translate-y-px transition-all duration-200"
+            >
+              Apply 2025–26
+            </a>
+            {/* Hamburger — visible below lg */}
+            <button
+              className="lg:hidden flex flex-col justify-center gap-[5px] w-9 h-9 p-1 rounded-md hover:bg-[rgba(15,47,87,0.06)] transition-colors duration-150"
+              aria-label="Open navigation menu"
+              onClick={() => setIsMobileMenuOpen(true)}
+            >
+              <span className="block w-full h-[2.5px] rounded-full bg-[#0A1F3D]" />
+              <span className="block w-4/5 h-[2.5px] rounded-full bg-[#0A1F3D] ml-auto" />
+              <span className="block w-full h-[2.5px] rounded-full bg-[#0A1F3D]" />
+            </button>
+          </div>
+
+        </div>
+      </nav>
+
+      {/* ── Mobile Overlay ──────────────────────────────────────────────── */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[2000] bg-black/60" onClick={() => setIsMobileMenuOpen(false)}></div>
+        <div
+          className="fixed inset-0 z-[2000] bg-black/50"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
       )}
 
-      {/* Mobile Slider Menu — white frosted glass */}
-      <div className={`fixed top-0 right-0 bottom-0 z-[2001] flex flex-col w-[85vw] max-w-[380px] bg-white/95 backdrop-blur-glass border-l border-[rgba(15,47,87,0.1)] shadow-[-20px_0_60px_rgba(15,23,42,0.18)] transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        {/* Slider Header */}
-        <div className="flex items-center justify-between py-[22px] px-6 bg-navy-light/60 border-b border-[rgba(15,47,87,0.1)]">
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="SRMCEM Logo" className="h-9 w-auto object-contain" />
-            <div className="text-[13px] font-bold tracking-[0.025em] uppercase text-navy-dark">Menu</div>
+      {/* ── Mobile Slide-in Panel ───────────────────────────────────────── */}
+      <div
+        className={`fixed top-0 right-0 bottom-0 z-[2001] flex flex-col w-[82vw] max-w-[340px] bg-white shadow-[-16px_0_48px_rgba(15,23,42,0.18)] transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        {/* Panel Header */}
+        <div className="shrink-0 flex items-center justify-between px-4 py-3.5 bg-[#E6EEF9] border-b border-[rgba(15,47,87,0.1)]">
+          <div className="flex items-center gap-2.5">
+            <img src={logo} alt="SRMCEM Logo" className="h-8 w-8 object-contain" />
+            <div>
+              <div className="text-[11px] font-bold text-[#0A1F3D] leading-tight">SRMCEM</div>
+              <div className="text-[9px] text-[#475467] font-medium">Navigation Menu</div>
+            </div>
           </div>
-          <button className="w-9 h-9 grid place-items-center rounded-lg border border-[rgba(15,47,87,0.14)] bg-white text-2xl leading-none text-navy-dark transition-[background,border-color,color] duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] hover:border-navy-mid hover:bg-navy hover:text-white" aria-label="Close menu" onClick={() => setIsMobileMenuOpen(false)}>×</button>
+          <button
+            className="w-8 h-8 flex items-center justify-center rounded-lg border border-[rgba(15,47,87,0.18)] bg-white text-[#0A1F3D] text-lg leading-none hover:bg-[#0F2F57] hover:text-white hover:border-[#0F2F57] transition-colors duration-150"
+            aria-label="Close menu"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            ×
+          </button>
         </div>
 
-        {/* Slider Links (Accordion) */}
-        <div className="flex-1 overflow-y-auto py-2.5">
+        {/* Accordion Nav Items */}
+        <div className="flex-1 min-h-0 overflow-y-auto divide-y divide-[rgba(15,47,87,0.08)]">
           {navItems.map((item, idx) => (
-            <div key={idx} className="mx-6 border-b border-[rgba(15,47,87,0.1)]">
+            <div key={idx}>
               <button
-                className="w-full py-[18px] flex items-center justify-between text-left text-sm font-bold tracking-[0.025em] uppercase text-navy-dark group"
-                aria-expanded={openAccordion === item.name}
+                className="w-full flex items-center justify-between px-4 py-[15px] text-left hover:bg-[rgba(15,47,87,0.03)] transition-colors duration-150"
                 onClick={() => toggleAccordion(item.name)}
               >
-                {item.name}
-                <span className="w-7 h-7 grid place-items-center rounded-[5px] border border-[rgba(15,47,87,0.12)] bg-navy-light/60 text-xs text-brand-gray transition-[transform,background,color,border-color] duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] group-aria-expanded:rotate-180 group-aria-expanded:bg-gold/[0.18] group-aria-expanded:text-gold-dark group-aria-expanded:border-gold/40">▼</span>
+                <span className="text-[13px] font-bold uppercase tracking-[0.06em] text-[#0A1F3D]">
+                  {item.name}
+                </span>
+                <span
+                  className={`w-6 h-6 flex items-center justify-center rounded text-[9px] border transition-all duration-200 ${
+                    openAccordion === item.name
+                      ? 'rotate-180 bg-[rgba(242,184,75,0.15)] border-[rgba(242,184,75,0.5)] text-[#D89A2F]'
+                      : 'bg-[#E6EEF9] border-[rgba(15,47,87,0.15)] text-[#475467]'
+                  }`}
+                >
+                  ▼
+                </span>
               </button>
 
               {openAccordion === item.name && (
-                <div className="flex flex-col gap-[14px] pt-1 pb-5 pl-3 animate-[fadeUp_0.3s_cubic-bezier(0.4,0,0.2,1)_both]">
+                <div className="px-4 pb-3 bg-[rgba(15,47,87,0.02)]">
                   {item.links.map((link, lIdx) => (
-                    <a key={lIdx} href="#" className="text-sm font-medium text-brand-gray transition-colors duration-200 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-navy-mid" onClick={() => setIsMobileMenuOpen(false)}>{link}</a>
+                    <a
+                      key={lIdx}
+                      href="#"
+                      className="flex items-center gap-2 py-2 pl-3 text-[13px] text-[#475467] border-l-2 border-transparent hover:border-l-[#F2B84B] hover:text-[#0F2F57] hover:pl-4 transition-all duration-150"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {link}
+                    </a>
                   ))}
                 </div>
               )}
@@ -116,12 +187,18 @@ const NavBar = () => {
           ))}
         </div>
 
-        {/* Bottom Action */}
-        <div className="p-6 bg-navy-light/50 border-t border-[rgba(15,47,87,0.1)]">
-          <a href="#admissions" className="block w-full py-[14px] text-center rounded-pill bg-[linear-gradient(135deg,#1B4C7F,#0F2F57)] text-white text-sm font-bold tracking-[0.025em] uppercase shadow-[0_8px_22px_rgba(27,76,127,0.35)]" onClick={() => setIsMobileMenuOpen(false)}>Apply for Admission 2025</a>
+        {/* Bottom CTA */}
+        <div className="shrink-0 px-4 py-4 bg-[#E6EEF9] border-t border-[rgba(15,47,87,0.1)]">
+          <a
+            href="#admissions"
+            className="flex items-center justify-center w-full py-3 rounded-full bg-[linear-gradient(135deg,#1B4C7F,#0F2F57)] text-white text-[13px] font-bold tracking-[0.06em] uppercase shadow-[0_6px_20px_rgba(27,76,127,0.35)] hover:shadow-[0_10px_28px_rgba(27,76,127,0.45)] transition-shadow duration-200"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Apply for Admission 2025
+          </a>
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 

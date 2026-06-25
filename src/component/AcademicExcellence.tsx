@@ -1,4 +1,4 @@
-import { section, sectionTitle } from '../utils/tw';
+import { eyebrowCenter, section, sectionTitle } from '../utils/tw';
 
 const stats = [
   { num: '18',  label: 'Gold Medalists',         accent: '#F2B84B', accentBg: 'rgba(242,184,75,0.11)',  accentBorder: 'rgba(242,184,75,0.40)',  rankLabel: 'GOLD'   },
@@ -30,15 +30,17 @@ const AcademicExcellence = () => (
       <div className="relative z-[1] px-6 pt-9 pb-8 sm:px-10 sm:pt-11">
         {/* Header */}
         <div className="text-center mb-7">
-          <div className="flex justify-center mb-3">
+          {/* <div className="flex justify-center mb-3">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-pill bg-gold/15 border border-gold/35 text-[10px] font-bold tracking-[2.5px] uppercase text-gold-light">
               <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
               AKTU University Rankings
               <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
             </span>
-          </div>
-          <h2 className={`${sectionTitle} text-white`}>Academic Excellence</h2>
-          <p className="mt-3 text-sm leading-relaxed max-w-2xl mx-auto text-white/55">
+          </div> */}
+          <div className={`${eyebrowCenter} text-[#f2b84b]`}>AKTU University Rankings</div>
+          <h2 className={`${sectionTitle} text-white`}>Our Toppers,
+Our Pride</h2>
+          <p className="mt-3 text-sm leading-relaxed  mx-auto text-white/55">
             SRMCEM students have consistently demonstrated outstanding performance in AKTU examinations,
             reflecting a strong academic culture and dedication to excellence.
           </p>

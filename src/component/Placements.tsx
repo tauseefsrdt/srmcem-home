@@ -17,7 +17,7 @@ const rows = [
 
 const Placements = () => {
   return (
-    <section className={`${section} overflow-hidden`} id="placements">
+    <section className={`${section} !pt-0  overflow-hidden`} id="placements">
       <div className="absolute right-[4vw] top-1/2 -translate-y-1/2 -rotate-90 font-display text-[clamp(120px,18vw,180px)] tracking-[10px] text-navy-mid/[0.05] pointer-events-none z-0 max-[900px]:hidden">PLACEMENTS</div>
 
       <div className={`${sectionHeadCenter} reveal relative z-[1]`}>

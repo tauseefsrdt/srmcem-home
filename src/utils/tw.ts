@@ -8,12 +8,12 @@
 /* ----------------------------------- Layout ---------------------------------- */
 export const container = 'w-full max-w-container mx-auto px-6';
 
-// Section: vertical clamp padding + horizontal gutters that center a 1220px column.
+// Section: fixed vertical padding (64px mobile → 96px desktop) + horizontal gutters.
 // Sections are transparent by default and float over the global light backdrop.
 export const section =
-  'relative py-[clamp(64px,7vw,112px)] px-[max(24px,calc((100%-1220px)/2))]';
+  'relative py-10 lg:py-16 px-[max(24px,calc((100%-1220px)/2))]';
 export const sectionTight =
-  'relative py-[clamp(44px,5vw,76px)] px-[max(24px,calc((100%-1220px)/2))]';
+  'relative py-10 lg:py-16 px-[max(24px,calc((100%-1220px)/2))]';
 
 // Section background modifiers (append after `section`):
 // Default = transparent (shows the body aurora). The others add light bands.

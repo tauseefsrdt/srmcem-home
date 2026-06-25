@@ -159,7 +159,7 @@ const AcademicPrograms = () => (
           Excellence
         </span>
       </h2>
-      <p className={`${sectionDesc} max-w-[620px]`}>
+      <p className={`${sectionDesc} `}>
         AKTU-affiliated programs built around industry demand — with dedicated placement
         drives, cutting-edge labs, and a proven 100% placement track record.
       </p>

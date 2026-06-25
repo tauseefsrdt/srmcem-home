@@ -4,8 +4,8 @@ import SlickSlider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Classes from "../utils/styles/Global.module.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { section, sectionGlass } from "../utils/tw";
 import { alumniData } from "../data/aluminiData";
 import { Alumni } from "../data/aluminiDataTypes";
 import Icon from "./Icon";
@@ -61,9 +61,8 @@ const TestmonialSlider: React.FC = () => {
 
   return (
     <>
-      <div className={`${Classes.container} py-10 md:py-18 lg:py-24`}>
-        <div className="testimonial-part relative w-full">
-          <div className="max-w-6xl mx-auto px-4">
+      <section className={`${section} ${sectionGlass}`}>
+        <div className="relative w-full">
             <div className="text-center max-w-[680px] mx-auto mb-12 reveal">
               <div className="inline-flex justify-center items-center gap-2.5 text-[11px] font-bold tracking-[4px] uppercase mb-[18px] text-navy-mid before:content-[''] before:w-[30px] before:h-0.5 before:bg-gold after:content-[''] after:w-[30px] after:h-0.5 after:bg-gold">In Their Words</div>
               <h2 className="font-serif font-black text-[clamp(28px,3.8vw,46px)] leading-[1.12] tracking-[-0.5px] text-ink">Alumni Testimonials</h2>
@@ -111,9 +110,8 @@ const TestmonialSlider: React.FC = () => {
                 ))}
               </Slider>
             </div>
-          </div>
         </div>
-      </div>
+      </section>
 
       {/* Full-testimonial modal */}
       {selected && (

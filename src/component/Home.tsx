@@ -35,7 +35,7 @@ const Home = () => {
       <NavBar />
       {/* ---- Reference-design sequence + retained original sections ---- */}
       <Hero />
-      <HiringNetwork />
+      {/* <HiringNetwork /> */}
       {/* <Accreditation /> */}
       <AcademicExcellence />
       <Placements />
