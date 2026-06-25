@@ -12,16 +12,16 @@ import img10 from "../../assets/course/image10.png";
 import ProgramGrid, { Course } from "./ProgramCard";
 
 const courses: Course[] = [
-    { id: 1, name: " Computer Science & Engineering", icon: img1, path: "/department/cse-ai-ml" },
-    { id: 2, name: "Computer Science & Engg (AI & ML)", icon: img2, path: "/department/cse-ai-ml" },
-    { id: 3, name: "Computer Science & Engg (Data Science)", icon: img3, path: "/department/data-science" },
-    { id: 4, name: "Computer Science & Engg (IOT)", icon: img4, path: "/department/iot" },
-    { id: 5, name: "Computer Science & Engg (Cyber Security)", icon: img5, path: "/department/cyber-cecurity" },
-    { id: 6, name: "Electronic & Communication Engineering", icon: img10, path: "/department/electronics&communication-engineering" },
-    { id: 7, name: "Information Technology", icon: img6, path: "/department/it" },
-    { id: 8, name: "Mechanical Engineering", icon: img7, path: "/department/mechanical-engineering" },
-    { id: 9, name: "Civil Engineering", icon: img8, path: "/department/civil-engineering" },
-    { id: 10, name: "Electrical Engineering", icon: img9, path: "/department/electrical-engineering" },
+    { id: 1, name: "Computer Science & Engineering", icon: img1, path: "/department/cse-ai-ml", tags: ["CSE", "B.Tech"] },
+    { id: 2, name: "Computer Science & Engg (AI & ML)", icon: img2, path: "/department/cse-ai-ml", tags: ["CSE", "AI & ML", "B.Tech"] },
+    { id: 3, name: "Computer Science & Engg (Data Science)", icon: img3, path: "/department/data-science", tags: ["CSE", "DS", "B.Tech"] },
+    { id: 4, name: "Computer Science & Engg (IOT)", icon: img4, path: "/department/iot", tags: ["CSE", "IOT", "B.Tech"] },
+    { id: 5, name: "Computer Science & Engg (Cyber Security)", icon: img5, path: "/department/cyber-cecurity", tags: ["CSE", "Cyber Sec", "B.Tech"] },
+    { id: 6, name: "Electronic & Communication Engineering", icon: img10, path: "/department/electronics&communication-engineering", tags: ["ECE", "B.Tech"] },
+    { id: 7, name: "Information Technology", icon: img6, path: "/department/it", tags: ["IT", "B.Tech"] },
+    { id: 8, name: "Mechanical Engineering", icon: img7, path: "/department/mechanical-engineering", tags: ["ME", "Core Engg", "B.Tech"] },
+    { id: 9, name: "Civil Engineering", icon: img8, path: "/department/civil-engineering", tags: ["CE", "Core Engg", "B.Tech"] },
+    { id: 10, name: "Electrical Engineering", icon: img9, path: "/department/electrical-engineering", tags: ["EE", "Core Engg", "B.Tech"] },
 ];
 
 type ProgProps = { images?: string[] };

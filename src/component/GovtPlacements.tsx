@@ -16,7 +16,7 @@ const GovtPlacements = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_70%_at_20%_40%,rgba(27,76,127,0.10)_0%,transparent_60%)]"></div>
       <div className="mb-14 reveal">
         <div className={`${eyebrow} text-navy-mid`}>Government Sector</div>
-        <h2 className={`${sectionTitle} text-ink`}>Proudly Serving<br />the Nation</h2>
+        <h2 className={`${sectionTitle} text-ink`}>Proudly Serving the Nation</h2>
         <p className="mt-[18px] text-base leading-[1.85] text-brand-gray max-w-[680px]">From IAS to ISRO — SRMCEM alumni serve at the highest levels of India's government and public sector.</p>
       </div>
 

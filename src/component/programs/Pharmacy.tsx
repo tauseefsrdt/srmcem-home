@@ -4,8 +4,8 @@ import img2 from "../../assets/course/image13.png";
 import ProgramGrid, { Course } from "./ProgramCard";
 
 const courses: Course[] = [
-    { id: 0, name: "B. Pharm.", icon: img1, path: "/department/pharmacy" },
-    { id: 1, name: "D. Pharm.", icon: img2, path: "/department/pharmacy" },
+    { id: 0, name: "B. Pharm.", icon: img1, path: "/department/pharmacy", tags: ["B.Pharm", "UG"] },
+    { id: 1, name: "D. Pharm.", icon: img2, path: "/department/pharmacy", tags: ["D.Pharm", "Diploma"] },
 ];
 
 type ProgProps = { images?: string[] };

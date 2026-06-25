@@ -5,7 +5,7 @@ import ComputerApplication from "./programs/ComputerApplication";
 import Pharmacy from "./programs/Pharmacy";
 import Management from "./programs/Management";
 import Commerce from "./programs/Commerce";
-import { section } from "../utils/tw";
+import { eyebrow, section, sectionTitle } from "../utils/tw";
 
 
 export const tabData: tabDataType[] = [
@@ -50,18 +50,13 @@ const { heading, tabs } = tabData[0];
 const AcademicPrograms: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
   return (
-    <section className="py-7 md:py-10 lg:py-14 ">
+    <section className={`${section} bg-[linear-gradient(180deg,#FFFFFF_0%,#E0F1FF_100%)]`}>
       <div className="w-full">
-        <div className={`${section}`}>
-          {heading.map((item: any, index: any) => {
-            return (
-              <div className="heading" key={index}>
-                <h2 className="text-center text-3xl lg:text-4xl font-bold ">{item.h1}</h2>
-                <p className="text-center mt-3 lg:mt-4  ">{item.para}</p>
+              <div className="mb-14 reveal" >
+                        <div className={`${eyebrow} text-navy-mid`}>Courses</div>
+                        <h2 className={`${sectionTitle} text-ink`}>Our Courses</h2>
+                     
               </div>
-            );
-          })}
-
           <ul className="w-full flex sm:justify-center space-x-2 sm:space-x-4 lg:space-x-10 mt-6 lg:mt-10 overflow-x-auto manage_button_scroll">
             {tabs.map((item: any) => (
               <li
@@ -79,7 +74,7 @@ const AcademicPrograms: React.FC = () => {
           </ul>
           <div className="mt-14">{tabs[activeTab].content}</div>
         </div>
-      </div>
+      
     </section>
   );
 };

@@ -98,7 +98,7 @@ const NavBar = () => {
               href="#admissions"
               className="hidden sm:inline-flex items-center py-2 px-4 lg:px-5 rounded-full bg-[linear-gradient(135deg,#1B4C7F,#0F2F57)] text-white text-[12px] lg:text-[13px] font-bold whitespace-nowrap shadow-[0_6px_18px_rgba(27,76,127,0.3)] hover:shadow-[0_10px_24px_rgba(27,76,127,0.45)] hover:-translate-y-px transition-all duration-200"
             >
-              Apply 2025–26
+              Apply 2026–27
             </a>
             {/* Hamburger — visible below lg */}
             <button

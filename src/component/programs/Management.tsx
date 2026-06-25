@@ -4,8 +4,8 @@ import img18 from "../../assets/course/image18.png";
 import ProgramGrid, { Course } from "./ProgramCard";
 
 const courses: Course[] = [
-    { id: 1, name: "BBA", icon: img18, isLink: true, path: "https://www.srmcm.ac.in/" },
-    { id: 2, name: "MBA", icon: img17, path: "/department/management" },
+    { id: 1, name: "BBA", icon: img18, isLink: true, path: "https://www.srmcm.ac.in/", tags: ["BBA", "UG"] },
+    { id: 2, name: "MBA", icon: img17, path: "/department/management", tags: ["MBA", "PG"] },
 ];
 
 type ProgProps = { images?: string[] };
