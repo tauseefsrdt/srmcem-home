@@ -31,7 +31,7 @@ const AcademicExcellence = () => (
       <div className="relative z-[1] px-6 pt-9 pb-8 sm:px-10 sm:pt-11">
         {/* Header */}
         <div className="mb-8">
-          <div className={`${eyebrow} text-[#f2b84b]`}>AKTU University Rankings</div>
+          <div className={`${eyebrow} !text-[#f2b84b]`}>AKTU University Rankings</div>
           <h2 className={`${sectionTitle} text-white`}>Our Toppers,Our Pride</h2>
         </div>
 
@@ -40,7 +40,7 @@ const AcademicExcellence = () => (
           {stats.map((s) => (
             <div
               key={s.label}
-              className="group relative flex flex-col items-center text-center px-4 py-7 rounded-2xl bg-white/[0.06] border border-white/[0.10] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.10] hover:border-white/[0.18]"
+              className="group relative flex flex-col items-center text-center px-4 py-7 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.10] hover:border-white/[0.18]"
             >
               {/* Subtle glow behind emoji */}
               <div
@@ -73,7 +73,7 @@ const AcademicExcellence = () => (
         {/* Divider */}
         <div className="flex items-center gap-3 mb-4">
           <div className="flex-1 h-px bg-white/[0.09]" />
-          <span className="text-[9px] font-bold tracking-[2px] uppercase text-white/35 px-3">University Toppers</span>
+          <span className="text-[14px] font-bold tracking-[2px] uppercase text-white/80 px-3">University Toppers</span>
           <div className="flex-1 h-px bg-white/[0.09]" />
         </div>
 

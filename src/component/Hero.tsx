@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Icon from './Icon';
-import bannerVideo from '../assets/banner-video.mp4';
+import bannerVideo from '../assets/banner-video1.mp4';
 
 const accreditations = ['NBA Accredited', 'AICTE Approved', 'AKTU Affiliated', 'LU Recognised'];
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { section, eyebrow, sectionTitle, sectionDesc } from '../utils/tw';
-import bestPackages from '../assets/best-packages.png';
+import bestPackages from '../assets/best-packages1.png';
 
 const minis = [
   { num: '450+',  label: 'Multiple Offers / Student' },
@@ -38,7 +38,7 @@ const Placements = () => {
       <div className="mb-14 reveal relative z-[1]">
         <div className={`${eyebrow} !text-gold-light`}>Career Success</div>
         <h2 className={`${sectionTitle} text-white`}>
-          2500+ Job Offers.<br />Every Year.
+          2500+ Job Offers.<span className="text-[#f2b84b]"> Every Year.</span>
         </h2>
         <p className={`${sectionDesc} !text-white/65 !mx-0`}>
           100%+ Placement Score in CS &amp; IT, Management, Computer Applications, and Polytechnic.

@@ -23,9 +23,9 @@ export default {
         'card-bg': '#F9FAFC',
       },
       fontFamily: {
-        sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
-        serif: ['Fraunces', 'Georgia', 'serif'],
-        display: ['Sora', 'Space Grotesk', 'sans-serif'],
+        sans: ['Rubik', 'sans-serif'],
+        serif: ['Rubik', 'sans-serif'],
+        display: ['Rubik', 'sans-serif'],
       },
       borderRadius: {
         sm: '10px',

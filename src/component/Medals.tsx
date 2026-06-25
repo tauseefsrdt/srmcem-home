@@ -24,7 +24,7 @@ const Medals = () => {
   return (
     <section className={`${section} bg-[linear-gradient(150deg,#0a1f3d_0%,#0f2f57_100%)] text-white overflow-hidden before:content-['🏆'] before:absolute before:right-[4vw] before:top-1/2 before:-translate-y-1/2 before:text-[260px] before:opacity-[0.04] before:pointer-events-none`}>
       <div className={`${sectionHeadCenter} max-[640px]:mb-9 relative z-[1] reveal`}>
-        <div className={`${eyebrowCenter} text-gold-light`}>AKTU University Rankings</div>
+        <div className={`${eyebrowCenter} !text-gold-light`}>AKTU University Rankings</div>
         <h2 className={`${sectionTitle} text-white`}>A Legacy of Academic Excellence</h2>
       </div>
 

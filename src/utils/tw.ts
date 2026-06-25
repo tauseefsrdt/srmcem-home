@@ -43,7 +43,7 @@ export const eyebrowCenter =
 
 // Section title — dark ink on the light backdrop. Append a color to override.
 export const sectionTitle =
-  'font-serif font-black text-[clamp(26px,3vw,40px)] leading-[1.12] tracking-[-0.5px] text-ink';
+  'font-serif font-black text-[clamp(24px,2vw,32px)] leading-[1.12] tracking-[-0.5px] text-ink';
 // Blue-gradient text accent for emphasis words inside a title.
 export const titleAccent =
   'bg-[linear-gradient(120deg,#1B4C7F,#0F2F57)] bg-clip-text text-transparent';

@@ -84,7 +84,7 @@ const Clubs = () => {
       <div className="mb-14 reveal relative z-[1]">
         <div className={eyebrow}>Student Life</div>
         <h2 className={sectionTitle}>17+ Clubs &amp; Societies —<br />Find Your Tribe</h2>
-        <p className="mt-[18px] text-base leading-[1.85] text-brand-gray max-w-[680px]">Becoming part of a student club at SRMCEM is more than a pastime — it's a journey of transformation. It links you to a dynamic community, fosters personal growth and ensures endless fun!</p>
+        <p className="mt-[18px] text-base leading-[1.85] text-brand-gray">Becoming part of a student club at SRMCEM is more than a pastime — it's a journey of transformation. It links you to a dynamic community, fosters personal growth and ensures endless fun!</p>
       </div>
 
       <div className="relative z-[1] reveal [&_.slick-track]:flex [&_.slick-slide]:h-auto [&_.slick-slide>div]:h-full [&_.slick-dots]:bottom-[-42px]">

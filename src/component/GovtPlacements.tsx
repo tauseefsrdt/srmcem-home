@@ -17,7 +17,7 @@ const GovtPlacements = () => {
       <div className="mb-14 reveal">
         <div className={`${eyebrow} text-navy-mid`}>Government Sector</div>
         <h2 className={`${sectionTitle} text-ink`}>Proudly Serving the Nation</h2>
-        <p className="mt-[18px] text-base leading-[1.85] text-brand-gray max-w-[680px]">From IAS to ISRO — SRMCEM alumni serve at the highest levels of India's government and public sector.</p>
+        <p className="mt-[18px] text-base leading-[1.85] text-brand-gray ">From IAS to ISRO — SRMCEM alumni serve at the highest levels of India's government and public sector.</p>
       </div>
 
       <div className="grid grid-cols-4 gap-[18px] max-[900px]:grid-cols-2 max-[560px]:grid-cols-1 reveal">
