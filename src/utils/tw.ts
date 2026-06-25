@@ -61,7 +61,7 @@ export const glassSubtle =
   'bg-white/50 backdrop-blur-glass border border-[rgba(15,47,87,0.08)] rounded-lg';
 // Interactive glass card: lifts + gains a blue-tinted shadow on hover.
 export const glassCard =
-  'group relative overflow-hidden bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] rounded-lg shadow-card transition-all duration-[400ms] ease-out hover:-translate-y-1.5 hover:bg-white hover:border-navy-mid/30 hover:shadow-hover';
+  'group relative overflow-hidden bg-white/90 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] rounded-lg shadow-card transition-all duration-[400ms] ease-out hover:-translate-y-1.5 hover:bg-white hover:border-navy-mid/30 hover:shadow-hover';
 // Stronger emphasis panel (feature blocks).
 export const glassPanel =
   'relative overflow-hidden bg-white/80 backdrop-blur-glass border border-[rgba(15,47,87,0.12)] rounded-lg shadow-soft';

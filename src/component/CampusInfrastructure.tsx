@@ -123,7 +123,7 @@ const CampusInfrastructure = () => {
             World-Class Facilities
           </h2>
 
-          <p className="mt-[18px] max-w-2xl text-base leading-[1.85] text-white/80">
+          <p className="mt-[18px]  text-base leading-[1.85] text-white/80">
             A vibrant campus designed to support learning, research, sports and
             holistic student wellbeing — all under one roof.
           </p>
@@ -134,19 +134,19 @@ const CampusInfrastructure = () => {
           {facilities.map((f, i) => (
             <div
               key={f.title}
-              className={`${glassCard} flex items-start gap-4 rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur-md transition-all duration-300 hover:border-gold/40 hover:bg-white/15`}
+              className={`${glassCard} group flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:border-navy hover:bg-navy hover:shadow-md`}
               style={{ animationDelay: `${i * 35}ms` }}
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-2xl transition-all duration-300 hover:scale-110 hover:border-gold/40 hover:bg-gold/15">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-gold/20 bg-gold/10 text-2xl transition-all duration-300 group-hover:border-white/20 group-hover:bg-white/10">
                 {f.icon}
               </div>
 
               <div>
-                <h3 className="mb-2 text-[15px] font-semibold text-white">
+                <h3 className="mb-2 text-[15px] font-semibold text-slate-800 transition-colors duration-300 group-hover:text-[#000]">
                   {f.title}
                 </h3>
 
-                <p className="text-[13px] leading-[1.7] text-white/75">
+                <p className="text-[13px] leading-[1.7] text-slate-500 transition-colors duration-300 group-hover:text-[#000]/70">
                   {f.desc}
                 </p>
               </div>

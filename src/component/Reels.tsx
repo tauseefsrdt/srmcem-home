@@ -18,26 +18,31 @@ import Icon, { IconName } from "./Icon";
 const chapters: {
   icon: IconName;
   title: string;
+  subtitle:string;
   video: string;
 }[] = [
   {
     icon: "cpu",
     title: "Abhiyukti",
+    subtitle: "The Annual Cultural Fest",
     video: reels1,
   },
   {
     icon: "radio",
     title: "Spardha",
+    subtitle: "The Annual Sports Fes",
     video: reels2,
   },
   {
     icon: "zap",
     title: "Best Women Coder Award",
+    subtitle: "Women Coder Award",
     video: reels3,
   },
   {
     icon: "battery",
     title: "Gantavya",
+    subtitle: "The Annual Tech Fest",
     video: reels4,
   },
 ];
@@ -70,7 +75,7 @@ const Reels = () => {
               />
             </div>
 
-            <div className="flex items-center gap-3 p-4">
+            <div className="flex flex-col gap-2 p-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-100 text-navy-mid">
                 <Icon name={chapter.icon} className="h-5 w-5" />
               </div>
@@ -78,6 +83,7 @@ const Reels = () => {
               <h3 className="text-sm font-semibold text-navy-dark">
                 {chapter.title}
               </h3>
+              <h4 className="text-[9px] text-[#f2b84b] font-semibold uppercase">{chapter.subtitle}</h4>
             </div>
           </article>
         ))}
