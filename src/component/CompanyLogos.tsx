@@ -1,8 +1,7 @@
 import React from 'react';
 import {
   section,
-  sectionHeadCenter,
-  eyebrowCenter,
+  eyebrow,
   sectionTitle,
 } from '../utils/tw';
 
@@ -117,18 +116,18 @@ const CompanyLogos = () => (
     `}</style>
 
     <section
-      className={`${section} bg-[linear-gradient(180deg,#eef3fb_0%,#e6eef9_100%)] border-y border-[rgba(15,47,87,0.08)]`}
+      className={`${section} bg-[linear-gradient(180deg,#FFFFFF_0%,#E6E6E7_100%)]`}
       id="companies"
     >
-      <div className={`${sectionHeadCenter} reveal`}>
-        <div className={eyebrowCenter}>250+ Recruiters</div>
-        <h2 className={sectionTitle}>Companies That Hire Our Graduates</h2>
+      <div className="mb-14 reveal">
+        <div className={eyebrow}>250+ Recruiters</div>
+        <h2 className={sectionTitle}>Companies That<br />Hire Our Graduates</h2>
       </div>
 
       <div className="space-y-10">
         {categories.map((cat, i) => (
           <div key={i} className="reveal">
-            <div className="flex justify-center mb-5">
+            <div className="mb-5">
               <span className="inline-block bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] border-l-[3px] border-l-gold px-4 py-1.5 text-[11px] font-bold tracking-[3px] uppercase text-navy-mid">
                 {cat.label}
               </span>

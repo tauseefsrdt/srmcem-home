@@ -2,9 +2,7 @@ import React from 'react';
 import { newsData } from "../data/homeData";
 import {
   section,
-  sectionGlass,
-  sectionHeadCenter,
-  eyebrowCenter,
+  eyebrow,
   sectionTitle,
   pill,
   pillGold,
@@ -36,10 +34,10 @@ const News = () => {
   const sideItems = newsData.slice(1);
 
   return (
-    <section className={`${section} ${sectionGlass}`} id="news">
-      <div className={`${sectionHeadCenter} reveal`}>
-        <div className={`${eyebrowCenter} text-navy-mid`}>Latest Events &amp; News</div>
-        <h2 className={`${sectionTitle} text-ink`}>What's Happening at SRMCEM</h2>
+    <section className={`${section} bg-[linear-gradient(180deg,#FFFFFF_0%,#E0F1FF_100%)]`} id="news">
+      <div className="mb-14 reveal">
+        <div className={`${eyebrow} text-navy-mid`}>Latest Events &amp; News</div>
+        <h2 className={`${sectionTitle} text-ink`}>What's Happening<br />at SRMCEM</h2>
       </div>
 
       <div className="grid grid-cols-1 min-[993px]:grid-cols-[1.2fr_1fr] gap-6 reveal">

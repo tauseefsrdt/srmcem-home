@@ -9,13 +9,20 @@ const programsList = ['Select Program', 'B.Tech', 'M.Tech', 'MBA', 'MCA', 'BBA',
 const states = ['Select State', 'Uttar Pradesh', 'Bihar', 'Madhya Pradesh', 'Uttarakhand', 'Delhi', 'Other'];
 const cities = ['Select City', 'Lucknow', 'Kanpur', 'Varanasi', 'Prayagraj', 'Gorakhpur', 'Other'];
 
+const heroStats = [
+  { label: 'Years of Excellence', suffix: '+', idx: 0 },
+  { label: 'Annual Job Offers',   suffix: '+', idx: 1 },
+  { label: 'Companies on Campus', suffix: '+', idx: 2 },
+  { label: 'Placement in CS & IT', suffix: '%', idx: 3 },
+];
+
 const Hero = () => {
   const statsRef = useRef<HTMLDivElement | null>(null);
   const [counts, setCounts] = useState<number[]>([0, 0, 0, 0]);
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    const stats = [27, 20, 3700, 1000];
+    const stats = [25, 2500, 250, 100];
     const duration = 1400; // ms
 
     let started = false;
@@ -64,7 +71,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative overflow-hidden bg-[radial-gradient(circle_at_20%_10%,#1B4C7F_0%,#0F2F57_52%,#0A1F3D_100%)]"
+      className="relative overflow-hidden bg-[radial-gradient(circle_at_25%_20%,#1B6AB5_0%,#0F4A85_55%,#0B3870_100%)]"
       id="home"
       aria-label="Admissions hero"
     >
@@ -80,7 +87,6 @@ const Hero = () => {
       />
       <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(8,22,46,0.82)_0%,rgba(11,33,66,0.5)_45%,rgba(11,33,66,0.2)_100%)]" aria-hidden />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_80%_at_110%_50%,rgba(242,184,75,0.18)_0%,transparent_65%),radial-gradient(ellipse_50%_60%_at_-10%_70%,rgba(27,76,127,0.5)_0%,transparent_60%)]" aria-hidden />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[length:60px_60px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_40%,#000_40%,transparent_100%)]" aria-hidden />
 
       <div className="relative z-[2] max-w-container mx-auto px-6 py-[clamp(56px,7vw,96px)]">
         <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_minmax(0,430px)] gap-12 lg:gap-16 items-center">
@@ -88,18 +94,17 @@ const Hero = () => {
           <div className="flex flex-col items-start text-left max-lg:items-center max-lg:text-center">
             <div className="animate-fadeUp [animation-delay:0.05s] inline-flex items-center w-fit px-[18px] py-2 mb-[22px] rounded-pill bg-gold/[0.16] border border-gold/[0.45] text-gold-light text-[11px] font-semibold tracking-[3px] uppercase">
               <span className="w-1.5 h-1.5 mr-2.5 rounded-full bg-gold shadow-[0_0_8px_rgba(242,184,75,0.9)] animate-softPulse"></span>
-              Admissions Open 2026-27
+              Admissions 2025–26 Now Open
             </div>
             <h1 className="animate-fadeUp [animation-delay:0.15s] font-serif font-black text-[clamp(30px,4.1vw,54px)] leading-[1.12] text-white mb-3">
-              Build Your Future at SRMCEM
-              <span className="block mt-2 font-bold text-[clamp(16px,2vw,22px)] text-white/80">One of Lucknow&apos;s Most Trusted Engineering &amp; Management Colleges</span>
+              Shri Ramswaroop<br />
+              Memorial College
+              <span className="block mt-2 font-bold text-[clamp(16px,2vw,22px)] text-white/80">Engineering &amp; Management · Lucknow</span>
             </h1>
-            {/* <p className="animate-fadeUp [animation-delay:0.25s] text-base leading-[1.85] text-white/70 max-w-[600px] mb-6 max-lg:mx-auto">
-              For 27+ years, SRMCEM has been shaping future-ready engineers and managers through
-              academic excellence, innovation-driven learning and strong industry exposure. Guided by
-              the vision of two IIT Kanpur Gold Medalists, the institution combines quality education
-              with practical, career-focused training.
-            </p> */}
+            <p className="animate-fadeUp [animation-delay:0.25s] text-base leading-[1.85] text-white/70 max-w-[600px] mb-6">
+              25 years of academic excellence. NBA Accredited · AICTE Approved · AKTU Affiliated.
+              Robotics World Champions. 2500+ Annual Job Offers. IAS, IPS &amp; ISRO Alumni.
+            </p>
 
             {/* Accreditation chips */}
             <div className="animate-fadeUp [animation-delay:0.3s] flex flex-wrap gap-2.5 mb-7 max-lg:justify-center">
@@ -119,12 +124,7 @@ const Hero = () => {
               className="animate-fadeUp [animation-delay:0.38s] flex gap-10 items-center mt-9 pt-7 border-t border-white/10 text-white/85 max-[640px]:gap-[18px] max-[640px]:flex-wrap max-lg:justify-center"
               ref={statsRef}
             >
-              {[
-                { label: 'Years Of Experience', suffix: '+', idx: 0 },
-                { label: 'Number Of Courses', suffix: '+', idx: 1 },
-                { label: 'Students', suffix: '+', idx: 2 },
-                { label: 'Number Of Placements', suffix: '+', idx: 3 },
-              ].map((s) => (
+              {heroStats.map((s) => (
                 <div className="flex flex-col items-start max-lg:items-center" key={s.label}>
                   <div className="font-serif font-black text-[28px] text-gold leading-none [text-shadow:0_6px_18px_rgba(7,22,46,0.6)] max-[640px]:text-[22px]">{counts[s.idx].toLocaleString()}{s.suffix}</div>
                   <div className="mt-1.5 text-xs text-white/65 normal-case">{s.label}</div>

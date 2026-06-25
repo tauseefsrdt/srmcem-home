@@ -4,8 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import {
   section,
-  sectionHeadCenter,
-  eyebrowCenter,
+  eyebrow,
   sectionTitle,
   sectionDesc,
   pill,
@@ -78,14 +77,14 @@ const Clubs = () => {
   };
 
   return (
-    <section className={`${section} bg-white/55 backdrop-blur-glass border-y border-[rgba(15,47,87,0.08)]`} id="clubs">
+    <section className={`${section} bg-[#FFFFFF]`} id="clubs">
       <div aria-hidden className="pointer-events-none absolute -top-16 right-[-6%] w-[420px] h-[420px] rounded-full bg-gold/[0.10] blur-[120px]" />
       <div aria-hidden className="pointer-events-none absolute -bottom-20 left-[-8%] w-[440px] h-[440px] rounded-full bg-navy-mid/[0.10] blur-[120px]" />
 
-      <div className={`${sectionHeadCenter} reveal relative z-[1]`}>
-        <div className={eyebrowCenter}>Student Life</div>
-        <h2 className={sectionTitle}>17+ Clubs &amp; Societies — Find Your Tribe</h2>
-        <p className={`${sectionDesc} mx-auto`}>Becoming part of a student club at SRMCEM is more than a pastime — it's a journey of transformation. It links you to a dynamic community, fosters personal growth and ensures endless fun!</p>
+      <div className="mb-14 reveal relative z-[1]">
+        <div className={eyebrow}>Student Life</div>
+        <h2 className={sectionTitle}>17+ Clubs &amp; Societies —<br />Find Your Tribe</h2>
+        <p className="mt-[18px] text-base leading-[1.85] text-brand-gray max-w-[680px]">Becoming part of a student club at SRMCEM is more than a pastime — it's a journey of transformation. It links you to a dynamic community, fosters personal growth and ensures endless fun!</p>
       </div>
 
       <div className="relative z-[1] reveal [&_.slick-track]:flex [&_.slick-slide]:h-auto [&_.slick-slide>div]:h-full [&_.slick-dots]:bottom-[-42px]">

@@ -27,6 +27,7 @@ import Footer from "./Footer";
 import Course from "./Programs";
 import CompanyLogos from "./CompanyLogos";
 import AcademicPrograms from "./AcademicPrograms";
+import Reels from "./Reels";
 
 const Home = () => {
   return (
@@ -48,6 +49,7 @@ const Home = () => {
       <TestmonialSlider />
       <CampusInfrastructure />
       {/* <Events /> */}
+      <Reels />
       <CSR />
       <Clubs />
       <CTA />

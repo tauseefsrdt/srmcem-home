@@ -1,23 +1,23 @@
 import React from 'react';
-import { section, sectionHeadCenter, eyebrowCenter, sectionTitle, sectionDesc } from '../utils/tw';
+import { section, eyebrow, sectionTitle } from '../utils/tw';
 import Icon, { IconName } from './Icon';
 import { unsplash } from '../utils/placeholder';
 
 const cells: { icon: IconName; title: string; desc: string; img: string }[] = [
-  { icon: 'landmark', title: '20+ Alumni in Indian Civil Services', desc: 'Serving the nation through prestigious roles in the IAS, IPS, IRS and other civil services, contributing to governance, policy-making and public administration.', img: '1529107386315-e1a2ed48a620' },
-  { icon: 'shield', title: '30+ Alumni in Indian Armed Forces', desc: 'Leading with courage and discipline across the Indian Army, Air Force and other defence services, safeguarding the nation and serving with distinction.', img: '1541872703-74c5e44368f9' },
-  { icon: 'factory', title: '150+ Alumni in Public Sector Undertakings', desc: "Building India's infrastructure, energy and industrial future through careers in leading PSUs including BHEL, NTPC, ONGC, GAIL, PGCIL and other government enterprises.", img: '1473341304170-971dccb5ac1e' },
-  { icon: 'wallet', title: '1000+ Alumni in Public Sector Banks', desc: "Driving India's financial sector through successful careers in SBI, PNB, Bank of Baroda, Canara Bank, Union Bank and other leading public sector banks.", img: '1554224155-6726b3ff858f' }
+  { icon: 'landmark', title: 'UPSC / Civil Services', desc: 'Disha Srivastava (IAS), Vaibhav Chaudhary (IAS), Akshat Jain (IRS), Shivanchal Asthana (Wing Commander, IAF)', img: '1529107386315-e1a2ed48a620' },
+  { icon: 'shield', title: 'IPS & Police Services', desc: 'Sakshi Singh — Indian Police Service (IPS), Bihar Cadre, Batch 2022. Proudly representing SRMCEM in national security.', img: '1541872703-74c5e44368f9' },
+  { icon: 'factory', title: 'Defence & Research', desc: 'Abhilash Ojha — Scientist at ISRO. Anurag Verma — Jr. Research Engineer, RDSO. Neeraj Upadhyay — Patent Officer, Govt. of India.', img: '1473341304170-971dccb5ac1e' },
+  { icon: 'wallet', title: 'PSU & UPSC-ESE', desc: 'Vaishnavi Mishra — UPSC-ESE (Govt. of India). Regular selections in BHEL, NTPC, ONGC through GATE & direct recruitment.', img: '1554224155-6726b3ff858f' },
 ];
 
 const GovtPlacements = () => {
   return (
-    <section className={`${section} bg-[linear-gradient(180deg,#eef3fb,#e6eef9)] overflow-hidden [&>*]:relative [&>*]:z-[1]`}>
+    <section className={`${section} bg-[#FFFFFF] overflow-hidden [&>*]:relative [&>*]:z-[1]`}>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_70%_at_20%_40%,rgba(27,76,127,0.10)_0%,transparent_60%)]"></div>
-      <div className={`${sectionHeadCenter} reveal`}>
-        <div className={`${eyebrowCenter} text-navy-mid`}>Nation Builders</div>
-        <h2 className={`${sectionTitle} text-ink`}>From Campus to National Service</h2>
-        <p className={`${sectionDesc} text-brand-gray mx-auto`}>For over two decades, SRMCEM graduates have contributed to India's progress through distinguished careers in the Civil Services, Armed Forces, Research Organizations, Public Sector Undertakings, and Government Departments. Their achievements reflect a culture of excellence, discipline, and leadership.</p>
+      <div className="mb-14 reveal">
+        <div className={`${eyebrow} text-navy-mid`}>Government Sector</div>
+        <h2 className={`${sectionTitle} text-ink`}>Proudly Serving<br />the Nation</h2>
+        <p className="mt-[18px] text-base leading-[1.85] text-brand-gray max-w-[680px]">From IAS to ISRO — SRMCEM alumni serve at the highest levels of India's government and public sector.</p>
       </div>
 
       <div className="grid grid-cols-4 gap-[18px] max-[900px]:grid-cols-2 max-[560px]:grid-cols-1 reveal">

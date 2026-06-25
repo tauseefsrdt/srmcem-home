@@ -1,17 +1,18 @@
-import { eyebrowCenter, section, sectionTitle } from '../utils/tw';
+import { eyebrow, section, sectionTitle } from '../utils/tw';
+import { avatar } from '../utils/placeholder';
 
 const stats = [
-  { num: '18',  label: 'Gold Medalists',         accent: '#F2B84B', accentBg: 'rgba(242,184,75,0.11)',  accentBorder: 'rgba(242,184,75,0.40)',  rankLabel: 'GOLD'   },
-  { num: '12',  label: 'Silver Medalists',        accent: '#BDC9DB', accentBg: 'rgba(189,201,219,0.08)', accentBorder: 'rgba(189,201,219,0.30)', rankLabel: 'SILVER' },
-  { num: '6',   label: 'Bronze Medalists',        accent: '#D4905A', accentBg: 'rgba(212,144,90,0.09)',  accentBorder: 'rgba(212,144,90,0.35)',  rankLabel: 'BRONZE' },
-  { num: '192', label: 'University Merit Holders', accent: '#F2B84B', accentBg: 'rgba(242,184,75,0.07)',  accentBorder: 'rgba(242,184,75,0.25)',  rankLabel: 'MERIT'  },
+  { num: '18',  label: 'Gold Medalists',          emoji: '🥇', accent: '#F2B84B', glow: 'rgba(242,184,75,0.18)'  },
+  { num: '12',  label: 'Silver Medalists',         emoji: '🥈', accent: '#BDC9DB', glow: 'rgba(189,201,219,0.14)' },
+  { num: '6',   label: 'Bronze Medalists',         emoji: '🥉', accent: '#D4905A', glow: 'rgba(212,144,90,0.16)'  },
+  { num: '192', label: 'University Merit Holders', emoji: '🏆', accent: '#F2B84B', glow: 'rgba(242,184,75,0.14)'  },
 ];
 
 const toppers = [
-  { position: '1st', label: '1st · University', name: 'Anjali Raj',     branch: 'B.Tech (EE)', photo: 'https://i.pravatar.cc/150?img=47' },
-  { position: '2nd', label: '2nd · University', name: 'Nimish',         branch: 'B.Tech (CE)', photo: 'https://i.pravatar.cc/150?img=68' },
-  { position: '2nd', label: '2nd · University', name: 'Sakshi Singh',   branch: 'B.Tech (IT)', photo: 'https://i.pravatar.cc/150?img=32' },
-  { position: '3rd', label: '3rd · University', name: 'Akshat Rastogi', branch: 'B.Tech (ME)', photo: 'https://i.pravatar.cc/150?img=53' },
+  { position: '1st', label: '1st · University', name: 'Anjali Raj',     branch: 'B.Tech (EE)', avatarId: 47 },
+  { position: '2nd', label: '2nd · University', name: 'Nimish',         branch: 'B.Tech (CE)', avatarId: 11 },
+  { position: '2nd', label: '2nd · University', name: 'Sakshi Singh',   branch: 'B.Tech (IT)', avatarId: 26 },
+  { position: '3rd', label: '3rd · University', name: 'Akshat Rastogi', branch: 'B.Tech (ME)', avatarId: 3  },
 ];
 
 const posStyle: Record<string, { ring: string; badge: string }> = {
@@ -21,47 +22,50 @@ const posStyle: Record<string, { ring: string; badge: string }> = {
 };
 
 const AcademicExcellence = () => (
-  <section className={section} aria-label="Academic excellence">
-    <div className="relative z-[1] rounded-lg overflow-hidden bg-[linear-gradient(150deg,#0a1f3d_0%,#0f2f57_100%)] text-white shadow-soft reveal">
+  <section className={`${section} bg-[linear-gradient(180deg,#CEE0EF_0%,#E8F3FB_100%)]`} aria-label="Academic excellence">
+    <div className="relative z-[1] rounded-2xl overflow-hidden bg-[linear-gradient(150deg,#0a1f3d_0%,#0f2f57_100%)] text-white shadow-soft reveal">
       {/* Decorative glows */}
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_80%_5%,rgba(242,184,75,0.09)_0%,transparent_55%)]" />
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(242,184,75,0.55),transparent)]" />
 
       <div className="relative z-[1] px-6 pt-9 pb-8 sm:px-10 sm:pt-11">
         {/* Header */}
-        <div className="text-center mb-7">
-          {/* <div className="flex justify-center mb-3">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-pill bg-gold/15 border border-gold/35 text-[10px] font-bold tracking-[2.5px] uppercase text-gold-light">
-              <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
-              AKTU University Rankings
-              <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
-            </span>
-          </div> */}
-          <div className={`${eyebrowCenter} text-[#f2b84b]`}>AKTU University Rankings</div>
-          <h2 className={`${sectionTitle} text-white`}>Our Toppers,
-Our Pride</h2>
-          <p className="mt-3 text-sm leading-relaxed  mx-auto text-white/55">
-            SRMCEM students have consistently demonstrated outstanding performance in AKTU examinations,
-            reflecting a strong academic culture and dedication to excellence.
-          </p>
+        <div className="mb-8">
+          <div className={`${eyebrow} text-[#f2b84b]`}>AKTU University Rankings</div>
+          <h2 className={`${sectionTitle} text-white`}>Our Toppers,Our Pride</h2>
         </div>
 
         {/* Stats row */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           {stats.map((s) => (
             <div
               key={s.label}
-              className="relative flex flex-col items-center text-center pt-5 pb-5 px-4 rounded-[12px] border overflow-hidden transition-all duration-300 hover:-translate-y-[3px]"
-              style={{ backgroundColor: s.accentBg, borderColor: s.accentBorder }}
+              className="group relative flex flex-col items-center text-center px-4 py-7 rounded-2xl bg-white/[0.06] border border-white/[0.10] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.10] hover:border-white/[0.18]"
             >
-              <div className="absolute inset-x-0 top-0 h-[2px]" style={{ background: `linear-gradient(90deg,transparent,${s.accent},transparent)` }} />
-              <div className="text-[8px] font-black tracking-[2.5px] uppercase mb-2.5 px-2 py-[2px] rounded-pill border" style={{ color: s.accent, borderColor: `${s.accent}38`, backgroundColor: `${s.accent}12` }}>
-                {s.rankLabel}
+              {/* Subtle glow behind emoji */}
+              <div
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full blur-2xl opacity-60 group-hover:opacity-90 transition-opacity duration-300"
+                style={{ background: s.glow }}
+                aria-hidden
+              />
+
+              {/* Emoji icon in frosted tile */}
+              <div className="relative mb-4 w-14 h-14 rounded-2xl bg-white/[0.08] border border-white/[0.12] flex items-center justify-center text-[30px] leading-none select-none">
+                {s.emoji}
               </div>
-              <div className="font-display text-[clamp(34px,4.5vw,46px)] leading-none font-black mb-1" style={{ color: s.accent }}>
+
+              {/* Number */}
+              <div
+                className="font-display text-[clamp(36px,4.5vw,50px)] leading-none font-black mb-2"
+                style={{ color: s.accent }}
+              >
                 {s.num}
               </div>
-              <div className="text-[10px] font-medium tracking-[0.5px] uppercase text-white/50 leading-tight">{s.label}</div>
+
+              {/* Label */}
+              <div className="text-[11px] font-semibold tracking-[0.5px] text-white/55 leading-tight">
+                {s.label}
+              </div>
             </div>
           ))}
         </div>
@@ -73,18 +77,25 @@ Our Pride</h2>
           <div className="flex-1 h-px bg-white/[0.09]" />
         </div>
 
-        {/* Toppers row — horizontal cards */}
+        {/* Toppers row */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           {toppers.map((t, i) => {
             const ps = posStyle[t.position];
             return (
               <div
                 key={i}
-                className="flex items-center gap-3 px-3 py-3 rounded-[12px] bg-white/[0.04] border border-white/[0.09] transition-all duration-300 hover:bg-white/[0.07] hover:border-white/[0.16]"
+                className="flex items-center gap-3 px-3 py-3 rounded-[14px] bg-white/[0.04] border border-white/[0.09] transition-all duration-300 hover:bg-white/[0.08] hover:border-white/[0.18]"
               >
-                <div className="relative shrink-0">
-                  <img src={t.photo} alt={t.name} className={`w-10 h-10 rounded-full object-cover border-2 ${ps.ring}`} />
+                {/* Avatar photo with rank-coloured ring */}
+                <div className={`relative shrink-0 w-11 h-11 rounded-full overflow-hidden border-2 ${ps.ring}`}>
+                  <img
+                    src={avatar(t.avatarId)}
+                    alt={t.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
+
                 <div className="min-w-0">
                   <div className={`text-[8px] font-black tracking-[1.5px] uppercase mb-0.5 px-1.5 py-[2px] rounded-sm inline-block ${ps.badge}`}>
                     {t.label}

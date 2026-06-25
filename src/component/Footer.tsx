@@ -1,10 +1,11 @@
 import React from 'react';
-import Icon from './Icon';
 import logo from '../assets/logo.png';
 
-const quickLinks = ['Home', 'Programs', 'Placements', 'Admissions', 'About SRMCEM', 'Contact'];
+const programs = ['B.Tech CSE / AI-ML', 'B.Tech ECE / IT', 'B.Tech ME / CE', 'MBA (120 Seats)', 'MCA / M.Tech', 'Diploma Programs'];
 
-const programs = ['B.Tech CSE / AI-ML', 'B.Tech ECE / IT', 'B.Tech ME / CE', 'MBA & MCA', 'B.Com (Hons.)', 'Diploma Programs'];
+const recognitions = ['AKTU Affiliation', 'NIRF Ranking', 'UPTAC', 'NBA Accreditation', 'AICTE Approval', 'ISO Certification'];
+
+const careerLinks = ['Faculty Positions', 'Staff Recruitment', 'Current Openings', 'Application Form'];
 
 const Footer = () => {
   return (
@@ -26,33 +27,8 @@ const Footer = () => {
             </div>
           </div>
           <div className="text-[13px] text-white/80 leading-[1.8] max-w-[340px]">
-            SRMCEM combines academic rigour, industry exposure and student-first innovation. Tiwariganj,
-            Faizabad Road, Lucknow (U.P.) — 226028. NBA Accredited · AICTE Approved · AKTU Affiliated.
-          </div>
-        </div>
-
-        {/* Admissions */}
-        <div>
-          <div className="text-[11px] tracking-[3px] uppercase font-bold text-gold-light mb-[18px]">Admissions</div>
-          <div className="text-[12px] tracking-[1.5px] uppercase text-white/55 mb-1">Admission Helpline</div>
-          <a href="tel:18001035298" className="inline-flex items-center gap-2 font-display text-2xl text-white tracking-[1px] mb-5 transition-colors hover:text-gold-light">
-            <Icon name="phone" className="w-5 h-5 text-gold-light" /> 1800-103-5298
-          </a>
-          <a
-            href="#admissions"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-pill bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] text-navy-deep text-[13px] font-bold tracking-[0.5px] shadow-glowGold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glowGoldStrong"
-          >
-            <Icon name="file" className="w-4 h-4" /> Apply Through Google Form
-          </a>
-        </div>
-
-        {/* Quick Links */}
-        <div>
-          <div className="text-[11px] tracking-[3px] uppercase font-bold text-gold-light mb-[18px]">Quick Links</div>
-          <div className="flex flex-col gap-[11px]">
-            {quickLinks.map((link) => (
-              <a key={link} href="#" className="text-[13px] text-white inline-block transition-all duration-200 hover:text-gold-light hover:translate-x-1">{link}</a>
-            ))}
+            Tiwariganj, Faizabad Road, Lucknow, Uttar Pradesh 226010. Established 2001.
+            NBA Accredited · AICTE Approved · AKTU Affiliated.
           </div>
         </div>
 
@@ -61,8 +37,29 @@ const Footer = () => {
           <div className="text-[11px] tracking-[3px] uppercase font-bold text-gold-light mb-[18px]">Programs</div>
           <div className="flex flex-col gap-[11px]">
             {programs.map((link) => (
-              <a key={link} href="#programs" className="text-[13px] text-white inline-block transition-all duration-200 hover:text-gold-light hover:translate-x-1">{link}</a>
+              <a key={link} href="#academic-programs" className="text-[13px] text-white inline-block transition-all duration-200 hover:text-gold-light hover:translate-x-1">{link}</a>
             ))}
+          </div>
+        </div>
+
+        {/* Recognitions */}
+        <div>
+          <div className="text-[11px] tracking-[3px] uppercase font-bold text-gold-light mb-[18px]">Recognitions</div>
+          <div className="flex flex-col gap-[11px]">
+            {recognitions.map((item) => (
+              <a key={item} href="#" className="text-[13px] text-white inline-block transition-all duration-200 hover:text-gold-light hover:translate-x-1">{item}</a>
+            ))}
+          </div>
+        </div>
+
+        {/* Career */}
+        <div>
+          <div className="text-[11px] tracking-[3px] uppercase font-bold text-gold-light mb-[18px]">Career</div>
+          <div className="flex flex-col gap-[11px]">
+            {careerLinks.map((item) => (
+              <a key={item} href="#" className="text-[13px] text-white inline-block transition-all duration-200 hover:text-gold-light hover:translate-x-1">{item}</a>
+            ))}
+            <a href="https://srmcem.ac.in" target="_blank" rel="noreferrer" className="text-[13px] text-white inline-block transition-all duration-200 hover:text-gold-light hover:translate-x-1">srmcem.ac.in</a>
           </div>
         </div>
       </div>

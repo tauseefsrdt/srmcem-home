@@ -1,5 +1,5 @@
 import React from 'react';
-import { section, sectionHeadCenter, eyebrowCenter, sectionTitle } from '../utils/tw';
+import { section, eyebrow, sectionTitle } from '../utils/tw';
 import Icon, { IconName } from './Icon';
 
 const csrData: { icon: IconName; title: string; desc: string }[] = [
@@ -11,10 +11,10 @@ const csrData: { icon: IconName; title: string; desc: string }[] = [
 
 const CSR = () => {
   return (
-    <section className={`${section} bg-[linear-gradient(180deg,#eef3fb,#e6eef9)] overflow-hidden`} id="csr">
-      <div className={`${sectionHeadCenter} reveal`}>
-        <div className={eyebrowCenter}>Social Responsibility</div>
-        <h2 className={sectionTitle}>CSR Initiatives — Giving Back to Society</h2>
+    <section className={`${section} bg-[#E0F1FF] overflow-hidden`} id="csr">
+      <div className="mb-14 reveal">
+        <div className={eyebrow}>Social Responsibility</div>
+        <h2 className={sectionTitle}>CSR Initiatives —<br />Giving Back to Society</h2>
       </div>
 
       <div className="grid grid-cols-4 gap-[18px] max-[900px]:grid-cols-2 max-[560px]:grid-cols-1 reveal">

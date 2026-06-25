@@ -1,5 +1,5 @@
 import React from 'react';
-import { section, sectionGlass, eyebrow, sectionTitle, sectionDesc, btnNavy, pill, glassSheen } from '../utils/tw';
+import { section, eyebrow, sectionTitle, sectionDesc, btnNavy, pill, glassSheen } from '../utils/tw';
 import Icon, { IconName } from './Icon';
 import { unsplash, themeImg } from '../utils/placeholder';
 
@@ -13,13 +13,13 @@ const cards: { icon: IconName; title: string; desc: string; tag: string; img: st
 ];
 
 const highlights = [
-  { num: '27', unit: 'Yrs', label: 'Of academic legacy since 1999' },
+  { num: '25', unit: 'Yrs', label: 'Of academic legacy since 2001' },
   { num: '100', unit: 'Ac', label: 'Wi-Fi enabled green campus' },
 ];
 
 const WorldStage = () => {
   return (
-    <section className={`${section} ${sectionGlass}`} id="achievements">
+    <section className={`${section} bg-[#F0F6FB]`} id="achievements">
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.4fr)] gap-10 lg:gap-14 items-start">
         {/* LEFT — why panel (sticky on desktop) */}
         <div className="lg:sticky lg:top-24 reveal">
@@ -37,9 +37,9 @@ const WorldStage = () => {
             </div>
 
             <div className="p-8 sm:p-10 pt-2 sm:pt-3">
-              <div className={eyebrow}>Achievements &amp; Recognition</div>
-              <h2 className={sectionTitle}>Celebrating Excellence Across Every Frontier</h2>
-              <p className={sectionDesc}>From robotics championships and prestigious IEEE conferences to accomplished alumni in civil services, ISRO, and global corporations, SRMCEM continues to create achievers who make their mark across industries, institutions, and nations.</p>
+              <div className={eyebrow}>Global Recognition</div>
+              <h2 className={sectionTitle}>Champions on the<br />World Stage</h2>
+              <p className={sectionDesc}>SRMCEM's Grobot robotics team has won national and international competitions. Our alumni serve in ISRO, IAS, IPS, Defence, and at global corporations.</p>
 
               <div className="grid grid-cols-2 gap-4 mt-8 mb-8">
                 {highlights.map((h) => (
