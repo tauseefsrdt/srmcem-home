@@ -77,12 +77,12 @@ const NavBar = () => {
                   <span className="text-[9px] opacity-50 mt-px">▾</span>
                 </a>
                 {/* Dropdown */}
-                <div className="absolute top-full left-0 z-50 min-w-[200px] flex flex-col py-1 bg-white border border-[rgba(15,47,87,0.1)] border-t-2 border-t-[#F2B84B] rounded-b-xl shadow-[0_14px_40px_rgba(15,23,42,0.12)] opacity-0 invisible translate-y-1.5 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                <div className="absolute top-full left-0 z-50 min-w-[200px] flex flex-col py-1 bg-white border border-[rgba(15,47,87,0.1)] border-t-2 border-t-[#ffb703] rounded-b-xl shadow-[0_14px_40px_rgba(15,23,42,0.12)] opacity-0 invisible translate-y-1.5 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
                   {item.links.map((link, lIdx) => (
                     <a
                       key={lIdx}
                       href="#"
-                      className="py-2.5 px-4 text-[13px] text-[#475467] border-l-2 border-transparent hover:bg-[rgba(15,47,87,0.04)] hover:text-[#0A1F3D] hover:pl-5 hover:border-l-[#F2B84B] transition-all duration-150"
+                      className="py-2.5 px-4 text-[13px] text-[#475467] border-l-2 border-transparent hover:bg-[rgba(15,47,87,0.04)] hover:text-[#0A1F3D] hover:pl-5 hover:border-l-[#ffb703] transition-all duration-150"
                     >
                       {link}
                     </a>
@@ -175,7 +175,7 @@ const NavBar = () => {
                     <a
                       key={lIdx}
                       href="#"
-                      className="flex items-center gap-2 py-2 pl-3 text-[13px] text-[#475467] border-l-2 border-transparent hover:border-l-[#F2B84B] hover:text-[#0F2F57] hover:pl-4 transition-all duration-150"
+                      className="flex items-center gap-2 py-2 pl-3 text-[13px] text-[#475467] border-l-2 border-transparent hover:border-l-[#ffb703] hover:text-[#0F2F57] hover:pl-4 transition-all duration-150"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {link}

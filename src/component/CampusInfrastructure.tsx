@@ -120,7 +120,7 @@ const CampusInfrastructure = () => {
           </div>
 
           <h2 className={`${sectionTitle} text-white`}>
-            World-Class Facilities
+            World-Class <span className="text-[#ffb703]">Facilities</span>
           </h2>
 
           <p className="mt-[18px]  text-base leading-[1.85] text-white/80">

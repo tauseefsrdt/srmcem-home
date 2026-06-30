@@ -78,7 +78,7 @@ const ProgramsOffered = () => {
 
           <a
             href="#admissions"
-            className="mt-auto self-start inline-flex items-center justify-center gap-2 px-8 py-[13px] rounded-pill bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] text-navy-deep text-sm font-bold tracking-[0.5px] shadow-glowGold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glowGoldStrong"
+            className="mt-auto self-start inline-flex items-center justify-center gap-2 px-8 py-[13px] rounded-pill bg-[linear-gradient(135deg,#F7CF75,#ffb703)] text-navy-deep text-sm font-bold tracking-[0.5px] shadow-glowGold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glowGoldStrong"
           >
             Apply Now →
           </a>

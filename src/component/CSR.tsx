@@ -14,12 +14,12 @@ const CSR = () => {
     <section className={`${section} bg-[#E0F1FF] overflow-hidden`} id="csr">
       <div className="mb-14 reveal">
         <div className={eyebrow}>Social Responsibility</div>
-        <h2 className={sectionTitle}>CSR Initiatives —<br />Giving Back to Society</h2>
+        <h2 className={sectionTitle}>CSR Initiatives<span className="text-[#ffb703]"> Giving Back to Society</span></h2>
       </div>
 
       <div className="grid grid-cols-4 gap-[18px] max-[900px]:grid-cols-2 max-[560px]:grid-cols-1 reveal">
         {csrData.map((item, i) => (
-          <div key={i} className="group relative overflow-hidden rounded-md bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] shadow-card transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-hover hover:border-navy-mid/30 px-7 py-9 text-center">
+          <div key={i} className="group relative overflow-hidden rounded-md bg-white/90 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] shadow-card transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-hover hover:border-navy-mid/30 px-7 py-9 text-center">
             <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(27,76,127,0.18),transparent)]" aria-hidden />
             <div className="w-12 h-12 mx-auto mb-5 grid place-items-center rounded-[12px] bg-navy-mid/[0.10] border border-navy-mid/20 text-navy-mid transition-all duration-300 group-hover:scale-[1.12] group-hover:bg-gold/15 group-hover:text-gold-dark"><Icon name={item.icon} className="w-6 h-6" /></div>
             <div className="font-serif font-bold text-base text-ink mb-3">{item.title}</div>

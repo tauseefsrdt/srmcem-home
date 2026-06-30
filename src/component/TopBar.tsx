@@ -22,7 +22,7 @@ const TopBar = () => {
             <Icon name="mail" className="w-3.5 h-3.5" /> info@srmcem.ac.in
           </a>
           <div className="hidden md:block w-px h-3.5 bg-white/20"></div>
-          <a href="#" className="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-1 rounded-pill text-[11px] font-bold tracking-wide uppercase bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] text-navy-deep shadow-glowGold transition duration-200 hover:-translate-y-px">
+          <a href="#" className="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-1 rounded-pill text-[11px] font-bold tracking-wide uppercase bg-[linear-gradient(135deg,#F7CF75,#ffb703)] text-navy-deep shadow-glowGold transition duration-200 hover:-translate-y-px">
             <Icon name="star" className="w-3.5 h-3.5" /> UPTAC-2025
           </a>
           <a href="#" className="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-1 rounded-pill text-[11px] font-bold tracking-wide uppercase bg-white/[0.08] text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.16)] transition duration-200 hover:bg-white/[0.16] hover:-translate-y-px">
@@ -36,7 +36,7 @@ const TopBar = () => {
           <a href="#" className={`hidden lg:inline-flex items-center gap-1.5 ${btnOutline}`}><Icon name="chart" className="w-3.5 h-3.5" /> Result</a>
           <a
             href="#"
-            className="inline-flex px-3.5 py-1 rounded-[4px] text-[11px] font-semibold tracking-wide uppercase whitespace-nowrap bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] text-navy-deep border border-gold/60 shadow-glowGold transition-all duration-200 hover:-translate-y-px hover:shadow-glowGoldStrong"
+            className="inline-flex px-3.5 py-1 rounded-[4px] text-[11px] font-semibold tracking-wide uppercase whitespace-nowrap bg-[linear-gradient(135deg,#F7CF75,#ffb703)] text-navy-deep border border-gold/60 shadow-glowGold transition-all duration-200 hover:-translate-y-px hover:shadow-glowGoldStrong"
           >
             Apply Now
           </a>

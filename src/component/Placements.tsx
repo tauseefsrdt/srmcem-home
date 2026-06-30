@@ -38,7 +38,7 @@ const Placements = () => {
       <div className="mb-14 reveal relative z-[1]">
         <div className={`${eyebrow} !text-gold-light`}>Career Success</div>
         <h2 className={`${sectionTitle} text-white`}>
-          2500+ Job Offers.<span className="text-[#f2b84b]"> Every Year.</span>
+          2500+ Job Offers.<span className="text-[#ffb703]"> Every Year.</span>
         </h2>
         <p className={`${sectionDesc} !text-white/65 !mx-0`}>
           100%+ Placement Score in CS &amp; IT, Management, Computer Applications, and Polytechnic.
@@ -61,7 +61,7 @@ const Placements = () => {
             <div className="relative overflow-hidden rounded-2xl border border-white/[0.12] shadow-[0_32px_80px_rgba(7,22,46,0.65)]">
               {/* Gold shimmer at top */}
               <div
-                className="absolute top-0 inset-x-0 h-[3px] z-10 bg-[linear-gradient(90deg,transparent_0%,#F2B84B_40%,#F7CF75_60%,transparent_100%)]"
+                className="absolute top-0 inset-x-0 h-[3px] z-10 bg-[linear-gradient(90deg,transparent_0%,#ffb703_40%,#F7CF75_60%,transparent_100%)]"
                 aria-hidden
               />
 
@@ -137,7 +137,7 @@ const Placements = () => {
               >
                 {/* Left accent bar */}
                 <div
-                  className={`absolute left-0 inset-y-0 w-[3px] rounded-r-full transition-opacity duration-300 ${r.gold ? 'bg-[linear-gradient(180deg,#F7CF75,#F2B84B)] opacity-80 group-hover:opacity-100' : 'bg-white/20 group-hover:bg-white/40'}`}
+                  className={`absolute left-0 inset-y-0 w-[3px] rounded-r-full transition-opacity duration-300 ${r.gold ? 'bg-[linear-gradient(180deg,#F7CF75,#ffb703)] opacity-80 group-hover:opacity-100' : 'bg-white/20 group-hover:bg-white/40'}`}
                   aria-hidden
                 />
 
@@ -164,7 +164,7 @@ const Placements = () => {
           {/* CTA */}
           <a
             href="#"
-            className="mt-6 flex items-center justify-center gap-2.5 w-full py-[15px] rounded-xl bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] text-navy-deep text-sm font-bold tracking-[0.6px] shadow-[0_10px_36px_rgba(242,184,75,0.38)] hover:-translate-y-0.5 hover:shadow-[0_14px_44px_rgba(242,184,75,0.55)] transition-all duration-300"
+            className="mt-6 flex items-center justify-center gap-2.5 w-full py-[15px] rounded-xl bg-[linear-gradient(135deg,#F7CF75,#ffb703)] text-navy-deep text-sm font-bold tracking-[0.6px] shadow-[0_10px_36px_rgba(242,184,75,0.38)] hover:-translate-y-0.5 hover:shadow-[0_14px_44px_rgba(242,184,75,0.55)] transition-all duration-300"
           >
             Explore Placement Records
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

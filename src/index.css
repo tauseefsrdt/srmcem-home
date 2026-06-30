@@ -137,7 +137,7 @@
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #f2b84b, #d89a2f);
+  background: linear-gradient(180deg, #ffb703, #d89a2f);
 }
 html {
   scrollbar-color: #1b4c7f #e6eef9;

@@ -37,7 +37,7 @@ const News = () => {
     <section className={`${section} bg-[linear-gradient(180deg,#FFFFFF_0%,#E0F1FF_100%)]`} id="news">
       <div className="mb-14 reveal">
         <div className={`${eyebrow} text-navy-mid`}>Latest Events &amp; News</div>
-        <h2 className={`${sectionTitle} text-ink`}>What's Happening<br />at SRMCEM</h2>
+        <h2 className={`${sectionTitle} text-ink`}>What's Happening at <span className="text-[#ffb703]">SRMCEM</span></h2>
       </div>
 
       <div className="grid grid-cols-1 min-[993px]:grid-cols-[1.2fr_1fr] gap-6 reveal">

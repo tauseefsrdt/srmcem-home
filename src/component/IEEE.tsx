@@ -21,7 +21,7 @@ const IEEE = () => {
         <div className={`${eyebrow} !text-white/80`}>Memberships &amp; Associations</div>
 
         <h2 className={`${sectionTitle} text-white`}>
-          IEEE Student Branch<br />&amp; Global Chapters
+          IEEE Student Branch &amp; <span className="text-[#ffb703]">Global Chapters</span>
         </h2>
 
         <p className="mt-[18px] text-base leading-[1.85] text-white/70 max-w-[820px]">
@@ -37,7 +37,7 @@ const IEEE = () => {
         {chapters.map((chapter, index) => (
           <article
             key={index}
-            className="group flex flex-col items-start gap-4 p-6 rounded-xl bg-white/70 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:bg-white hover:border-navy-mid/30 hover:shadow-hover"
+            className="group flex flex-col items-start gap-4 p-6 rounded-xl bg-white/100 backdrop-blur-glass border border-[rgba(15,47,87,0.10)] shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:bg-white hover:border-navy-mid/30 hover:shadow-hover"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-mid/[0.10] border border-navy-mid/20 text-navy-mid transition-all duration-300 group-hover:bg-gold/15 group-hover:border-gold/40 group-hover:text-gold-dark">
               <Icon name={chapter.icon} className="h-6 w-6" />

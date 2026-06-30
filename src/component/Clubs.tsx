@@ -83,7 +83,7 @@ const Clubs = () => {
 
       <div className="mb-14 reveal relative z-[1]">
         <div className={eyebrow}>Student Life</div>
-        <h2 className={sectionTitle}>17+ Clubs &amp; Societies —<br />Find Your Tribe</h2>
+        <h2 className={sectionTitle}>17+ Clubs &amp; Societies <span className="text-[#ffb703]">Find Your Tribe</span></h2>
         <p className="mt-[18px] text-base leading-[1.85] text-brand-gray">Becoming part of a student club at SRMCEM is more than a pastime — it's a journey of transformation. It links you to a dynamic community, fosters personal growth and ensures endless fun!</p>
       </div>
 

@@ -48,7 +48,7 @@ const WorldStage = () => {
       <div className="mb-12 reveal">
         <div className={eyebrow}>Global Recognition</div>
         <h2 className={sectionTitle}>
-          Champions on the<br />World Stage
+          Champions on the <span className="text-[#ffb703]">World Stage</span>  
         </h2>
         <p className={`${sectionDesc} !mx-0 max-w-2xl`}>
           SRMCEM's Grobot robotics team has won national and international competitions.<br />

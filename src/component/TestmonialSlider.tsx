@@ -67,7 +67,7 @@ const TestmonialSlider: React.FC = () => {
 
              <div className="mb-14 reveal">
                     <div className={`${eyebrow} text-navy-mid`}>In Their Words</div>
-                    <h2 className={`${sectionTitle} text-ink`}>Alumni Testimonials</h2>
+                    <h2 className={`${sectionTitle} text-ink`}>Alumni <span className="text-[#ffb703]">Testimonials</span></h2>
                     <p className="mt-[18px] text-base leading-[1.85] text-brand-gray ">Hear from our graduates building careers across the globe — and read their full journeys.</p>
                   </div>
 
@@ -125,7 +125,7 @@ const TestmonialSlider: React.FC = () => {
             onClick={() => setSelected(null)}
           />
           <div className="relative max-w-2xl w-full mx-4 max-h-[calc(100vh-48px)] overflow-hidden bg-white border border-[rgba(15,47,87,0.12)] rounded-2xl shadow-[0_40px_90px_rgba(10,31,61,0.35)]">
-            <span className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#1B4C7F,#F2B84B)]" aria-hidden />
+            <span className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#1B4C7F,#ffb703)]" aria-hidden />
             <button
               type="button"
               className="absolute top-3 right-3 z-10 grid place-items-center w-9 h-9 bg-navy-light/70 border border-[rgba(15,47,87,0.14)] text-navy-dark rounded-full leading-none text-xl transition-colors duration-200 hover:bg-navy hover:text-white hover:border-navy"

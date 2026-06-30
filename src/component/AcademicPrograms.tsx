@@ -54,7 +54,7 @@ const AcademicPrograms: React.FC = () => {
       <div className="w-full">
               <div className="mb-14 reveal" >
                         <div className={`${eyebrow} text-navy-mid`}>Courses</div>
-                        <h2 className={`${sectionTitle} text-ink`}>Our Courses</h2>
+                        <h2 className={`${sectionTitle} text-ink`}>Our <span className="text-[#ffb703]">Courses</span> </h2>
                      
               </div>
           <ul className="w-full flex sm:justify-center space-x-2 sm:space-x-4 lg:space-x-10 mt-6 lg:mt-10 overflow-x-auto manage_button_scroll">

@@ -121,7 +121,7 @@ const CompanyLogos = () => (
     >
       <div className="mb-14 reveal">
         <div className={eyebrow}>250+ Recruiters</div>
-        <h2 className={sectionTitle}>Companies That<br />Hire Our Graduates</h2>
+        <h2 className={sectionTitle}>Companies That <span className="text-[#ffb703]">Our Graduates</span> </h2>
       </div>
 
       <div className="space-y-10">

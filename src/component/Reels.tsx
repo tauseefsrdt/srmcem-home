@@ -52,10 +52,10 @@ const Reels = () => {
     <section className={`${section} ${sectionGlass}`}>
        <div className="mb-14 reveal">
             <div className={eyebrow}>Campus Life</div>
-            <h2 className={sectionTitle}>
-              Vibrant Events.<br />
-              Unforgettable Memories.
-            </h2>
+           <h2 className={sectionTitle}>
+                   Vibrant Events.
+                  <span className='text-[#ffb703]'> Unforgettable Memories. </span>
+                 </h2>
           </div>
 
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 reveal">
@@ -83,7 +83,7 @@ const Reels = () => {
               <h3 className="text-sm font-semibold text-navy-dark">
                 {chapter.title}
               </h3>
-              <h4 className="text-[9px] text-[#f2b84b] font-semibold uppercase">{chapter.subtitle}</h4>
+              <h4 className="text-[9px] text-[#ffb703] font-semibold uppercase">{chapter.subtitle}</h4>
             </div>
           </article>
         ))}

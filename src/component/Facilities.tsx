@@ -52,7 +52,7 @@ const Facilities = () => {
         </div>
         <a
           href="tel:18001035298"
-          className="inline-flex items-center justify-center gap-2 px-8 py-[14px] rounded-pill bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] text-navy-deep text-sm font-bold tracking-[0.5px] shadow-glowGold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glowGoldStrong"
+          className="inline-flex items-center justify-center gap-2 px-8 py-[14px] rounded-pill bg-[linear-gradient(135deg,#F7CF75,#ffb703)] text-navy-deep text-sm font-bold tracking-[0.5px] shadow-glowGold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glowGoldStrong"
         >
           <Icon name="phone" className="w-4 h-4" /> Call Now
         </a>

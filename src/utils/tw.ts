@@ -11,7 +11,7 @@ export const container = 'w-full max-w-container mx-auto px-6';
 // Section: fixed vertical padding (64px mobile → 96px desktop) + horizontal gutters.
 // Sections are transparent by default and float over the global light backdrop.
 export const section =
-  'relative py-10 lg:py-16 px-[max(24px,calc((100%-1220px)/2))]';
+  'relative py-8 lg:py-12 px-[max(24px,calc((100%-1220px)/2))]';
 export const sectionTight =
   'relative py-10 lg:py-16 px-[max(24px,calc((100%-1220px)/2))]';
 
@@ -89,7 +89,7 @@ export const btn =
 // Primary = blue.
 export const btnPrimary = `${btn} bg-[linear-gradient(135deg,#1B4C7F,#0F2F57)] text-white shadow-[0_8px_24px_rgba(27,76,127,0.32)] hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(27,76,127,0.45)]`;
 // Secondary = gold.
-export const btnGold = `${btn} bg-[linear-gradient(135deg,#F7CF75,#F2B84B)] text-navy-deep shadow-gold hover:-translate-y-0.5 hover:shadow-glowGoldStrong`;
+export const btnGold = `${btn} bg-[linear-gradient(135deg,#F7CF75,#ffb703)] text-navy-deep shadow-gold hover:-translate-y-0.5 hover:shadow-glowGoldStrong`;
 export const btnOutline = `${btn} font-semibold bg-white/60 backdrop-blur-sm text-navy-dark border border-navy-mid/30 hover:border-navy-mid hover:bg-white hover:-translate-y-0.5`;
 export const btnLight = `${btn} bg-white text-navy-dark shadow-card hover:shadow-soft hover:-translate-y-0.5`;
 export const btnNavy = `${btn} bg-navy text-white shadow-[0_8px_24px_rgba(27,76,127,0.32)] hover:bg-navy-dark hover:-translate-y-0.5`;
